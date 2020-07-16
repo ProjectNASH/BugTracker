@@ -1,0 +1,33 @@
+@* trails Template File *@
+@()(implicit request: RequestHeader, assetsFinder: AssetsFinder)
+@import helper._
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Login Form</title>
+	<link rel="stylesheet" media="screen" type="text/css" href="@assetsFinder.path("stylesheets/utils/trial.css")">
+	
+</head>
+<body>
+<h1>Its working</h1>
+
+	
+  	<form action = "@routes.HomeController.upload" method ="POST" enctype="multipart/form-data">
+  	@helper.CSRF.formField
+    <input type="file" name="picture">
+    
+    <p>
+        <input type="submit">
+    </p>
+    </form>
+   
+    
+
+
+</html>
+
+	
+

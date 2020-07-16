@@ -1,0 +1,29 @@
+@* trails Template File *@
+@(tasks : List[String])(implicit request: RequestHeader, assetsFinder: AssetsFinder)
+@import helper._
+
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+    <body>
+    	Based on the given Employee data list, we have found the following roles in your organization
+    	<ul>
+    	@for(task <- tasks){
+    		<li>@task</li>
+    		}
+    	</ul>
+    	If you would like to add more roles, write them down in the following text-box.(If you want to add multiple write them as XXX, YYY, ZZZ)
+    	<form method = "POST" action ="@routes.setup.getAddRoles" id="formSubmit">
+    	@helper.CSRF.formField
+    	<input type="text" name="addRoles" value="" id ="addRoles"/>
+    	<input type="SUBMIT" value="SUBMIT" />    	
+    	</form>
+    	
+    	
+
+    	
+    </body>
+</html>

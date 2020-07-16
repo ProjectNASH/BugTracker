@@ -1,0 +1,142 @@
+@* trails Template File *@
+@()(implicit request: RequestHeader, assetsFinder: AssetsFinder)
+@import helper._
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> SignUp to BugTracker </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      	<link rel="stylesheet" href="@assetsFinder.path("stylesheets/utils/homePagestyle.css")" type ="text/css">
+      	
+	<link rel="apple-touch-icon" sizes="180x180" href="@assetsFinder.path("/images/title images/apple-touch-icon.png")">
+	<link rel="icon" type="image/png" sizes="32x32" href="@assetsFinder.path("/images/title images/favicon-32x32.png")">
+	<link rel="icon" type="image/png" sizes="16x16" href="@assetsFinder.path("/images/title images/favicon-16x16.png")">
+	<link rel="manifest" href="@assetsFinder.path("/images/title images/site.webmanifest")">
+
+    </head>
+    <body onload="showText()">
+	  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="#">
+	  	<img src="@assetsFinder.path("/images/images.jpeg")" width="40" height="40" class="d-inline-block align-top" alt=""/>
+	  </a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Documentation
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">What is BugTracker</a>
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="#">How to upload your queries</a>
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="#">How to create an account</a>
+	        </div>
+	      </li>
+
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Meet the Team</a>
+	      </li>
+	     
+	    </ul>
+	    
+	  </div>
+	</nav>
+
+
+
+
+
+
+	   	<div class="jumbotron">   			
+				<h1 class="display-4" id ="headerText"></h1>
+				<p class="lead">BugTracker provides you with a simple solution for your enteprise to track and mark all the bugs that developers encounter. This makes way for easier communication between different teams, resulting in hassle free and easier bug removal process</p>
+				<hr class="my-4">
+				<p class="logSignup">Log in up if your organization already uses BugTracker. If not, then ask your System Adminstrator to set up bugtracker. It takes less than 5 minutes to do so.</p>
+				<p class="lead">
+
+
+				   <div class="text-center">
+				   
+				   <form method ="GET" action = "" id="signupForm" >
+					@helper.CSRF.formField
+				   	<input type="submit" class="btn btn-outline-secondary btn-lg" value="Set Up"  onclick="signup()" /></form>
+				   	
+				   	
+				   	<form method ="GET" action = "" id="loginForm">
+					@helper.CSRF.formField
+				   	<input type="submit" class="btn btn-outline-secondary btn-lg" value="Login" onclick="login()" />
+				   	</form>
+				   
+				   
+				    <!-- <form method ="GET" action = "" id="setupForm" >
+					@helper.CSRF.formField
+				   	<input type="submit" class="btn btn-outline-secondary btn-lg" value="Set Up"  onclick="setup()" />
+				   	</form> -->
+				   	
+				   
+				   </div>
+				</p>
+				
+			
+		</div>
+
+
+		<section id="testimonials">
+			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  			<div class="carousel-inner">
+   				<div class="carousel-item active">
+					<h2>Absolute delight to work with Bugtracker, was able to quicly solve all the bus</h2>
+					<h3>-Sam Smith</h3>
+				</div>
+				<div class="carousel-item">
+					<h2>Dosent work absolute garbage plese fix it before i call the cops</h2>
+					<h3>-Sam Smith</h3>
+				</div>	
+				<div class="carousel-item">
+					<h2>ASdknjdka Jndoanms, soidja nfdi us idjsojdoam fidfnika sdiojnfkjdsn jindkk sjd</h2>
+					<h3>-Sam Smith</h3>
+				</div>	
+
+			</div>
+			</div>
+		</section>
+		
+		
+
+
+		<footer>
+			Copyright © Bug Tracker. All Rights Reserved | Contact Us: +91 123456789
+		</footer>
+	</body>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		
+	    <script type="text/javascript" src="@assetsFinder.path("js/homePage.js")"> </script> 
+	    <script>
+	    function signup(){
+	    	document.getElementById("signupForm").action = "@routes.signUp.sendSignupPage";
+	    	document.getElementById("signupForm").submit();			
+			
+		}
+		
+		function login(){
+	    	document.getElementById("loginForm").action = "@routes.login.loginPage";
+	    	document.getElementById("loginForm").submit();			
+			
+		}
+		
+	    </script>
+	     
+         
+</html>

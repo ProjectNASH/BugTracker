@@ -1,0 +1,42 @@
+@* trails Template File *@
+@()(implicit request: RequestHeader, assetsFinder: AssetsFinder)
+@import helper._
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Login Form</title>
+	<link rel="stylesheet" media="screen" type="text/css" href="@assetsFinder.path("stylesheets/utils/loginPage.css")">
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="@assetsFinder.path("/images/title images/apple-touch-icon.png")">
+	<link rel="icon" type="image/png" sizes="32x32" href="@assetsFinder.path("/images/title images/favicon-32x32.png")">
+	<link rel="icon" type="image/png" sizes="16x16" href="@assetsFinder.path("/images/title images/favicon-16x16.png")">
+	<link rel="manifest" href="@assetsFinder.path("/images/title images/site.webmanifest")">
+	
+	
+</head>
+<body>
+		<div class="login">
+		<img src="@assetsFinder.path("/images/images.jpeg")" class="bug">
+			<h1> Login Here</h1>
+			<form method ="POST" action = "@routes.login.loginValidate()">
+			@helper.CSRF.formField
+			<p>Username</p>
+			<input type="text" name="username" placeholder="Enter Username">
+			<p>Password</p>
+			<input type="password" name="password" placeholder="Enter Password">
+			<input type="submit" name="submit" value="Login">
+			<a href="#">Lost Your Password?</a><br>
+			<a href="#">Create Account</a>
+			</form>
+		</div>
+</body>
+<script>
+	
+</script>
+</html>
+
+	
+

@@ -1,0 +1,117 @@
+@font-face
+{
+	font-family: 'myFont';
+	src: url("../../fonts/UbuntuMono-Regular.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+
+body{
+	margin:0;
+	padding: 0;
+	background-color:#323030;
+	background-image: linear-gradient( #333636,#0c0d0d);
+	background-size:cover;
+	background-position:center;
+	font-family: myFont !important;
+	background-image: url("../../images/loginBackImage.jpg");
+}
+.login{
+	width:320px;
+	height:430px;
+	background:#000;
+	background-image: linear-gradient( #333636,#0c0d0d);
+	border-radius:20px;
+	color:#fff;
+	top:50%;
+	left:50%;
+	position:absolute;
+	transform:translate(-50%,-50%);
+	box-sizing:border-box;
+	padding:70px 30px;
+}
+.bug{
+	width:100px;
+	height:100px;
+	border-radius:50%;
+	position:absolute;
+	top:-50px;
+	left: calc(50% - 50px);
+	
+}
+h1{
+	margin:0;
+	padding: 0 0 20px;
+	text-align:center;
+	font-size:30px;
+}
+.login p{
+	margin: 0;
+	padding:0;	
+	font-size:22px;
+}
+.login input{
+	width:100%;
+	margin-bottom:20px;
+}
+.login input[type="text"],input[type="password"]
+{
+	border:none;
+	border-bottom:1px solid #fff;
+	background:transparent;
+	outline:none;
+	height:40px;
+	color:#fff;
+	font-size:15px;
+}
+.login input[type="submit"]
+{
+	border:none;
+	outline:none;
+	height:40px;
+	background:#fb2525;
+	color:#fff;
+	font-size:18px;
+	border-radius:20px;
+}
+.login input[type="submit"]:hover
+{
+	cursor:pointer;
+	background:#ffc107;
+	color:#000;
+}
+.login a{
+	text-decoration:none;
+	font-size:15px;
+	line-height:20px;
+	color:darkgrey;
+}
+.login a:hover{
+	color:#ffc107;
+}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+@font-face
+{
+	font-family: 'Ubuntu Mono';
+	src: url("../../fonts/UbuntuMono-Regular.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+form{
+	display:inline;
+}
+
+
+
+body{
+	font-family: 'Ubuntu Mono';
+
+}
+
+nav{
+	font-family: 'Ubuntu Mono';
+	font-size: 19px;
+}
+
+.navbar-brand img{
+	border-radius: 50%;
+}
+
+.display-4{
+	font-size: 5rem;
+}
+
+.lead{
+	font-size: 1.7rem;
+}
+
+.logSignup{
+	font-size: 1.7rem;
+}
+
+.signupLoginBtn{
+
+}
+
+.jumbotron{
+	background-image: linear-gradient(to right, rgba(28, 31, 31,1) 40%,rgba(12, 13, 13,0) 100%),url("../../images/loginBackImage.jpg");
+	background-size: cover;
+	color: white;
+	padding-right: 10%;
+	padding-left: 10%;
+
+}
+
+.container{
+	padding-left: 30rem;
+}
+
+
+#testimonials{
+	padding:7% 15%;
+	text-align: center;
+	
+}
+
+footer {
+   width:100%;
+   height: 100%;
+   background-image: linear-gradient(#333636,#0c0d0d);
+   color:white; 
+   text-align: center;
+
+}
+   

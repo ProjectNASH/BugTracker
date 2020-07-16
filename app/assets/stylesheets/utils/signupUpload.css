@@ -1,0 +1,117 @@
+
+.jumbotron {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  background-color: white;
+  
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron h1 {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+.first{
+	padding:0;
+}
+.border{
+	padding:5%;
+}
+.space{
+	border:1.5rem;
+	padding:.75rem;
+}
+.space1{
+	border:1.5rem;
+	padding:.45rem;
+}
+.rounded{
+	border-radius:15px;
+}
+{
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+.first{
+	padding:0;
+}
+
+.upload-input {
+	position:absolute;
+	left:0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.third {
+  padding: 50px 10%;
+}
+
+.box {
+  position: relative;
+  background: #ffffff;
+  width: 100%;
+}
+
+.box-header {
+  color: #444;
+  display: block;
+  padding: 10px;
+  position: relative;
+  border-bottom: 1px solid #f4f4f4;
+  margin-bottom: 10px;
+}
+.box-tools{
+	position:absolute;
+	top:5px;
+	right:10px;
+}
+.dropzone-wrapper {
+  	position:relative;
+  height: auto;
+  padding:0
+}
+.img-fluid{
+	height:auto;
+	width:60%;
+	background:cover;	
+}
+.dropzone,
+.dropzone:focus {
+  position: absolute;
+  outline: none;
+  width: 50%;
+  height: 180px;
+  cursor: pointer;
+  opacity: 0;
+}
+.preview-zone {
+  text-align: center;
+}
+
+.preview-zone .box {
+  box-shadow: none;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+.five{
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
