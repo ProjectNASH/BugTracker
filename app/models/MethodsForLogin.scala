@@ -9,6 +9,9 @@ object MethodsForLogin {
   
   def validateUser(usernamePasswordList: Map[String, String], username: String, password:String):Boolean = {
     //users.get(username).map(_ == password).getOrElse(false)
+    println(usernamePasswordList.contains(username))
+    println(usernamePasswordList)
+    println(username)
     if(usernamePasswordList.contains(username) && models.EncryterTool.decrypt(usernamePasswordList(username)) == password ){
         println(models.EncryterTool.decrypt(usernamePasswordList(username)))
         println(password)

@@ -35,22 +35,25 @@ class login @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
    postVals.map{ args => 
      val username = args("username").head
      var password = args("password").head
-     //println("Login Before:" + password)
+     println("Login Before:" + password)
      //password = models.EncryterTool.encrypt(password)
      println("Working")
-     //println("Login After:" + password)
+     println("Login After:" + password)
      
      db.withConnection { implicit connection =>  
-       //println("Inside db")
+       println("Inside db")
        val usernameList :List[String] = {
-         SQL("select user_username from usertable where user_username in ({inputUsername})").on("inputUsername"->username).as( str("user_username") *) 
+         SQL("select EmpUserName from usertable where EmpUserName in ({inputUsername})").on("inputUsername"->username).as( str("EmpUserName") *) 
        }
+       println(usernameList)
        val passwordList:List[String] = {
-        SQL("select user_password from usertable where user_username in ({inputUsername})").on("inputUsername"->username).as( str("user_password")  *) 
+        SQL("select EmpPass from usertable where EmpUserName in ({inputUsername})").on("inputUsername"->username).as( str("EmpPass")  *) 
        }       
+       println(passwordList)
       if(!(usernameList.isEmpty)){
         //println("Username exsists")
-        val usernamePasswordList = (usernameList zip passwordList).toMap      
+        val usernamePasswordList = (usernameList zip passwordList).toMap    
+        println(usernamePasswordList)
         if(models.MethodsForLogin.validateUser(usernamePasswordList, username, password)){
           println("Username valid")
           //Ok(views.html.userDashboard())
