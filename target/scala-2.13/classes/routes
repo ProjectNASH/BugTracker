@@ -13,29 +13,35 @@ GET     /message                    controllers.AsyncController.message
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(file)
 
+
+#All Methods related to login
 GET		/login						controllers.login.loginPage
 POST	/checkinglogin				controllers.login.loginValidate
 
-
+#All methods related to signing up
+GET		/signupsetup				controllers.signUp.sendSignupSetupPage
 GET		/signup						controllers.signUp.sendSignupPage
 
 # We send setup page i.e setupPageOne from this POST request directly
+#Following are methods to setup
 POST	/checkingsignup				controllers.signUp.getSignupInfo
-
-
 #GET		/setupOne					controllers.setup.sendSetUpPage
 POST	/getbacksetupinfo			controllers.setup.getSetUpInfo
 #GET		/setupTwo					controllers.setup.setupPageTwo
 POST	/getbackempinfo				controllers.setup.getEmpData
 POST	/getbackAddRoles			controllers.setup.getAddRoles
 
-GET		/viewDashboard				controllers.login.viewDashboard
+#All methods related to users Dashboard, create a page ,get info from that page, view others pages
+GET		/viewDashboard				controllers.dashboard.viewDashboard
+GET 	/createPage					controllers.dashboard.createPage	    
+POST	/getPageData				controllers.dashboard.getPageData		
+GET		/viewPages					controllers.dashboard.viewPages				
 
 
-
-
-#GET		/trial						controllers.HomeController.trialPage	
-
+#Following are for test purposes
+#GET		/trial					controllers.HomeController.trialPage	
 POST  	/trial1				        controllers.HomeController.upload
+GET		/trial3					    controllers.MailerService.send()
+
 
 

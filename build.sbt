@@ -24,7 +24,9 @@ lazy val root = (project in file("."))
      "com.pauldijou" %% "jwt-play-json" % "4.3.0",
      "com.pauldijou" %% "jwt-play" % "4.3.0",
      "com.pauldijou" %% "jwt-core" % "4.3.0",
-     "io.spray" %%  "spray-json" % "1.3.5"
+     "io.spray" %%  "spray-json" % "1.3.5",
+     "com.typesafe.play" %% "play-mailer" % "8.0.1",
+     "com.typesafe.play" %% "play-mailer-guice" % "8.0.1"
     ),
     scalacOptions ++= Seq(
       "-feature",

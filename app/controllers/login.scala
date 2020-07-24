@@ -18,6 +18,7 @@ import scala.concurrent.Future
 import scala.language.postfixOps
 
 
+
 /**
  * This controller creates an `Action` to handle HTTP requests to the
  * application's home page.
@@ -33,52 +34,56 @@ class login @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
   def loginValidate = Action{ implicit request =>
    val postVals = request.body.asFormUrlEncoded
    postVals.map{ args => 
-     val username = args("username").head
+     val username = ((args("username").head).split("@"))(0)
+     println(username)
+     //val username = args("username").head
      var password = args("password").head
      println("Login Before:" + password)
      //password = models.EncryterTool.encrypt(password)
      println("Working")
      println("Login After:" + password)
      
-     db.withConnection { implicit connection =>  
-       println("Inside db")
-       val usernameList :List[String] = {
-         SQL("select EmpUserName from usertable where EmpUserName in ({inputUsername})").on("inputUsername"->username).as( str("EmpUserName") *) 
+     try{
+       db.withConnection { implicit connection =>  
+         println("Inside db")
+         val usernameList :List[String] = {
+           SQL("select EmpUserName from usertable where EmpUserName in ({inputUsername})").on("inputUsername"->username).as( str("EmpUserName") *) 
+         }
+         println(usernameList)
+         val passwordList:List[String] = {
+          SQL("select EmpPass from usertable where EmpUserName in ({inputUsername})").on("inputUsername"->username).as( str("EmpPass")  *) 
+         }       
+         println(passwordList)
+        if(!(usernameList.isEmpty)){
+          //println("Username exsists")
+          val usernamePasswordList = (usernameList zip passwordList).toMap    
+          println(usernamePasswordList)
+          if(models.MethodsForLogin.validateUser(usernamePasswordList, username, password)){
+            println("Username valid")
+            //Ok(views.html.userDashboard())
+            Redirect{routes.dashboard.viewDashboard()}.withSession("username"->username);          
+          }
+          else{
+              Ok("you have not entered the right password")
+          }
+        }
+        else
+        {
+          Ok("No such User exists!!")
+          //Redirect{routes.login.loginPage()}
+        }
        }
-       println(usernameList)
-       val passwordList:List[String] = {
-        SQL("select EmpPass from usertable where EmpUserName in ({inputUsername})").on("inputUsername"->username).as( str("EmpPass")  *) 
-       }       
-       println(passwordList)
-      if(!(usernameList.isEmpty)){
-        //println("Username exsists")
-        val usernamePasswordList = (usernameList zip passwordList).toMap    
-        println(usernamePasswordList)
-        if(models.MethodsForLogin.validateUser(usernamePasswordList, username, password)){
-          println("Username valid")
-          //Ok(views.html.userDashboard())
-          Redirect{routes.login.viewDashboard()}.withSession("username"->username);          
-        }
-        else{
-            Ok("you have not entered the right password")
-        }
-      }
-      else
-      {
-        Ok("No such User exists!!")
-        //Redirect{routes.login.loginPage()}
-      }
-     } 
+     }
+     catch{
+       case x:Throwable => 
+         println(x)
+         Ok("Mysql Server is not Running. Switch on MySQL server and reload Page.")
+     }
+     
+     
     }.getOrElse(Ok("Something went wrong with postVals"))
   }
   
-  def viewDashboard = Action{ implicit request =>
-    val usernameOption = request.session.get("username")
-      usernameOption.map{ username =>
-        //write a method to get all the information about the user that is needed to be
-        //shown on the dashboard from the database, then do Ok()
-        Ok(views.html.userDashboard());
-      }getOrElse(Ok("YOU CSRF SH!T GET OUT!!!"))
-  }
+  
   
 }

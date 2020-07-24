@@ -81,29 +81,30 @@ Seq[Any](format.raw/*4.1*/("""
 
 	   	<div class="jumbotron">   			
 				<h1 class="display-4" id ="headerText"></h1>
-				<p class="lead">BugTracker provides you with a simple solution for your enteprise to track and mark all the bugs that developers encounter. This makes way for easier communication between different teams, resulting in hassle free and easier bug removal process</p>
+				<p class="lead">BugTracker provides you with a simple solution for your enterprise to track and mark all the bugs that developers encounter. This makes way for easier communication between different teams, resulting in hassle free and easier bug removal process</p>
 				<hr class="my-4">
-				<p class="logSignup">Log in up if your organization already uses BugTracker. If not, then ask your System Adminstrator to set up bugtracker. It takes less than 5 minutes to do so.</p>
+				<p class="logSignup">Sign up/Log in up if your organization already uses BugTracker. If not, then it takes only 3 steps to setup. </p>
 				<p class="lead">
 
 
 				   <div class="text-center">
 				   
-				   <form method ="GET" action = "" id="signupForm" >
+				   <form method ="GET" action = "" id="signupSetupForm" >
 					"""),_display_(/*70.7*/helper/*70.13*/.CSRF.formField),format.raw/*70.28*/("""
-				   	"""),format.raw/*71.9*/("""<input type="submit" class="btn btn-outline-secondary btn-lg" value="Set Up"  onclick="signup()" /></form>
+				   	"""),format.raw/*71.9*/("""<input type="submit" class="btn btn-outline-secondary btn-lg" value="Set Up"  onclick="signupsetup()" />
+				   	</form>
 				   	
 				   	
 				   	<form method ="GET" action = "" id="loginForm">
-					"""),_display_(/*75.7*/helper/*75.13*/.CSRF.formField),format.raw/*75.28*/("""
-				   	"""),format.raw/*76.9*/("""<input type="submit" class="btn btn-outline-secondary btn-lg" value="Login" onclick="login()" />
+					"""),_display_(/*76.7*/helper/*76.13*/.CSRF.formField),format.raw/*76.28*/("""
+				   	"""),format.raw/*77.9*/("""<input type="submit" class="btn btn-outline-secondary btn-lg" value="Login" onclick="login()" />
 				   	</form>
 				   
 				   
-				    <!-- <form method ="GET" action = "" id="setupForm" >
-					"""),_display_(/*81.7*/helper/*81.13*/.CSRF.formField),format.raw/*81.28*/("""
-				   	"""),format.raw/*82.9*/("""<input type="submit" class="btn btn-outline-secondary btn-lg" value="Set Up"  onclick="setup()" />
-				   	</form> -->
+				    <form method ="GET" action = "" id="signupForm" >
+					"""),_display_(/*82.7*/helper/*82.13*/.CSRF.formField),format.raw/*82.28*/("""
+				   	"""),format.raw/*83.9*/("""<input type="submit" class="btn btn-outline-secondary btn-lg" value="Sign Up"  onclick="signup()" />
+				   	</form> 
 				   	
 				   
 				   </div>
@@ -145,12 +146,11 @@ Seq[Any](format.raw/*4.1*/("""
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		
-	    <script type="text/javascript" src=""""),_display_(/*125.43*/assetsFinder/*125.55*/.path("js/homePage.js")),format.raw/*125.78*/(""""> </script> 
+	    <script type="text/javascript" src=""""),_display_(/*126.43*/assetsFinder/*126.55*/.path("js/homePage.js")),format.raw/*126.78*/(""""> </script> 
 	    <script>
-	    function signup()"""),format.raw/*127.23*/("""{"""),format.raw/*127.24*/("""
-	    	"""),format.raw/*128.7*/("""document.getElementById("signupForm").action = """"),_display_(/*128.56*/routes/*128.62*/.signUp.sendSignupPage),format.raw/*128.84*/("""";
-	    	document.getElementById("signupForm").submit();			
-			
+	    function signupsetup()"""),format.raw/*128.28*/("""{"""),format.raw/*128.29*/("""
+	    	"""),format.raw/*129.7*/("""document.getElementById("signupSetupForm").action = """"),_display_(/*129.61*/routes/*129.67*/.signUp.sendSignupSetupPage),format.raw/*129.94*/("""";
+	    	document.getElementById("signupSetupForm").submit();						
 		"""),format.raw/*131.3*/("""}"""),format.raw/*131.4*/("""
 		
 		"""),format.raw/*133.3*/("""function login()"""),format.raw/*133.19*/("""{"""),format.raw/*133.20*/("""
@@ -159,7 +159,14 @@ Seq[Any](format.raw/*4.1*/("""
 			
 		"""),format.raw/*137.3*/("""}"""),format.raw/*137.4*/("""
 		
-	    """),format.raw/*139.6*/("""</script>
+		"""),format.raw/*139.3*/("""function signup()"""),format.raw/*139.20*/("""{"""),format.raw/*139.21*/("""
+	    	"""),format.raw/*140.7*/("""document.getElementById("signupForm").action = """"),_display_(/*140.56*/routes/*140.62*/.signUp.sendSignupPage),format.raw/*140.84*/("""";
+	    	document.getElementById("signupForm").submit();						
+		"""),format.raw/*142.3*/("""}"""),format.raw/*142.4*/("""
+		
+		
+		
+	    """),format.raw/*146.6*/("""</script>
 	     
          
 </html>
@@ -179,11 +186,11 @@ Seq[Any](format.raw/*4.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-07-15T18:47:24.314
+                  DATE: 2020-07-22T17:23:40.742
                   SOURCE: C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/app/views/homePage.scala.html
-                  HASH: 1db24f339dbedd2839ea3dda508cada26a87ff74
-                  MATRIX: 774->28|910->93|954->109|981->110|1342->444|1363->456|1428->500|1536->581|1557->593|1629->643|1715->702|1736->714|1805->761|1891->820|1912->832|1981->879|2040->911|2061->923|2128->969|2317->1131|2338->1143|2387->1171|4475->3233|4490->3239|4526->3254|4562->3263|4775->3450|4790->3456|4826->3471|4862->3480|5085->3677|5100->3683|5136->3698|5172->3707|6791->5298|6813->5310|6858->5333|6937->5383|6967->5384|7002->5391|7079->5440|7095->5446|7139->5468|7233->5534|7262->5535|7296->5541|7341->5557|7371->5558|7406->5565|7482->5613|7498->5619|7536->5635|7629->5700|7658->5701|7695->5710
-                  LINES: 21->2|24->3|27->4|28->5|33->10|33->10|33->10|35->12|35->12|35->12|36->13|36->13|36->13|37->14|37->14|37->14|38->15|38->15|38->15|44->21|44->21|44->21|93->70|93->70|93->70|94->71|98->75|98->75|98->75|99->76|104->81|104->81|104->81|105->82|148->125|148->125|148->125|150->127|150->127|151->128|151->128|151->128|151->128|154->131|154->131|156->133|156->133|156->133|157->134|157->134|157->134|157->134|160->137|160->137|162->139
+                  HASH: 58a09cbf2c43a5fb0d25c02a7441bab5f0358f26
+                  MATRIX: 774->28|910->93|954->109|981->110|1342->444|1363->456|1428->500|1536->581|1557->593|1629->643|1715->702|1736->714|1805->761|1891->820|1912->832|1981->879|2040->911|2061->923|2128->969|2317->1131|2338->1143|2387->1171|4432->3190|4447->3196|4483->3211|4519->3220|4746->3421|4761->3427|4797->3442|4833->3451|5052->3644|5067->3650|5103->3665|5139->3674|6757->5264|6779->5276|6824->5299|6908->5354|6938->5355|6973->5362|7055->5416|7071->5422|7120->5449|7218->5519|7247->5520|7281->5526|7326->5542|7356->5543|7391->5550|7467->5598|7483->5604|7521->5620|7614->5685|7643->5686|7677->5692|7723->5709|7753->5710|7788->5717|7865->5766|7881->5772|7925->5794|8018->5859|8047->5860|8090->5875
+                  LINES: 21->2|24->3|27->4|28->5|33->10|33->10|33->10|35->12|35->12|35->12|36->13|36->13|36->13|37->14|37->14|37->14|38->15|38->15|38->15|44->21|44->21|44->21|93->70|93->70|93->70|94->71|99->76|99->76|99->76|100->77|105->82|105->82|105->82|106->83|149->126|149->126|149->126|151->128|151->128|152->129|152->129|152->129|152->129|154->131|154->131|156->133|156->133|156->133|157->134|157->134|157->134|157->134|160->137|160->137|162->139|162->139|162->139|163->140|163->140|163->140|163->140|165->142|165->142|169->146
                   -- GENERATED --
               */
           

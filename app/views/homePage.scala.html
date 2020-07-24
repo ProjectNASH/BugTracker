@@ -58,17 +58,18 @@
 
 	   	<div class="jumbotron">   			
 				<h1 class="display-4" id ="headerText"></h1>
-				<p class="lead">BugTracker provides you with a simple solution for your enteprise to track and mark all the bugs that developers encounter. This makes way for easier communication between different teams, resulting in hassle free and easier bug removal process</p>
+				<p class="lead">BugTracker provides you with a simple solution for your enterprise to track and mark all the bugs that developers encounter. This makes way for easier communication between different teams, resulting in hassle free and easier bug removal process</p>
 				<hr class="my-4">
-				<p class="logSignup">Log in up if your organization already uses BugTracker. If not, then ask your System Adminstrator to set up bugtracker. It takes less than 5 minutes to do so.</p>
+				<p class="logSignup">Sign up/Log in up if your organization already uses BugTracker. If not, then it takes only 3 steps to setup. </p>
 				<p class="lead">
 
 
 				   <div class="text-center">
 				   
-				   <form method ="GET" action = "" id="signupForm" >
+				   <form method ="GET" action = "" id="signupSetupForm" >
 					@helper.CSRF.formField
-				   	<input type="submit" class="btn btn-outline-secondary btn-lg" value="Set Up"  onclick="signup()" /></form>
+				   	<input type="submit" class="btn btn-outline-secondary btn-lg" value="Set Up"  onclick="signupsetup()" />
+				   	</form>
 				   	
 				   	
 				   	<form method ="GET" action = "" id="loginForm">
@@ -77,10 +78,10 @@
 				   	</form>
 				   
 				   
-				    <!-- <form method ="GET" action = "" id="setupForm" >
+				    <form method ="GET" action = "" id="signupForm" >
 					@helper.CSRF.formField
-				   	<input type="submit" class="btn btn-outline-secondary btn-lg" value="Set Up"  onclick="setup()" />
-				   	</form> -->
+				   	<input type="submit" class="btn btn-outline-secondary btn-lg" value="Sign Up"  onclick="signup()" />
+				   	</form> 
 				   	
 				   
 				   </div>
@@ -124,10 +125,9 @@
 		
 	    <script type="text/javascript" src="@assetsFinder.path("js/homePage.js")"> </script> 
 	    <script>
-	    function signup(){
-	    	document.getElementById("signupForm").action = "@routes.signUp.sendSignupPage";
-	    	document.getElementById("signupForm").submit();			
-			
+	    function signupsetup(){
+	    	document.getElementById("signupSetupForm").action = "@routes.signUp.sendSignupSetupPage";
+	    	document.getElementById("signupSetupForm").submit();						
 		}
 		
 		function login(){
@@ -135,6 +135,13 @@
 	    	document.getElementById("loginForm").submit();			
 			
 		}
+		
+		function signup(){
+	    	document.getElementById("signupForm").action = "@routes.signUp.sendSignupPage";
+	    	document.getElementById("signupForm").submit();						
+		}
+		
+		
 		
 	    </script>
 	     

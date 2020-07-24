@@ -1,4 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\DELL\Desktop\BugTracker\play-samples-play-scala-starter-example\app\controllers\login.scala:56:17: not found: value usernamePasswordLists[0m
-[0m[[0m[31merror[0m] [0m[0m        println(usernamePasswordLists)[0m
-[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\DELL\Desktop\BugTracker\play-samples-play-scala-starter-example\app\controllers\dashboard.scala:143:6: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Any[0m
+[0m[[0m[31merror[0m] [0m[0m required: play.api.mvc.Result[0m
+[0m[[0m[31merror[0m] [0m[0m    }getOrElse(Redirect{routes.login.loginPage()})[0m
+[0m[[0m[31merror[0m] [0m[0m     ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

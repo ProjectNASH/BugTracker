@@ -9,7 +9,7 @@
 <head>
 <title>Login Form</title>
 	<link rel="stylesheet" media="screen" type="text/css" href="@assetsFinder.path("stylesheets/utils/loginPage.css")">
-	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 	<link rel="apple-touch-icon" sizes="180x180" href="@assetsFinder.path("/images/title images/apple-touch-icon.png")">
 	<link rel="icon" type="image/png" sizes="32x32" href="@assetsFinder.path("/images/title images/favicon-32x32.png")">
 	<link rel="icon" type="image/png" sizes="16x16" href="@assetsFinder.path("/images/title images/favicon-16x16.png")">
@@ -23,7 +23,7 @@
 			<h1> Login Here</h1>
 			<form method ="POST" action = "@routes.login.loginValidate()">
 			@helper.CSRF.formField
-			<p>Username</p>
+			<p>Email/Username</p>
 			<input type="text" name="username" placeholder="Enter Username">
 			<p>Password</p>
 			<input type="password" name="password" placeholder="Enter Password">

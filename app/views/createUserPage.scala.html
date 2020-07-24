@@ -1,0 +1,45 @@
+@* createUserPage Template File *@
+@( r :List[String])(implicit request: RequestHeader, assetsFinder: AssetsFinder)
+@import helper._
+
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>Create Page</title>
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	        
+	    <!--<link rel="stylesheet" href="@assetsFinder.path("stylesheets/utils/signup.css")" type="text/css"/>  
+		<link rel="apple-touch-icon" sizes="180x180" href="@assetsFinder.path("/images/title images/apple-touch-icon.png")">
+		<link rel="icon" type="image/png" sizes="32x32" href="@assetsFinder.path("/images/title images/favicon-32x32.png")">
+		<link rel="icon" type="image/png" sizes="16x16" href="@assetsFinder.path("/images/title images/favicon-16x16.png")">
+		<link rel="manifest" href="@assetsFinder.path("/images/title images/site.webmanifest")">-->
+	
+	        	<!--Write your link and src tags after this comment-->
+	        	
+	
+	</head>
+    <body>
+		
+		
+		<form name="getPageInfo" action ="@routes.dashboard.getPageData" method="POST">
+		@helper.CSRF.formField
+		Title: <input type="text" name="pageName" value="" /><br>
+		Body:  <input type="text" name="pageBody" value="" /><br>
+		Target:<br>
+		@for(data<-r){		 	
+			<input type="checkbox" name="pageTarget" value="@data" id="@data"/><label for="@data">@data</label><br>		
+		}
+		<input type = "submit" value = "Submit">
+		</form>
+
+    	
+        
+	    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>  
+     
+    
+</html>
+
+

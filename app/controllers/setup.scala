@@ -20,6 +20,10 @@ import java.nio.file.{Files, Paths}
 import scala.language.postfixOps
 
 
+import org.apache.commons.mail.EmailAttachment
+import play.api.Environment
+import play.api.libs.mailer._
+import play.api.mvc._
 
 
 
@@ -73,7 +77,7 @@ class setup @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
                  Ok("Seems like already registered")
               }
         }
-        catch{
+        catch{ 
           case x: AnormException=>
             Ok("Looks like BugTracker has already been setup on this server")
         }            
@@ -95,22 +99,60 @@ class setup @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
    request.body
     .file("sqlFile") 
     .map { temp =>
-      val filename= Paths.get(temp.filename).getFileName     
-      temp.ref.copyTo(Paths.get(s"app/assets/sysTable/userTable.csv"), replace = true) 
-           
+      val filename= Paths.get(temp.filename).getFileName    
+      temp.ref.copyTo(Paths.get(s"app/assets/sysTable/userTable.csv"), replace = true)            
         db.withConnection { implicit connection =>  
            try{
-             val createCsvTable = s"CREATE TABLE csvtable(EmpId Varchar(225),EmpName VARCHAR(50),dept VARCHAR(255));"
+             val createCsvTable = s"CREATE TABLE csvtable(name VARCHAR(255),dept VARCHAR(255),email VARCHAR(255));"
              val result = SQL(createCsvTable).execute()
            }catch{
              case x: Throwable => println(x)
            }
            var str = "LOAD DATA INFILE 'C://Users//DELL//Desktop//BugTracker//play-samples-play-scala-starter-example//app//assets//sysTable//userTable.csv' INTO TABLE csvtable FIELDS TERMINATED BY ',' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS"
-           val result: Boolean = SQL(str).execute()
+           var result: Boolean = SQL(str).execute();
            
-           val r :List[String] = {
-             SQL("select distinct dept from csvtable").as(get[String]("dept") *)
-           }           
+          
+           str = "insert into usertable(EmpName,EmpDept,EmpEmail) select name,dept,email from csvtable ";
+           result = SQL(str).execute();
+           
+           /*str="update usertable set emppass = concat(substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', rand(@seed:=round(rand(@lid)*4294967296))*36+1, 1),substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', rand(@seed:=round(rand(@seed)*4294967296))*36+1, 1),substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', rand(@seed:=round(rand(@seed)*4294967296))*36+1, 1),substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', rand(@seed:=round(rand(@seed)*4294967296))*36+1, 1),substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', rand(@seed:=round(rand(@seed)*4294967296))*36+1, 1),substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', rand(@seed:=round(rand(@seed)*4294967296))*36+1, 1),substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', rand(@seed:=round(rand(@seed)*4294967296))*36+1, 1),substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', rand(@seed)*36+1, 1)) where EmpUserId <> 1"*/
+           var count = (SQL("select count(*) from usertable;").as(int("count(*)")*)).head
+           println("Count: "+count);
+           var a = 0
+           for( a <- 2 to count){
+             
+             val r = new scala.util.Random
+             val sb = new StringBuilder
+             for (i <- 1 to 6) {
+               sb.append(r.nextPrintableChar)
+             }
+             var pass = models.EncryterTool.encrypt(sb.toString)
+             
+             str = "update usertable set emppass = '" + pass + s"' where EmpUserId <> 1 and empuserid = $a"
+             println("str" + str)
+             result = SQL(str).execute();
+           }
+           
+           val initialUsername = SQL("select empemail from usertable where empuserid <> 1").as(get[String]("empemail") *);
+           var i = 2
+           for( a <- initialUsername){
+             var username = (a.split("@"))(0)  + i.toString
+             println(username)
+             val str2 = "update usertable set empusername = '" + username + s"' where EmpUserId <> 1 and empuserid = $i"
+             println(str2)
+             result = SQL(str2).execute();
+             i = i+1
+           }
+           
+           
+           str=s"update usertable set empbook = concat(usertable.empusername,'book')";
+           result = SQL(str).execute();
+           
+           var r :List[String] = {
+             SQL("select distinct empdept from usertable").as(get[String]("empdept") *)
+           }
+           
+           
            Ok(views.html.setupPageThree(r))                      
          }
       //Ok("We got everything")
@@ -128,7 +170,7 @@ class setup @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
             
             
             var r :List[String] = {
-             SQL("select distinct dept from csvtable").as(get[String]("dept") *)
+             SQL("select distinct empdept from usertable").as(get[String]("empdept") *)
              }
             
             for(i<-roles)
@@ -157,7 +199,11 @@ class setup @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
                       }                 
             } 
          }   
-         Ok(views.html.loginPage())
+         //Ok(views.html.loginPage())
+         
+         //Subject : String, SenderEmail:String, ReceiverEmail : String, body:String
+         Redirect{routes.MailerService.send()}
+         //Redirect{routes.login.loginPage()}
        }.getOrElse(Ok("Something went wrong"))
      }
     

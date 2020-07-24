@@ -45,6 +45,8 @@ class HomeController @Inject()(cc: ControllerComponents) (implicit assetsFinder:
     }
 }
   
+ 
+  
   /*def uploadTwo = Action(parse.temporaryFile) { request =>
   request.body.moveTo(Paths.get("C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/app/sysTable.csv"), replace = true)
   Ok("File uploaded")

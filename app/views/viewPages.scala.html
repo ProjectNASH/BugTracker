@@ -1,0 +1,66 @@
+@* viewPages Template File *@
+@(userToBookMap : Map[String,List[(String,String)]])(implicit request: RequestHeader, assetsFinder: AssetsFinder)
+@import helper._
+
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>Create Page</title>
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	     
+	    <!--<link rel="stylesheet" href="@assetsFinder.path("stylesheets/utils/signup.css")" type="text/css"/>  
+		<link rel="apple-touch-icon" sizes="180x180" href="@assetsFinder.path("/images/title images/apple-touch-icon.png")">
+		<link rel="icon" type="image/png" sizes="32x32" href="@assetsFinder.path("/images/title images/favicon-32x32.png")">
+		<link rel="icon" type="image/png" sizes="16x16" href="@assetsFinder.path("/images/title images/favicon-16x16.png")">
+		<link rel="manifest" href="@assetsFinder.path("/images/title images/site.webmanifest")">-->
+	
+	        	<!--Write your link and src tags after this comment-->
+	        	
+	
+	</head>
+    <body>
+		
+		
+			 
+			 
+	  		 
+  			 
+  			 @for((name,infoList)<-userToBookMap){
+  			 	@for((pageName,pageTarget)<-infoList){
+  			 	<div class="card second w-75">
+  			 	<h5 class="card-header">@pageName</h5>
+	  		 
+  			 	<div class="card-body">
+					<div class="row">
+						<div class="card-text col-sm-3 font-weight-bold"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem ">Created By </span></div>
+						<div class="col-sm-9"><span class="me">@name</span></div>
+					</div>
+				
+				<div class="space"></div>
+				
+					<div class="row">
+							<div class="card-text col-sm-3 font-weight-bold"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem">Domain</span></div>
+							<div class="col-sm-9"><span class="me">@pageTarget</span></div>
+						
+					</div>
+				</div>
+				</div>
+				<br>
+				}
+				
+			} 
+			
+			
+			
+			
+    	
+        
+	    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>  
+     
+    
+</html>
+
+

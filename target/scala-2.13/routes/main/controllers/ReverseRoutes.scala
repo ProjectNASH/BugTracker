@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/conf/routes
-// @DATE:Wed Jul 15 18:47:23 IST 2020
+// @DATE:Fri Jul 24 16:38:29 IST 2020
 
 import play.api.mvc.Call
 
@@ -21,6 +21,39 @@ package controllers {
     def versioned(file:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[String]].unbind("file", file))
+    }
+  
+  }
+
+  // @LINE:35
+  class Reversedashboard(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:36
+    def createPage(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "createPage")
+    }
+  
+    // @LINE:37
+    def getPageData(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "getPageData")
+    }
+  
+    // @LINE:38
+    def viewPages(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "viewPages")
+    }
+  
+    // @LINE:35
+    def viewDashboard(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "viewDashboard")
     }
   
   }
@@ -47,7 +80,7 @@ package controllers {
     }
 
   
-    // @LINE:39
+    // @LINE:43
     def upload(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "trial1")
@@ -82,47 +115,62 @@ package controllers {
   
   }
 
-  // @LINE:16
+  // @LINE:18
   class Reverselogin(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:17
+    // @LINE:19
     def loginValidate(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "checkinglogin")
     }
   
-    // @LINE:16
+    // @LINE:18
     def loginPage(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "login")
     }
   
-    // @LINE:32
-    def viewDashboard(): Call = {
+  }
+
+  // @LINE:44
+  class ReverseMailerService(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:44
+    def send(): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "viewDashboard")
+      Call("GET", _prefix + { _defaultPrefix } + "trial3")
     }
   
   }
 
-  // @LINE:20
+  // @LINE:22
   class ReversesignUp(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:23
+    // @LINE:27
     def getSignupInfo(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "checkingsignup")
     }
   
-    // @LINE:20
+    // @LINE:22
+    def sendSignupSetupPage(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "signupsetup")
+    }
+  
+    // @LINE:23
     def sendSignupPage(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "signup")
@@ -130,26 +178,26 @@ package controllers {
   
   }
 
-  // @LINE:27
+  // @LINE:29
   class Reversesetup(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:27
+    // @LINE:29
     def getSetUpInfo(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "getbacksetupinfo")
     }
   
-    // @LINE:30
+    // @LINE:32
     def getAddRoles(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "getbackAddRoles")
     }
   
-    // @LINE:29
+    // @LINE:31
     def getEmpData(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "getbackempinfo")

@@ -15,10 +15,10 @@ import play.api.templates.PlayMagic._
 import play.api.mvc._
 import play.api.data._
 
-object userDashboard extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[RequestHeader,AssetsFinder,play.twirl.api.HtmlFormat.Appendable] {
+object userDashboard extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[Map[String, String],RequestHeader,AssetsFinder,play.twirl.api.HtmlFormat.Appendable] {
 
   /* trails Template File */
-  def apply/*2.2*/()(implicit request: RequestHeader, assetsFinder: AssetsFinder):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*2.2*/(argsMaps:Map[String,String])(implicit request: RequestHeader, assetsFinder: AssetsFinder):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*3.2*/import helper._
@@ -123,16 +123,29 @@ Seq[Any](format.raw/*4.1*/("""
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
+        		       
         <div class="btn-toolbar mb-2 mb-md-0">
-          <button type="button" class="btn btn-sm btn-outline-secondary">
-            <span data-feather="book"></span>
-            Create Page
-          </button>
-          <div class="space"></div>
-          <button type="button" class="btn btn-sm btn-outline-secondary ">
+        
+                <form name="createPage" action =""""),_display_(/*106.51*/routes/*106.57*/.dashboard.createPage),format.raw/*106.78*/("""" method="GET" style="display:inline-flex; margin:0px;
+    padding:0px;">
+        """),_display_(/*108.10*/helper/*108.16*/.CSRF.formField),format.raw/*108.31*/("""
+          """),format.raw/*109.11*/("""<button type="submit" class="btn btn-sm btn-outline-secondary">
             <span data-feather="help-circle"></span>
-            Ask Questions
+            Post Query
           </button>
+          </form>
+           
+          <div class="space"></div>
+          
+          <form name="viewPage" action =""""),_display_(/*117.43*/routes/*117.49*/.dashboard.viewPages),format.raw/*117.69*/("""" method="GET" style="display:inline-flex; margin:0px;
+    padding:0px;">
+        """),_display_(/*119.10*/helper/*119.16*/.CSRF.formField),format.raw/*119.31*/("""
+          """),format.raw/*120.11*/("""<button type="submit" class="btn btn-sm btn-outline-secondary ">
+            <span data-feather="book"></span>
+            View Queries
+          </button>
+          </form>
+          
         </div>
       </div>
 	 <div class="card first">
@@ -140,31 +153,39 @@ Seq[Any](format.raw/*4.1*/("""
   <div class="row">
   <div class="card-body col-9">
   <div class="inner1">
+		<div class="row">
+		<div class="card-text col-sm-3  text-wrap"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem"> Name </span></div>
+		<div class="col-sm-8">
+		 <span class="me">
+		 """),_display_(/*137.5*/argsMaps("name")),format.raw/*137.21*/("""
+		 """),format.raw/*138.4*/("""</span></div>
+		 
+		 
+	</div>
+	<div class="space"></div>
+
 	<div class="row">
 		<div class="card-text col-sm-3 font-weight-bolder text-wrap"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem"> Username</span></div>
-		<div class="col-sm-9"><span class="me"> Lucky02</span></div>
+		<div class="col-sm-9"><span class="me"> """),_display_(/*146.44*/argsMaps("username")),format.raw/*146.64*/("""</span></div>
 		
 	</div>
-		<div class="space"></div>
-	<div class="row">
-		<div class="card-text col-sm-3  text-wrap"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem"> Name </span></div>
-		<div class="col-sm-8"> <span class="me">Himanshu Tripathi</span></div>
-	</div>
+		
+
 		<div class="space"></div>
 	<div class="row">
 		<div class="card-text col-sm-3 font-weight-bold"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem"> Profession </span></div>
-		<div class="col-sm-9"><span class="me">Student</span></div>
+		<div class="col-sm-9"><span class="me">	"""),_display_(/*154.44*/argsMaps("dept")),format.raw/*154.60*/("""</span></div>
 	</div>
 		<div class="space"></div>
 	<div class="row">
 		<div class="card-text col-sm-3 font-weight-bold text-wrap"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem">Email</span></div>
-		<div class="col-sm-9"><span class="me" >himanshugmail.com</span></div>
+		<div class="col-sm-9"><span class="me" >"""),_display_(/*159.44*/argsMaps("email")),format.raw/*159.61*/("""</span></div>
 	</div>
   </div>
   </div>
   <div class="container d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center col-3">
 	<div class="container inner">
-		<img src=""""),_display_(/*144.14*/assetsFinder/*144.26*/.path("/images/big_hero.PNG")),format.raw/*144.55*/("""" alt="profile pic" class="image img-fluid img-thumbnail">
+		<img src=""""),_display_(/*165.14*/assetsFinder/*165.26*/.path("/images/big_hero.PNG")),format.raw/*165.55*/("""" alt="profile pic" class="image img-fluid img-thumbnail">
 		<div class="overlay">
 			<a href="https://www.google.com" class="icon" title="Change Profile Picture">
 				<i class="fa fa-user"></i>
@@ -200,12 +221,13 @@ Seq[Any](format.raw/*4.1*/("""
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
         <script>
-        (function () """),format.raw/*180.22*/("""{"""),format.raw/*180.23*/("""
-            """),format.raw/*181.13*/("""'use strict'
+        (function () """),format.raw/*201.22*/("""{"""),format.raw/*201.23*/("""
+            """),format.raw/*202.13*/("""'use strict'
 
           feather.replace()
-                """),format.raw/*184.17*/("""}"""),format.raw/*184.18*/("""())
+                """),format.raw/*205.17*/("""}"""),format.raw/*205.18*/("""())
           
+
         </script>
 
 
@@ -228,9 +250,9 @@ Seq[Any](format.raw/*4.1*/("""
     }
   }
 
-  def render(request:RequestHeader,assetsFinder:AssetsFinder): play.twirl.api.HtmlFormat.Appendable = apply()(request,assetsFinder)
+  def render(argsMaps:Map[String, String],request:RequestHeader,assetsFinder:AssetsFinder): play.twirl.api.HtmlFormat.Appendable = apply(argsMaps)(request,assetsFinder)
 
-  def f:(() => (RequestHeader,AssetsFinder) => play.twirl.api.HtmlFormat.Appendable) = () => (request,assetsFinder) => apply()(request,assetsFinder)
+  def f:((Map[String, String]) => (RequestHeader,AssetsFinder) => play.twirl.api.HtmlFormat.Appendable) = (argsMaps) => (request,assetsFinder) => apply(argsMaps)(request,assetsFinder)
 
   def ref: this.type = this
 
@@ -239,11 +261,11 @@ Seq[Any](format.raw/*4.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-07-15T18:47:24.521
+                  DATE: 2020-07-24T16:39:42.543
                   SOURCE: C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/app/views/userDashboard.scala.html
-                  HASH: 05abeba8ca145335896375cd6296ddc7e0793416
-                  MATRIX: 779->28|915->93|959->109|986->110|1610->707|1631->719|1696->763|1798->838|1819->850|1891->900|1977->959|1998->971|2067->1018|2153->1077|2174->1089|2243->1136|2302->1168|2323->1180|2390->1226|2667->1476|2688->1488|2737->1516|7354->6105|7376->6117|7427->6146|9160->7850|9190->7851|9232->7864|9319->7922|9349->7923
-                  LINES: 21->2|24->3|27->4|28->5|38->15|38->15|38->15|39->16|39->16|39->16|40->17|40->17|40->17|41->18|41->18|41->18|42->19|42->19|42->19|49->26|49->26|49->26|167->144|167->144|167->144|203->180|203->180|204->181|207->184|207->184
+                  HASH: 91e9fdc4b6b761fbdf7f3499c718af08b8a4b6e4
+                  MATRIX: 799->28|962->120|1006->136|1033->137|1657->734|1678->746|1743->790|1845->865|1866->877|1938->927|2024->986|2045->998|2114->1045|2200->1104|2221->1116|2290->1163|2349->1195|2370->1207|2437->1253|2714->1503|2735->1515|2784->1543|5700->4431|5716->4437|5759->4458|5870->4541|5886->4547|5923->4562|5963->4573|6270->4852|6286->4858|6328->4878|6439->4961|6455->4967|6492->4982|6532->4993|7121->5555|7159->5571|7191->5575|7498->5854|7540->5874|7837->6143|7875->6159|8168->6424|8207->6441|8426->6632|8448->6644|8499->6673|10232->8377|10262->8378|10304->8391|10391->8449|10421->8450
+                  LINES: 21->2|24->3|27->4|28->5|38->15|38->15|38->15|39->16|39->16|39->16|40->17|40->17|40->17|41->18|41->18|41->18|42->19|42->19|42->19|49->26|49->26|49->26|129->106|129->106|129->106|131->108|131->108|131->108|132->109|140->117|140->117|140->117|142->119|142->119|142->119|143->120|160->137|160->137|161->138|169->146|169->146|177->154|177->154|182->159|182->159|188->165|188->165|188->165|224->201|224->201|225->202|228->205|228->205
                   -- GENERATED --
               */
           

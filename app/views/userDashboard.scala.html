@@ -1,5 +1,5 @@
 @* trails Template File *@
-@()(implicit request: RequestHeader, assetsFinder: AssetsFinder)
+@(argsMaps:Map[String,String])(implicit request: RequestHeader, assetsFinder: AssetsFinder)
 @import helper._
 
 <!DOCTYPE html>
@@ -100,16 +100,29 @@
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
+        		       
         <div class="btn-toolbar mb-2 mb-md-0">
-          <button type="button" class="btn btn-sm btn-outline-secondary">
-            <span data-feather="book"></span>
-            Create Page
-          </button>
-          <div class="space"></div>
-          <button type="button" class="btn btn-sm btn-outline-secondary ">
+        
+                <form name="createPage" action ="@routes.dashboard.createPage" method="GET" style="display:inline-flex; margin:0px;
+    padding:0px;">
+        @helper.CSRF.formField
+          <button type="submit" class="btn btn-sm btn-outline-secondary">
             <span data-feather="help-circle"></span>
-            Ask Questions
+            Post Query
           </button>
+          </form>
+           
+          <div class="space"></div>
+          
+          <form name="viewPage" action ="@routes.dashboard.viewPages" method="GET" style="display:inline-flex; margin:0px;
+    padding:0px;">
+        @helper.CSRF.formField
+          <button type="submit" class="btn btn-sm btn-outline-secondary ">
+            <span data-feather="book"></span>
+            View Queries
+          </button>
+          </form>
+          
         </div>
       </div>
 	 <div class="card first">
@@ -117,25 +130,33 @@
   <div class="row">
   <div class="card-body col-9">
   <div class="inner1">
+		<div class="row">
+		<div class="card-text col-sm-3  text-wrap"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem"> Name </span></div>
+		<div class="col-sm-8">
+		 <span class="me">
+		 @argsMaps("name")
+		 </span></div>
+		 
+		 
+	</div>
+	<div class="space"></div>
+
 	<div class="row">
 		<div class="card-text col-sm-3 font-weight-bolder text-wrap"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem"> Username</span></div>
-		<div class="col-sm-9"><span class="me"> Lucky02</span></div>
+		<div class="col-sm-9"><span class="me"> @argsMaps("username")</span></div>
 		
 	</div>
-		<div class="space"></div>
-	<div class="row">
-		<div class="card-text col-sm-3  text-wrap"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem"> Name </span></div>
-		<div class="col-sm-8"> <span class="me">Himanshu Tripathi</span></div>
-	</div>
+		
+
 		<div class="space"></div>
 	<div class="row">
 		<div class="card-text col-sm-3 font-weight-bold"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem"> Profession </span></div>
-		<div class="col-sm-9"><span class="me">Student</span></div>
+		<div class="col-sm-9"><span class="me">	@argsMaps("dept")</span></div>
 	</div>
 		<div class="space"></div>
 	<div class="row">
 		<div class="card-text col-sm-3 font-weight-bold text-wrap"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem">Email</span></div>
-		<div class="col-sm-9"><span class="me" >himanshugmail.com</span></div>
+		<div class="col-sm-9"><span class="me" >@argsMaps("email")</span></div>
 	</div>
   </div>
   </div>
@@ -183,6 +204,7 @@
           feather.replace()
                 }())
           
+
         </script>
 
 

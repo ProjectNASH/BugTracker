@@ -32,7 +32,7 @@ Seq[Any](format.raw/*4.1*/("""
 <head>
 <title>Login Form</title>
 	<link rel="stylesheet" media="screen" type="text/css" href=""""),_display_(/*11.63*/assetsFinder/*11.75*/.path("stylesheets/utils/loginPage.css")),format.raw/*11.115*/("""">
-	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 	<link rel="apple-touch-icon" sizes="180x180" href=""""),_display_(/*13.54*/assetsFinder/*13.66*/.path("/images/title images/apple-touch-icon.png")),format.raw/*13.116*/("""">
 	<link rel="icon" type="image/png" sizes="32x32" href=""""),_display_(/*14.57*/assetsFinder/*14.69*/.path("/images/title images/favicon-32x32.png")),format.raw/*14.116*/("""">
 	<link rel="icon" type="image/png" sizes="16x16" href=""""),_display_(/*15.57*/assetsFinder/*15.69*/.path("/images/title images/favicon-16x16.png")),format.raw/*15.116*/("""">
@@ -46,7 +46,7 @@ Seq[Any](format.raw/*4.1*/("""
 			<h1> Login Here</h1>
 			<form method ="POST" action = """"),_display_(/*24.36*/routes/*24.42*/.login.loginValidate()),format.raw/*24.64*/("""">
 			"""),_display_(/*25.5*/helper/*25.11*/.CSRF.formField),format.raw/*25.26*/("""
-			"""),format.raw/*26.4*/("""<p>Username</p>
+			"""),format.raw/*26.4*/("""<p>Email/Username</p>
 			<input type="text" name="username" placeholder="Enter Username">
 			<p>Password</p>
 			<input type="password" name="password" placeholder="Enter Password">
@@ -79,10 +79,10 @@ Seq[Any](format.raw/*4.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-07-15T18:47:24.408
+                  DATE: 2020-07-18T17:52:17.395
                   SOURCE: C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/app/views/loginPage.scala.html
-                  HASH: 4055e7e0e3f0b8429195ef691058f17867812d3b
-                  MATRIX: 775->28|911->93|955->109|984->112|1139->240|1160->252|1222->292|1307->350|1328->362|1400->412|1486->471|1507->483|1576->530|1662->589|1683->601|1752->648|1811->680|1832->692|1899->738|1983->795|2004->807|2053->835|2154->909|2169->915|2212->937|2245->944|2260->950|2296->965|2327->969
+                  HASH: c09bbc020904eed52c7d4c222b6989aed2a60240
+                  MATRIX: 775->28|911->93|955->109|984->112|1139->240|1160->252|1222->292|1502->545|1523->557|1595->607|1681->666|1702->678|1771->725|1857->784|1878->796|1947->843|2006->875|2027->887|2094->933|2178->990|2199->1002|2248->1030|2349->1104|2364->1110|2407->1132|2440->1139|2455->1145|2491->1160|2522->1164
                   LINES: 21->2|24->3|27->4|30->7|34->11|34->11|34->11|36->13|36->13|36->13|37->14|37->14|37->14|38->15|38->15|38->15|39->16|39->16|39->16|45->22|45->22|45->22|47->24|47->24|47->24|48->25|48->25|48->25|49->26
                   -- GENERATED --
               */
