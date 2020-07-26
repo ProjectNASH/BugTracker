@@ -110,7 +110,7 @@ class dashboard @Inject()(db: Database,cc: ControllerComponents) (implicit asset
     val usernameOption = request.session.get("username")
     usernameOption.map{ username => 
       
-      var userToBookMap = Map[String,List[(String,String)]]()
+      var userToBookMap = Map[String,List[(Int,String,String)]]()
       db.withConnection { implicit connection => 
         
         val listOfBooks = SQL("select empbook from usertable").as(get[String]("EmpBook") *)
@@ -121,8 +121,8 @@ class dashboard @Inject()(db: Database,cc: ControllerComponents) (implicit asset
         for(bookName <- listOfBooks){
           try{
             
-            var str = "select pageName,pageTarget from " + bookName
-            var bookinfo : List[(String,String)] = {SQL(str).as( get[String]("pageName") ~ get[String]("pageTarget") map(flatten)*)}
+            var str = "select qsno,pageName,pageTarget from " + bookName
+            var bookinfo : List[(Int,String,String)] = {SQL(str).as( get[Int]("qsno") ~ get[String]("pageName") ~ get[String]("pageTarget") map(flatten)*)}
             
             
             val bookOwnerName = (bookName.split("book"))(0) 

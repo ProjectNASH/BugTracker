@@ -1,5 +1,5 @@
 @* viewPages Template File *@
-@(userToBookMap : Map[String,List[(String,String)]])(implicit request: RequestHeader, assetsFinder: AssetsFinder)
+@(userToBookMap : Map[String,List[(Int,String,String)]])(implicit request: RequestHeader, assetsFinder: AssetsFinder)
 @import helper._
 
 <!DOCTYPE html>
@@ -19,17 +19,15 @@
 	
 	</head>
     <body>
-		
-		
-			 
-			 
-	  		 
-  			 
-  			 @for((name,infoList)<-userToBookMap){
-  			 	@for((pageName,pageTarget)<-infoList){
+			 @for((name,infoList)<-userToBookMap){
+  			 	@for((qsNo,pageName,pageTarget)<-infoList){
   			 	<div class="card second w-75">
   			 	<h5 class="card-header">@pageName</h5>
-	  		 
+  			 	<form action="answer" method="GET">
+  			 	<input type ="text" name = "bookNametemp"  value=@name style ="visibility:hidden">
+  			 	<input type ="number" name = "qsNo"  value=@qsNo style ="visibility:hidden">
+	  		 	<input type ="submit" value ="Ans" style="float:right; display:inline; width:15%;">
+  			 	</form>
   			 	<div class="card-body">
 					<div class="row">
 						<div class="card-text col-sm-3 font-weight-bold"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem ">Created By </span></div>

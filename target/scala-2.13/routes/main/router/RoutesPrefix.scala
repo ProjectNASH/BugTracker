@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/conf/routes
-// @DATE:Fri Jul 24 16:38:29 IST 2020
+// @DATE:Sat Jul 25 17:16:31 IST 2020
 
 
 package router {

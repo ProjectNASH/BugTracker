@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/conf/routes
-// @DATE:Fri Jul 24 16:38:29 IST 2020
+// @DATE:Sat Jul 25 17:16:31 IST 2020
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -100,6 +100,26 @@ package controllers.javascript {
   
   }
 
+  // @LINE:41
+  class ReverseanswerQuery(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:41
+    def getQuestionToAnswer: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.answerQuery.getQuestionToAnswer",
+      """
+        function(bookNametemp0,qsNo1) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "answer" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("bookNametemp", bookNametemp0), (""" + implicitly[play.api.mvc.QueryStringBindable[Int]].javascriptUnbind + """)("qsNo", qsNo1)])})
+        }
+      """
+    )
+  
+  }
+
   // @LINE:6
   class ReverseHomeController(_prefix: => String) {
 
@@ -108,7 +128,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:43
+    // @LINE:45
     def upload: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.upload",
       """
@@ -190,7 +210,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:44
+  // @LINE:46
   class ReverseMailerService(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -198,7 +218,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:44
+    // @LINE:46
     def send: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MailerService.send",
       """

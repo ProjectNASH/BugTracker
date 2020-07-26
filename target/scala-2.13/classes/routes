@@ -37,6 +37,8 @@ GET 	/createPage					controllers.dashboard.createPage
 POST	/getPageData				controllers.dashboard.getPageData		
 GET		/viewPages					controllers.dashboard.viewPages				
 
+#Methods when user answers a question
+GET   /answer          controllers.answerQuery.getQuestionToAnswer(bookNametemp:String, qsNo: Int)
 
 #Following are for test purposes
 #GET		/trial					controllers.HomeController.trialPage	

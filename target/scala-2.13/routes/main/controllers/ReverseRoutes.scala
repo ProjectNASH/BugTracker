@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/conf/routes
-// @DATE:Fri Jul 24 16:38:29 IST 2020
+// @DATE:Sat Jul 25 17:16:31 IST 2020
 
 import play.api.mvc.Call
 
@@ -73,6 +73,21 @@ package controllers {
   
   }
 
+  // @LINE:41
+  class ReverseanswerQuery(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:41
+    def getQuestionToAnswer(bookNametemp:String, qsNo:Int): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "answer" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("bookNametemp", bookNametemp)), Some(implicitly[play.api.mvc.QueryStringBindable[Int]].unbind("qsNo", qsNo)))))
+    }
+  
+  }
+
   // @LINE:6
   class ReverseHomeController(_prefix: => String) {
     def _defaultPrefix: String = {
@@ -80,7 +95,7 @@ package controllers {
     }
 
   
-    // @LINE:43
+    // @LINE:45
     def upload(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "trial1")
@@ -136,14 +151,14 @@ package controllers {
   
   }
 
-  // @LINE:44
+  // @LINE:46
   class ReverseMailerService(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:44
+    // @LINE:46
     def send(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "trial3")
