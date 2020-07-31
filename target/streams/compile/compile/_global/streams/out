@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\DELL\Desktop\BugTracker\play-samples-play-scala-starter-example\conf\routes:41:1: not enough arguments for method getQuestionToAnswer: (bookName: String, qsNo: Int)play.api.mvc.Action[play.api.mvc.AnyContent].[0m
-[0m[[0m[31merror[0m] [0m[0mUnspecified value parameters bookName, qsNo.[0m
-[0m[[0m[31merror[0m] [0m[0mGET   /answer          controllers.answerQuery.getQuestionToAnswer()[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\DELL\Desktop\BugTracker\play-samples-play-scala-starter-example\app\controllers\meetTheTeam.scala:25:31: Cannot find any HTTP Request Header here[0m
+[0m[[0m[31merror[0m] [0m[0m     Ok(views.html.meetTheTeam())[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

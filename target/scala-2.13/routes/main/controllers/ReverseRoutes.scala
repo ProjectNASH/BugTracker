@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/conf/routes
-// @DATE:Sat Jul 25 17:16:31 IST 2020
+// @DATE:Fri Jul 31 16:04:07 IST 2020
 
 import play.api.mvc.Call
 
@@ -25,32 +25,32 @@ package controllers {
   
   }
 
-  // @LINE:35
+  // @LINE:38
   class Reversedashboard(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:36
+    // @LINE:39
     def createPage(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "createPage")
     }
   
-    // @LINE:37
+    // @LINE:40
     def getPageData(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "getPageData")
     }
   
-    // @LINE:38
+    // @LINE:41
     def viewPages(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "viewPages")
     }
   
-    // @LINE:35
+    // @LINE:38
     def viewDashboard(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "viewDashboard")
@@ -73,14 +73,14 @@ package controllers {
   
   }
 
-  // @LINE:41
+  // @LINE:44
   class ReverseanswerQuery(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:41
+    // @LINE:44
     def getQuestionToAnswer(bookNametemp:String, qsNo:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "answer" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("bookNametemp", bookNametemp)), Some(implicitly[play.api.mvc.QueryStringBindable[Int]].unbind("qsNo", qsNo)))))
@@ -95,7 +95,7 @@ package controllers {
     }
 
   
-    // @LINE:45
+    // @LINE:48
     def upload(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "trial1")
@@ -131,19 +131,34 @@ package controllers {
   }
 
   // @LINE:18
+  class ReversemeetTheTeam(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:18
+    def showTeamPage(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "meetTheTeam")
+    }
+  
+  }
+
+  // @LINE:21
   class Reverselogin(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:19
+    // @LINE:22
     def loginValidate(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "checkinglogin")
     }
   
-    // @LINE:18
+    // @LINE:21
     def loginPage(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "login")
@@ -151,14 +166,14 @@ package controllers {
   
   }
 
-  // @LINE:46
+  // @LINE:49
   class ReverseMailerService(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:46
+    // @LINE:49
     def send(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "trial3")
@@ -166,26 +181,26 @@ package controllers {
   
   }
 
-  // @LINE:22
+  // @LINE:25
   class ReversesignUp(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:27
+    // @LINE:30
     def getSignupInfo(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "checkingsignup")
     }
   
-    // @LINE:22
+    // @LINE:25
     def sendSignupSetupPage(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "signupsetup")
     }
   
-    // @LINE:23
+    // @LINE:26
     def sendSignupPage(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "signup")
@@ -193,26 +208,26 @@ package controllers {
   
   }
 
-  // @LINE:29
+  // @LINE:32
   class Reversesetup(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:29
+    // @LINE:32
     def getSetUpInfo(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "getbacksetupinfo")
     }
   
-    // @LINE:32
+    // @LINE:35
     def getAddRoles(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "getbackAddRoles")
     }
   
-    // @LINE:31
+    // @LINE:34
     def getEmpData(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "getbackempinfo")

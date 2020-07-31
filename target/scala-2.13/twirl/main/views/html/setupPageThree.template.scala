@@ -29,24 +29,45 @@ Seq[Any](format.raw/*4.1*/("""
 <html>
     <head>
     	<meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	 <title>Team Members setup</title>
+    	 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	 <link rel="stylesheet" href=""""),_display_(/*11.37*/assetsFinder/*11.49*/.path("stylesheets/utils/roles.css")),format.raw/*11.85*/(""""></link>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     </head>
     <body>
-    	Based on the given Employee data list, we have found the following roles in your organization
-    	<ul>
-    	"""),_display_(/*14.7*/for(task <- tasks) yield /*14.25*/{_display_(Seq[Any](format.raw/*14.26*/("""
-    		"""),format.raw/*15.7*/("""<li>"""),_display_(/*15.12*/task),format.raw/*15.16*/("""</li>
-    		""")))}),format.raw/*16.8*/("""
-    	"""),format.raw/*17.6*/("""</ul>
-    	If you would like to add more roles, write them down in the following text-box.(If you want to add multiple write them as XXX, YYY, ZZZ)
-    	<form method = "POST" action =""""),_display_(/*19.38*/routes/*19.44*/.setup.getAddRoles),format.raw/*19.62*/("""" id="formSubmit">
-    	"""),_display_(/*20.7*/helper/*20.13*/.CSRF.formField),format.raw/*20.28*/("""
-    	"""),format.raw/*21.6*/("""<input type="text" name="addRoles" value="" id ="addRoles"/>
-    	<input type="SUBMIT" value="SUBMIT" />    	
+    	
+    	<div class="container-fluid part1">
+		<div class="inner">
+		<p class="heading">Based on the given Employee data list, we have found the following roles in your organization:</p></br>
+		<ul class="sub">
+    	"""),_display_(/*20.7*/for(task <- tasks) yield /*20.25*/{_display_(Seq[Any](format.raw/*20.26*/("""
+    		"""),format.raw/*21.7*/("""<li>"""),_display_(/*21.12*/task),format.raw/*21.16*/("""</li>
+    		""")))}),format.raw/*22.8*/("""
+    	"""),format.raw/*23.6*/("""</ul>
+    	</br>
+    	
+    	
+    	<form method = "POST" action =""""),_display_(/*27.38*/routes/*27.44*/.setup.getAddRoles),format.raw/*27.62*/("""" id="formSubmit">
+		<div class="texts">
+				<label for="usr"><span class="heading2">If you would like to add more roles, write them down in the following text-box.(If you want to add multiple write them as XXX, YYY, ZZZ)
+    	</span></label></br>
+    	
+    	
+    	
+    	"""),_display_(/*34.7*/helper/*34.13*/.CSRF.formField),format.raw/*34.28*/("""
+    	"""),format.raw/*35.6*/("""<input type="text" name="addRoles" value="" id ="addRoles"/>
+    	</div>
+    	<input type="SUBMIT" value="SUBMIT"  class="btn btn-outline-secondary"/>    	
     	</form>
+		</div>
+		</div>
     	
     	
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     	
     </body>
 </html>"""))
@@ -65,11 +86,11 @@ Seq[Any](format.raw/*4.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-07-15T18:47:24.451
+                  DATE: 2020-07-31T16:37:39.833
                   SOURCE: C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/app/views/setupPageThree.scala.html
-                  HASH: 2e9fd74cbd7e20a652e25e744d1c93f8fc7c4360
-                  MATRIX: 793->28|949->113|993->129|1020->130|1338->422|1372->440|1411->441|1445->448|1477->453|1502->457|1545->470|1578->476|1790->661|1805->667|1844->685|1895->710|1910->716|1946->731|1979->737
-                  LINES: 21->2|24->3|27->4|28->5|37->14|37->14|37->14|38->15|38->15|38->15|39->16|40->17|42->19|42->19|42->19|43->20|43->20|43->20|44->21
+                  HASH: 066c825f2c15870606d0ffc34d0e8e083cdebc13
+                  MATRIX: 793->28|949->113|993->129|1020->130|1278->361|1299->373|1356->409|1848->875|1882->893|1921->894|1955->901|1987->906|2012->910|2055->923|2088->929|2181->995|2196->1001|2235->1019|2533->1291|2548->1297|2584->1312|2617->1318
+                  LINES: 21->2|24->3|27->4|28->5|34->11|34->11|34->11|43->20|43->20|43->20|44->21|44->21|44->21|45->22|46->23|50->27|50->27|50->27|57->34|57->34|57->34|58->35
                   -- GENERATED --
               */
           

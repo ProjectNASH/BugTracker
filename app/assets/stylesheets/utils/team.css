@@ -1,0 +1,84 @@
+@font-face
+{
+	font-family: 'Ubuntu Mono';
+	src: url("../../fonts/UbuntuMono-Regular.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body{
+	font-family: 'Ubuntu Mono';
+
+}
+
+
+body {
+  font-size: .875rem;
+}
+.sub{
+	
+  font-size:1.2rem;	
+}
+.space{
+	padding:0.9rem;
+}
+.space1{
+	padding:1.2rem;
+}
+.h3{
+	padding:0 0 0 2rem;
+	letter-spacing:1px;
+}
+.border{
+		border-radius:1%;
+		border-style:solid;
+		border-width:3px !important;
+}
+.content{
+	font-size:1.05rem;
+}
+.part1{
+	padding-left:0;
+	padding-right:0;
+}
+.part2{
+	padding-right:0;
+}
+.part3{
+	padding:0;
+}
+.part4{
+	padding:0.65rem 0.4rem 0.4rem 0.4rem;
+}
+
+.image1{
+width:180px;
+height:180px;	
+	
+}
+@media (min-width: 600px){
+   .collapse {
+       display: none;
+   }
+}
+@media (max-width: 450px){
+   .content{
+	   font-size:1rem;
+   }
+   .h3{
+	padding:0 0 0 4.5rem;
+	}
+   .part4{
+	padding:0.65rem 0.7rem 0.6rem 0.6rem;
+	}
+}
+@media (max-width: 350px){
+   .content{
+	   font-size:0.9rem;
+   }
+   .part4{
+	padding:0.5rem 0.6rem 0.5rem 0.5rem;
+	}.h3{
+	padding:0 0 0 2rem;
+	}
+}

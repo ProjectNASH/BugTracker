@@ -14,6 +14,9 @@ GET     /message                    controllers.AsyncController.message
 GET     /assets/*file               controllers.Assets.versioned(file)
 
 
+#All methods related to homePage
+GET		/meetTheTeam				controllers.meetTheTeam.showTeamPage
+
 #All Methods related to login
 GET		/login						controllers.login.loginPage
 POST	/checkinglogin				controllers.login.loginValidate

@@ -1,3 +1,17 @@
+@font-face
+{
+	font-family: 'Ubuntu Mono';
+	src: url("../../fonts/UbuntuMono-Regular.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body{
+	font-family: 'Ubuntu Mono';
+
+}
+
+
 body {
   font-size: .875rem;
 }

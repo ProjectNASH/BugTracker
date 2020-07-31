@@ -6,16 +6,18 @@
 	font-style: normal;
 }
 
+body{
+	font-family: 'Ubuntu Mono';
+
+}
+
 form{
 	display:inline;
 }
 
 
 
-body{
-	font-family: 'Ubuntu Mono';
 
-}
 
 nav{
 	font-family: 'Ubuntu Mono';

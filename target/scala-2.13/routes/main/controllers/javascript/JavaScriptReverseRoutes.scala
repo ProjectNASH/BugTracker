@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/conf/routes
-// @DATE:Sat Jul 25 17:16:31 IST 2020
+// @DATE:Fri Jul 31 16:04:07 IST 2020
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -30,7 +30,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:35
+  // @LINE:38
   class Reversedashboard(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -38,7 +38,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:36
+    // @LINE:39
     def createPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.dashboard.createPage",
       """
@@ -48,7 +48,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:37
+    // @LINE:40
     def getPageData: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.dashboard.getPageData",
       """
@@ -58,7 +58,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:38
+    // @LINE:41
     def viewPages: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.dashboard.viewPages",
       """
@@ -68,7 +68,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:35
+    // @LINE:38
     def viewDashboard: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.dashboard.viewDashboard",
       """
@@ -100,7 +100,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:41
+  // @LINE:44
   class ReverseanswerQuery(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -108,7 +108,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:41
+    // @LINE:44
     def getQuestionToAnswer: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.answerQuery.getQuestionToAnswer",
       """
@@ -128,7 +128,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:45
+    // @LINE:48
     def upload: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.upload",
       """
@@ -181,6 +181,26 @@ package controllers.javascript {
   }
 
   // @LINE:18
+  class ReversemeetTheTeam(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:18
+    def showTeamPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.meetTheTeam.showTeamPage",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "meetTheTeam"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:21
   class Reverselogin(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -188,7 +208,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:19
+    // @LINE:22
     def loginValidate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.login.loginValidate",
       """
@@ -198,7 +218,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:18
+    // @LINE:21
     def loginPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.login.loginPage",
       """
@@ -210,7 +230,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:46
+  // @LINE:49
   class ReverseMailerService(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -218,7 +238,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:46
+    // @LINE:49
     def send: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MailerService.send",
       """
@@ -230,7 +250,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:22
+  // @LINE:25
   class ReversesignUp(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -238,7 +258,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:27
+    // @LINE:30
     def getSignupInfo: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.signUp.getSignupInfo",
       """
@@ -248,7 +268,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:22
+    // @LINE:25
     def sendSignupSetupPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.signUp.sendSignupSetupPage",
       """
@@ -258,7 +278,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:23
+    // @LINE:26
     def sendSignupPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.signUp.sendSignupPage",
       """
@@ -270,7 +290,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:29
+  // @LINE:32
   class Reversesetup(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -278,7 +298,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:29
+    // @LINE:32
     def getSetUpInfo: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.setup.getSetUpInfo",
       """
@@ -288,7 +308,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:32
+    // @LINE:35
     def getAddRoles: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.setup.getAddRoles",
       """
@@ -298,7 +318,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:31
+    // @LINE:34
     def getEmpData: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.setup.getEmpData",
       """

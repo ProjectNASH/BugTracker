@@ -202,8 +202,8 @@ class setup @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
          //Ok(views.html.loginPage())
          
          //Subject : String, SenderEmail:String, ReceiverEmail : String, body:String
-         Redirect{routes.MailerService.send()}
-         //Redirect{routes.login.loginPage()}
+         //Redirect{routes.MailerService.send()}
+         Redirect{routes.login.loginPage()}
        }.getOrElse(Ok("Something went wrong"))
      }
     
