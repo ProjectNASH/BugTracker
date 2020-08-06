@@ -44,9 +44,10 @@ GET		/viewPages					controllers.dashboard.viewPages
 GET   /answer          controllers.answerQuery.getQuestionToAnswer(bookNametemp:String, qsNo: Int)
 
 #Following are for test purposes
-#GET		/trial					controllers.HomeController.trialPage	
+GET		/trial					controllers.HomeController.trialPage
+POST		/trial2					controllers.answerQuery.answerThequestion	
 POST  	/trial1				        controllers.HomeController.upload
-GET		/trial3					    controllers.MailerService.send()
+#GET		/trial3					    controllers.MailerService.send()
 
 
 

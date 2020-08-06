@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/conf/routes
-// @DATE:Fri Jul 31 16:04:07 IST 2020
+// @DATE:Thu Aug 06 12:54:35 IST 2020
 
 package router
 
@@ -14,13 +14,13 @@ import _root_.controllers.Assets.Asset
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
-  HomeController_10: controllers.HomeController,
+  HomeController_9: controllers.HomeController,
   // @LINE:9
   CountController_6: controllers.CountController,
   // @LINE:11
-  AsyncController_9: controllers.AsyncController,
+  AsyncController_8: controllers.AsyncController,
   // @LINE:14
-  Assets_8: controllers.Assets,
+  Assets_7: controllers.Assets,
   // @LINE:18
   meetTheTeam_5: controllers.meetTheTeam,
   // @LINE:21
@@ -33,21 +33,19 @@ class Routes(
   dashboard_1: controllers.dashboard,
   // @LINE:44
   answerQuery_3: controllers.answerQuery,
-  // @LINE:49
-  MailerService_7: controllers.MailerService,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
-    HomeController_10: controllers.HomeController,
+    HomeController_9: controllers.HomeController,
     // @LINE:9
     CountController_6: controllers.CountController,
     // @LINE:11
-    AsyncController_9: controllers.AsyncController,
+    AsyncController_8: controllers.AsyncController,
     // @LINE:14
-    Assets_8: controllers.Assets,
+    Assets_7: controllers.Assets,
     // @LINE:18
     meetTheTeam_5: controllers.meetTheTeam,
     // @LINE:21
@@ -59,15 +57,13 @@ class Routes(
     // @LINE:38
     dashboard_1: controllers.dashboard,
     // @LINE:44
-    answerQuery_3: controllers.answerQuery,
-    // @LINE:49
-    MailerService_7: controllers.MailerService
-  ) = this(errorHandler, HomeController_10, CountController_6, AsyncController_9, Assets_8, meetTheTeam_5, login_0, signUp_4, setup_2, dashboard_1, answerQuery_3, MailerService_7, "/")
+    answerQuery_3: controllers.answerQuery
+  ) = this(errorHandler, HomeController_9, CountController_6, AsyncController_8, Assets_7, meetTheTeam_5, login_0, signUp_4, setup_2, dashboard_1, answerQuery_3, "/")
 
   def withPrefix(addPrefix: String): Routes = {
     val prefix = play.api.routing.Router.concatPrefix(addPrefix, this.prefix)
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_10, CountController_6, AsyncController_9, Assets_8, meetTheTeam_5, login_0, signUp_4, setup_2, dashboard_1, answerQuery_3, MailerService_7, prefix)
+    new Routes(errorHandler, HomeController_9, CountController_6, AsyncController_8, Assets_7, meetTheTeam_5, login_0, signUp_4, setup_2, dashboard_1, answerQuery_3, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -94,8 +90,9 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getPageData""", """controllers.dashboard.getPageData"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """viewPages""", """controllers.dashboard.viewPages"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """answer""", """controllers.answerQuery.getQuestionToAnswer(bookNametemp:String, qsNo:Int)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """trial""", """controllers.HomeController.trialPage"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """trial2""", """controllers.answerQuery.answerThequestion"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """trial1""", """controllers.HomeController.upload"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """trial3""", """controllers.MailerService.send()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -108,7 +105,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_HomeController_index0_invoker = createInvoker(
-    HomeController_10.index,
+    HomeController_9.index,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -126,7 +123,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("trial")))
   )
   private[this] lazy val controllers_HomeController_trialPage1_invoker = createInvoker(
-    HomeController_10.trialPage,
+    HomeController_9.trialPage,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -162,7 +159,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("message")))
   )
   private[this] lazy val controllers_AsyncController_message3_invoker = createInvoker(
-    AsyncController_9.message,
+    AsyncController_8.message,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.AsyncController",
@@ -180,7 +177,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
   private[this] lazy val controllers_Assets_versioned4_invoker = createInvoker(
-    Assets_8.versioned(fakeValue[String]),
+    Assets_7.versioned(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -446,12 +443,48 @@ Following are methods to setup""",
     )
   )
 
+  // @LINE:47
+  private[this] lazy val controllers_HomeController_trialPage19_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("trial")))
+  )
+  private[this] lazy val controllers_HomeController_trialPage19_invoker = createInvoker(
+    HomeController_9.trialPage,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "trialPage",
+      Nil,
+      "GET",
+      this.prefix + """trial""",
+      """Following are for test purposes""",
+      Seq()
+    )
+  )
+
   // @LINE:48
-  private[this] lazy val controllers_HomeController_upload19_route = Route("POST",
+  private[this] lazy val controllers_answerQuery_answerThequestion20_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("trial2")))
+  )
+  private[this] lazy val controllers_answerQuery_answerThequestion20_invoker = createInvoker(
+    answerQuery_3.answerThequestion,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.answerQuery",
+      "answerThequestion",
+      Nil,
+      "POST",
+      this.prefix + """trial2""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:49
+  private[this] lazy val controllers_HomeController_upload21_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("trial1")))
   )
-  private[this] lazy val controllers_HomeController_upload19_invoker = createInvoker(
-    HomeController_10.upload,
+  private[this] lazy val controllers_HomeController_upload21_invoker = createInvoker(
+    HomeController_9.upload,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -459,25 +492,6 @@ Following are methods to setup""",
       Nil,
       "POST",
       this.prefix + """trial1""",
-      """Following are for test purposes
-GET		/trial					controllers.HomeController.trialPage	""",
-      Seq()
-    )
-  )
-
-  // @LINE:49
-  private[this] lazy val controllers_MailerService_send20_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("trial3")))
-  )
-  private[this] lazy val controllers_MailerService_send20_invoker = createInvoker(
-    MailerService_7.send(),
-    play.api.routing.HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.MailerService",
-      "send",
-      Nil,
-      "GET",
-      this.prefix + """trial3""",
       """""",
       Seq()
     )
@@ -489,13 +503,13 @@ GET		/trial					controllers.HomeController.trialPage	""",
     // @LINE:6
     case controllers_HomeController_index0_route(params@_) =>
       call { 
-        controllers_HomeController_index0_invoker.call(HomeController_10.index)
+        controllers_HomeController_index0_invoker.call(HomeController_9.index)
       }
   
     // @LINE:7
     case controllers_HomeController_trialPage1_route(params@_) =>
       call { 
-        controllers_HomeController_trialPage1_invoker.call(HomeController_10.trialPage)
+        controllers_HomeController_trialPage1_invoker.call(HomeController_9.trialPage)
       }
   
     // @LINE:9
@@ -507,13 +521,13 @@ GET		/trial					controllers.HomeController.trialPage	""",
     // @LINE:11
     case controllers_AsyncController_message3_route(params@_) =>
       call { 
-        controllers_AsyncController_message3_invoker.call(AsyncController_9.message)
+        controllers_AsyncController_message3_invoker.call(AsyncController_8.message)
       }
   
     // @LINE:14
     case controllers_Assets_versioned4_route(params@_) =>
       call(params.fromPath[String]("file", None)) { (file) =>
-        controllers_Assets_versioned4_invoker.call(Assets_8.versioned(file))
+        controllers_Assets_versioned4_invoker.call(Assets_7.versioned(file))
       }
   
     // @LINE:18
@@ -600,16 +614,22 @@ GET		/trial					controllers.HomeController.trialPage	""",
         controllers_answerQuery_getQuestionToAnswer18_invoker.call(answerQuery_3.getQuestionToAnswer(bookNametemp, qsNo))
       }
   
-    // @LINE:48
-    case controllers_HomeController_upload19_route(params@_) =>
+    // @LINE:47
+    case controllers_HomeController_trialPage19_route(params@_) =>
       call { 
-        controllers_HomeController_upload19_invoker.call(HomeController_10.upload)
+        controllers_HomeController_trialPage19_invoker.call(HomeController_9.trialPage)
+      }
+  
+    // @LINE:48
+    case controllers_answerQuery_answerThequestion20_route(params@_) =>
+      call { 
+        controllers_answerQuery_answerThequestion20_invoker.call(answerQuery_3.answerThequestion)
       }
   
     // @LINE:49
-    case controllers_MailerService_send20_route(params@_) =>
+    case controllers_HomeController_upload21_route(params@_) =>
       call { 
-        controllers_MailerService_send20_invoker.call(MailerService_7.send())
+        controllers_HomeController_upload21_invoker.call(HomeController_9.upload)
       }
   }
 }

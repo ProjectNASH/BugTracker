@@ -13,20 +13,26 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="@assetsFinder.path("/images/title images/favicon-32x32.png")">
 		<link rel="icon" type="image/png" sizes="16x16" href="@assetsFinder.path("/images/title images/favicon-16x16.png")">
 		<link rel="manifest" href="@assetsFinder.path("/images/title images/site.webmanifest")">
-	
+		
 	        	<!--Write your link and src tags after this comment-->
 	        	
 	
 	</head>
     <body>
 			
-	<nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 style=" background-color:grey"="">
+	<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">
-      <img src="images.jpg" width="55" alt="" class="d-inline-block align-middle rounded-circle mr-1"><span class="image1">BUG TRACKER</span></a>
+      <img src="@assetsFinder.path("/images/images.jpeg")" width="45" alt="" class="d-inline-block align-middle rounded-circle mr-1"><span class="image1">BUG TRACKER</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>  
-	</nav>
+  </button>
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+  </ul>
+  
+</nav>
 <div class="container-fluid">
  
   <div class="row">
@@ -107,6 +113,7 @@
 							<form action="answer" method="GET">
 							<input type ="text" name = "bookNametemp"  value=@name style ="visibility:hidden">
   			 				<input type ="number" name = "qsNo"  value=@qsNo style ="visibility:hidden"> 
+  			 				<input type ="text" name = "pageTarget"  value=@pageTarget style ="visibility:hidden"> 
 							<input type="submit" class="btn  btn-success btn-sm" value ="Ans" id="Ans">
 								
 								

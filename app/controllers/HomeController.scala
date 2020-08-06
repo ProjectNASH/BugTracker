@@ -24,7 +24,7 @@ class HomeController @Inject()(cc: ControllerComponents) (implicit assetsFinder:
   }
   
   def trialPage=Action{ implicit request=>
-    Ok(views.html.trial())
+    Ok(views.html.trial(1,"abc"))
   }
   
   def upload = Action(parse.multipartFormData) { request =>

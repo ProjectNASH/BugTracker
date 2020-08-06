@@ -36,20 +36,26 @@ Seq[Any](format.raw/*4.1*/("""
 		<link rel="icon" type="image/png" sizes="32x32" href=""""),_display_(/*13.58*/assetsFinder/*13.70*/.path("/images/title images/favicon-32x32.png")),format.raw/*13.117*/("""">
 		<link rel="icon" type="image/png" sizes="16x16" href=""""),_display_(/*14.58*/assetsFinder/*14.70*/.path("/images/title images/favicon-16x16.png")),format.raw/*14.117*/("""">
 		<link rel="manifest" href=""""),_display_(/*15.31*/assetsFinder/*15.43*/.path("/images/title images/site.webmanifest")),format.raw/*15.89*/("""">
-	
+		
 	        	<!--Write your link and src tags after this comment-->
 	        	
 	
 	</head>
     <body>
 			
-	<nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 style=" background-color:grey"="">
+	<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">
-      <img src="images.jpg" width="55" alt="" class="d-inline-block align-middle rounded-circle mr-1"><span class="image1">BUG TRACKER</span></a>
+      <img src=""""),_display_(/*25.18*/assetsFinder/*25.30*/.path("/images/images.jpeg")),format.raw/*25.58*/("""" width="45" alt="" class="d-inline-block align-middle rounded-circle mr-1"><span class="image1">BUG TRACKER</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>  
-	</nav>
+  </button>
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+  </ul>
+  
+</nav>
 <div class="container-fluid">
  
   <div class="row">
@@ -119,17 +125,18 @@ Seq[Any](format.raw/*4.1*/("""
         <h1 class="h2">ALL Queries</h1>
       </div>
       
-      """),_display_(/*99.8*/for((name,infoList)<-userToBookMap) yield /*99.43*/{_display_(Seq[Any](format.raw/*99.44*/("""
- """),_display_(/*100.3*/for((qsNo,pageName,pageTarget)<-infoList) yield /*100.44*/{_display_(Seq[Any](format.raw/*100.45*/("""
-"""),format.raw/*101.1*/("""<div class="card">
+      """),_display_(/*105.8*/for((name,infoList)<-userToBookMap) yield /*105.43*/{_display_(Seq[Any](format.raw/*105.44*/("""
+ """),_display_(/*106.3*/for((qsNo,pageName,pageTarget)<-infoList) yield /*106.44*/{_display_(Seq[Any](format.raw/*106.45*/("""
+"""),format.raw/*107.1*/("""<div class="card">
 		<div class="card-header">
 			<div class="row">
-				<div class="col-lg-9 col-md-7 col-sm-12 d-flex justify-content-start"><span class="page" style ="display:inline;">"""),_display_(/*104.120*/pageName),format.raw/*104.128*/("""</span></div>
+				<div class="col-lg-9 col-md-7 col-sm-12 d-flex justify-content-start"><span class="page" style ="display:inline;">"""),_display_(/*110.120*/pageName),format.raw/*110.128*/("""</span></div>
 				<div class="col-lg-3 col-md-5 col-sm-12  justify-content-center">	
 						<div class="btn-toolbar mb-2 mb-md-0">
 							<form action="answer" method="GET">
-							<input type ="text" name = "bookNametemp"  value="""),_display_(/*108.58*/name),format.raw/*108.62*/(""" """),format.raw/*108.63*/("""style ="visibility:hidden">
-  			 				<input type ="number" name = "qsNo"  value="""),_display_(/*109.55*/qsNo),format.raw/*109.59*/(""" """),format.raw/*109.60*/("""style ="visibility:hidden"> 
+							<input type ="text" name = "bookNametemp"  value="""),_display_(/*114.58*/name),format.raw/*114.62*/(""" """),format.raw/*114.63*/("""style ="visibility:hidden">
+  			 				<input type ="number" name = "qsNo"  value="""),_display_(/*115.55*/qsNo),format.raw/*115.59*/(""" """),format.raw/*115.60*/("""style ="visibility:hidden"> 
+  			 				<input type ="text" name = "pageTarget"  value="""),_display_(/*116.59*/pageTarget),format.raw/*116.69*/(""" """),format.raw/*116.70*/("""style ="visibility:hidden"> 
 							<input type="submit" class="btn  btn-success btn-sm" value ="Ans" id="Ans">
 								
 								
@@ -145,23 +152,23 @@ Seq[Any](format.raw/*4.1*/("""
   <div class="inner1">
 	<div class="row">
 		<div class="card-text col-sm-3 font-weight-bolder text-wrap"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem"> Created By</span></div>
-		<div class="col-sm-9"><span class="me"> """),_display_(/*125.44*/name),format.raw/*125.48*/("""</span></div>
+		<div class="col-sm-9"><span class="me"> """),_display_(/*132.44*/name),format.raw/*132.48*/("""</span></div>
 
 	</div>
 		<div class="space"></div>
 	<div class="row">
 		<div class="card-text col-sm-3 font-weight-bold"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem">Target</span></div>
-		<div class="col-sm-9"><span class="me">"""),_display_(/*131.43*/pageTarget),format.raw/*131.53*/("""</span></div>
+		<div class="col-sm-9"><span class="me">"""),_display_(/*138.43*/pageTarget),format.raw/*138.53*/("""</span></div>
 	</div>
   </div>
   </div>
   </div>
 	</div>
 	<div class="space"></div>
-	""")))}),format.raw/*138.3*/("""
-""")))}),format.raw/*139.2*/("""
+	""")))}),format.raw/*145.3*/("""
+""")))}),format.raw/*146.2*/("""
 	 
-	"""),format.raw/*141.2*/("""<div class="container space"></div>		
+	"""),format.raw/*148.2*/("""<div class="container space"></div>		
 			
 			
 			
@@ -192,11 +199,11 @@ Seq[Any](format.raw/*4.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-07-30T02:45:04.999
+                  DATE: 2020-08-06T17:10:27.143
                   SOURCE: C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/app/views/viewPages.scala.html
-                  HASH: b15862813b7ee42396ff31484ceca401baadf9a8
-                  MATRIX: 831->31|1020->149|1064->165|1091->166|1570->618|1591->630|1651->669|1754->745|1775->757|1847->807|1934->867|1955->879|2024->926|2111->986|2132->998|2201->1045|2261->1078|2282->1090|2349->1136|7199->5960|7250->5995|7289->5996|7319->5999|7377->6040|7417->6041|7446->6042|7662->6229|7693->6237|7951->6467|7977->6471|8007->6472|8117->6554|8143->6558|8173->6559|8703->7061|8729->7065|9013->7321|9045->7331|9162->7417|9195->7419|9228->7424
-                  LINES: 21->2|24->3|27->4|28->5|34->11|34->11|34->11|35->12|35->12|35->12|36->13|36->13|36->13|37->14|37->14|37->14|38->15|38->15|38->15|122->99|122->99|122->99|123->100|123->100|123->100|124->101|127->104|127->104|131->108|131->108|131->108|132->109|132->109|132->109|148->125|148->125|154->131|154->131|161->138|162->139|164->141
+                  HASH: de8d8efff0f66409fb85e69462f816f04c75d491
+                  MATRIX: 831->31|1020->149|1064->165|1091->166|1570->618|1591->630|1651->669|1754->745|1775->757|1847->807|1934->867|1955->879|2024->926|2111->986|2132->998|2201->1045|2261->1078|2282->1090|2349->1136|2644->1404|2665->1416|2714->1444|7394->6097|7446->6132|7486->6133|7516->6136|7574->6177|7614->6178|7643->6179|7859->6366|7890->6374|8148->6604|8174->6608|8204->6609|8314->6691|8340->6695|8370->6696|8485->6783|8517->6793|8547->6794|9077->7296|9103->7300|9387->7556|9419->7566|9536->7652|9569->7654|9602->7659
+                  LINES: 21->2|24->3|27->4|28->5|34->11|34->11|34->11|35->12|35->12|35->12|36->13|36->13|36->13|37->14|37->14|37->14|38->15|38->15|38->15|48->25|48->25|48->25|128->105|128->105|128->105|129->106|129->106|129->106|130->107|133->110|133->110|137->114|137->114|137->114|138->115|138->115|138->115|139->116|139->116|139->116|155->132|155->132|161->138|161->138|168->145|169->146|171->148
                   -- GENERATED --
               */
           

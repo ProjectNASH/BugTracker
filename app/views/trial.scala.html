@@ -1,5 +1,5 @@
 @* trails Template File *@
-@()(implicit request: RequestHeader, assetsFinder: AssetsFinder)
+@(qsNo: Int, bookname:String,pageTarget: String)(implicit request: RequestHeader, assetsFinder: AssetsFinder)
 @import helper._
 
 
@@ -23,6 +23,26 @@
         <input type="submit">
     </p>
     </form>
+    
+   
+    
+  	<form action = "@routes.answerQuery.answerThequestion" method ="POST" enctype="multipart/form-data">
+  	@helper.CSRF.formField
+    	
+		<textarea name = "answer"></textarea>
+		<br>
+		<input type="file" name="picture">
+		<input type="number" name="qsNo" value="@qsNo">
+		<ul>
+		@for(target<-pageTarget){
+				
+		}
+		</ul>
+		<input type="text" name="bookname" value="@bookname">
+		<input type="text" name="bookname" value="@pageTarget">
+		<input type="submit">
+	</form>
+    
    
     
 

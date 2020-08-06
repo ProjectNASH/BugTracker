@@ -6,37 +6,161 @@
 <html>
     <head>
 	    <title>Create Page</title>
+	    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	        
-	    <!--<link rel="stylesheet" href="@assetsFinder.path("stylesheets/utils/signup.css")" type="text/css"/>  
+	     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>   
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+	    
 		<link rel="apple-touch-icon" sizes="180x180" href="@assetsFinder.path("/images/title images/apple-touch-icon.png")">
 		<link rel="icon" type="image/png" sizes="32x32" href="@assetsFinder.path("/images/title images/favicon-32x32.png")">
 		<link rel="icon" type="image/png" sizes="16x16" href="@assetsFinder.path("/images/title images/favicon-16x16.png")">
-		<link rel="manifest" href="@assetsFinder.path("/images/title images/site.webmanifest")">-->
-	
-	        	<!--Write your link and src tags after this comment-->
-	        	
+		<link rel="manifest" href="@assetsFinder.path("/images/title images/site.webmanifest")">
+		
+	    <link rel="stylesheet" type="text/css" href="@assetsFinder.path("stylesheets/utils/query.css")"></link>
+	     <script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	
 	</head>
     <body>
-		
-		
-		<form name="getPageInfo" action ="@routes.dashboard.getPageData" method="POST">
-		@helper.CSRF.formField
-		Title: <input type="text" name="pageName" value="" /><br>
-		Body:  <input type="text" name="pageBody" value="" /><br>
-		Target:<br>
-		@for(data<-r){		 	
-			<input type="checkbox" name="pageTarget" value="@data" id="@data"/><label for="@data">@data</label><br>		
-		}
-		<input type = "submit" value = "Submit">
-		</form>
+			<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">
+      <img src="@assetsFinder.path("/images/images.jpeg")" width="45" alt="" class="d-inline-block align-middle rounded-circle mr-1"><span class="image1">BUG TRACKER</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+  </ul>
+  
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="sidebar-sticky pt-3 part1">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link sidebar-heading" href="#">
+              <span></span>
+              TRACK
+            </a><hr class="my-1">
+          </li>
+          <li>
+            <a class="nav-link hel" href="#">
+              <span data-feather="airplay"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hel" href="#">
+              <span data-feather="file"></span>
+              Pages
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hel" href="#">
+              <span data-feather="help-circle"></span>
+              Questions Asked
+            </a>
+          </li>
+        <span style="padding:2%"></span>
+        </ul>
+          <a class="nav-link sidebar-heading" href="#">ACCOUNT</a><hr class="my-1">
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link hel" href="#">
+              <span data-feather="edit"></span>
+              Change password
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hel" href="#">
+              <span data-feather="trash"></span>
+              Delete Account
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hel" href="#">
+              <span data-feather="message-square"></span>
+              FAQ
+            </a>
+          </li>
+        </ul>
+      <div class="space"></div>
+      <ul class="navbar-nav px-3 col-12">
+        <li class="nav-item text-nowrap d-flex justify-content-center">
+        <a class="nav-link " href="#"><span class="sign">Sign out</span></a>
+        </li>
+      </ul>
+      </div>
+    </nav>
+		<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Write a Query</h1>
+      </div>
+	 <div class="card">
+		<div class="card-header">
+			In poetry, content and form combine to create meaning. Poetic content refers to a poem's language. ... Elements like the poem's type, stanza structure, line lengths, rhyme scheme, and rhythm express its form. Together, content and form make meaning, which is the message the poet gives to the reader.
+		</div>
+  <div class="card-body">
+		<div class="cotainer">
+			<form name="getPageInfo" action ="@routes.dashboard.getPageData" method="POST">
+			 @helper.CSRF.formField
+				<div class="form-group">
+					<label for="title"><span class="subhead">TITLE</span></label></br>
+					<input type="text" name="pageName" value="" />
+				</div>
+				<div class="form-group">
+					<label for="body"><span class="subhead">BODY</span></label><br>
+					<textarea id="body" class="body" name="pageBody"></textarea>
+				</div>
+			
+			<div><span class="subhead2">Target</span></div>
+
+			@for(data<-r){
+			<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="@data" value="@data" name="pageTarget">
+					<label class="form-check-label" for="@data">@data</label>
+			</div>
+			}
+
+			<div class="row">
+				<div class="col-lg-9 col-md-7 col-sm-12"><span class="page"></span></div>
+				<div class="col-lg-3 col-md-5 col-sm-12  justify-content-center">	
+						<div class="btn-toolbar mb-2 mb-md-0">
+							<input type = "submit" value = "Submit"  class="btn  btn-success btn-sm">
+								
+								
+							
+							<div class="space4"></div>
+							
+						</div>
+				</div>
+				</div>
+				</form>
+			</div>
+  </div>
+	</div>
+
+	<div class="container space"></div>
 
     	
         
 	    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+		<script src="track.js">
+		(function () {
+	          'use strict'
+
+	        feather.replace()
+	              }())
+		</script>
     </body>  
      
     

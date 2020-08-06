@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/conf/routes
-// @DATE:Fri Jul 31 16:04:07 IST 2020
+// @DATE:Thu Aug 06 12:54:35 IST 2020
 
 import play.api.mvc.Call
 
@@ -86,6 +86,12 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "answer" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("bookNametemp", bookNametemp)), Some(implicitly[play.api.mvc.QueryStringBindable[Int]].unbind("qsNo", qsNo)))))
     }
   
+    // @LINE:48
+    def answerThequestion(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "trial2")
+    }
+  
   }
 
   // @LINE:6
@@ -95,7 +101,7 @@ package controllers {
     }
 
   
-    // @LINE:48
+    // @LINE:49
     def upload(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "trial1")
@@ -103,8 +109,16 @@ package controllers {
   
     // @LINE:7
     def trialPage(): Call = {
+    
+      () match {
       
-      Call("GET", _prefix + { _defaultPrefix } + "trial")
+        // @LINE:7
+        case ()  =>
+          
+          Call("GET", _prefix + { _defaultPrefix } + "trial")
+      
+      }
+    
     }
   
     // @LINE:6
@@ -162,21 +176,6 @@ package controllers {
     def loginPage(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "login")
-    }
-  
-  }
-
-  // @LINE:49
-  class ReverseMailerService(_prefix: => String) {
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:49
-    def send(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "trial3")
     }
   
   }

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/conf/routes
-// @DATE:Fri Jul 31 16:04:07 IST 2020
+// @DATE:Thu Aug 06 12:54:35 IST 2020
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -118,6 +118,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:48
+    def answerThequestion: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.answerQuery.answerThequestion",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "trial2"})
+        }
+      """
+    )
+  
   }
 
   // @LINE:6
@@ -128,7 +138,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:48
+    // @LINE:49
     def upload: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.upload",
       """
@@ -143,7 +153,11 @@ package controllers.javascript {
       "controllers.HomeController.trialPage",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "trial"})
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "trial"})
+          }
+        
         }
       """
     )
@@ -224,26 +238,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
-        }
-      """
-    )
-  
-  }
-
-  // @LINE:49
-  class ReverseMailerService(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:49
-    def send: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.MailerService.send",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "trial3"})
         }
       """
     )

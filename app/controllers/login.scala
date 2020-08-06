@@ -34,8 +34,30 @@ class login @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
   def loginValidate = Action{ implicit request =>
    val postVals = request.body.asFormUrlEncoded
    postVals.map{ args => 
-     val username = ((args("username").head).split("@"))(0)
-     println(username)
+     
+     var username ="";
+     //if you get Exception then you got Username
+     // if you do not get Exception you get Email
+     try{
+       username = ((args("username").head).split("@"))(1)
+       val email = (args("username").head)
+       try{
+         db.withConnection { implicit connection => 
+             val usernameList : List[String] = {SQL("select EmpUserName from usertable where EmpEmail in ({inputEmail})").on("inputEmail"->email).as( str("EmpUserName") *) }
+             username = usernameList.head
+         }
+       }
+       catch{
+         case x:Throwable => 
+         println(x)
+         Ok("Mysql Server is not Running. Switch on MySQL server and reload Page.")
+       }
+     }
+     catch{
+       case x : Throwable=>
+        username = ((args("username").head).split("@"))(0)
+     }
+     println(username)     
      //val username = args("username").head
      var password = args("password").head
      println("Login Before:" + password)
