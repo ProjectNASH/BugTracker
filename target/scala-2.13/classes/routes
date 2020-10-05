@@ -4,7 +4,7 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
-GET		/trial						controllers.HomeController.trialPage
+#GET		/trial						controllers.HomeController.trialPage
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code
@@ -16,14 +16,32 @@ GET     /assets/*file               controllers.Assets.versioned(file)
 
 #All methods related to homePage
 GET		/meetTheTeam				controllers.meetTheTeam.showTeamPage
+GET		/documentation				controllers.meetTheTeam.documentation
 
 #All Methods related to login
 GET		/login						controllers.login.loginPage
 POST	/checkinglogin				controllers.login.loginValidate
+GET		/logout					    controllers.login.logout
+
+#All methods related to "Forget Password"
+GET		/resetPassword				    		controllers.resetPassword.sendOtpChange
+POST	/resetPassword/otpverify				controllers.resetPassword.sendEmail
+POST	/resetPassword/otpverify/resultofotp	controllers.resetPassword.getOTP
+GET		/inputnewPasswords						controllers.resetPassword.forgetSendPasswordOne(userEmail:String)
+GET		/forgotPasswords						controllers.resetPassword.forgetSendPasswordTwo
+
+#All methods related to "force change password"
+GET 	/changePasswordByUser					controllers.dashboard.changePassWordOne
+POST	/getpasswordForfchangePassword			controllers.dashboard.changePasswordTwo
+
+#All methods related to "Change Password from forgetting/force change"
+GET		/changePassword							controllers.resetPassword.sendPasswordChangePage
+POST	/validatePasswordChange					controllers.resetPassword.setNewPassword
+
 
 #All methods related to signing up
 GET		/signupsetup				controllers.signUp.sendSignupSetupPage
-GET		/signup						controllers.signUp.sendSignupPage
+#GET		/signup						controllers.signUp.sendSignupPage
 
 # We send setup page i.e setupPageOne from this POST request directly
 #Following are methods to setup
@@ -33,21 +51,20 @@ POST	/getbacksetupinfo			controllers.setup.getSetUpInfo
 #GET		/setupTwo					controllers.setup.setupPageTwo
 POST	/getbackempinfo				controllers.setup.getEmpData
 POST	/getbackAddRoles			controllers.setup.getAddRoles
+GET 	/sendemailnotifications		controllers.MailerService.send
 
 #All methods related to users Dashboard, create a page ,get info from that page, view others pages
 GET		/viewDashboard				controllers.dashboard.viewDashboard
 GET 	/createPage					controllers.dashboard.createPage	    
 POST	/getPageData				controllers.dashboard.getPageData		
-GET		/viewPages					controllers.dashboard.viewPages				
+#POST	/getPageDataUpload			controllers.dashboard.upload
+GET		/viewPages					controllers.dashboard.viewPages	
+GET		/viewMyPages					controllers.dashboard.viewMyPages				
 
 #Methods when user answers a question
 GET   /answer          controllers.answerQuery.getQuestionToAnswer(bookNametemp:String, qsNo: Int)
-
-#Following are for test purposes
-GET		/trial					controllers.HomeController.trialPage
-POST		/trial2					controllers.answerQuery.answerThequestion	
-POST  	/trial1				        controllers.HomeController.upload
-#GET		/trial3					    controllers.MailerService.send()
+GET	  /markCorrectSol  controllers.answerQuery.markWorkingSolution(slno: Int,bookNameTemp: String,working:Int,qsno:Int)
+POST	/answerquestion	controllers.answerQuery.answerThequestion
 
 
 

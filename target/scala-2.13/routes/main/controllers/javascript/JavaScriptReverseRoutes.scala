@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/conf/routes
-// @DATE:Thu Aug 06 12:54:35 IST 2020
+// @DATE:Mon Oct 05 12:41:16 IST 2020
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -30,7 +30,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:38
+  // @LINE:34
   class Reversedashboard(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -38,27 +38,17 @@ package controllers.javascript {
     }
 
   
-    // @LINE:39
-    def createPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.dashboard.createPage",
+    // @LINE:57
+    def viewDashboard: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.dashboard.viewDashboard",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "createPage"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "viewDashboard"})
         }
       """
     )
   
-    // @LINE:40
-    def getPageData: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.dashboard.getPageData",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "getPageData"})
-        }
-      """
-    )
-  
-    // @LINE:41
+    // @LINE:61
     def viewPages: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.dashboard.viewPages",
       """
@@ -68,12 +58,52 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:38
-    def viewDashboard: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.dashboard.viewDashboard",
+    // @LINE:34
+    def changePassWordOne: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.dashboard.changePassWordOne",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "viewDashboard"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "changePasswordByUser"})
+        }
+      """
+    )
+  
+    // @LINE:35
+    def changePasswordTwo: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.dashboard.changePasswordTwo",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "getpasswordForfchangePassword"})
+        }
+      """
+    )
+  
+    // @LINE:59
+    def getPageData: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.dashboard.getPageData",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "getPageData"})
+        }
+      """
+    )
+  
+    // @LINE:58
+    def createPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.dashboard.createPage",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "createPage"})
+        }
+      """
+    )
+  
+    // @LINE:62
+    def viewMyPages: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.dashboard.viewMyPages",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "viewMyPages"})
         }
       """
     )
@@ -100,7 +130,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:44
+  // @LINE:65
   class ReverseanswerQuery(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -108,7 +138,17 @@ package controllers.javascript {
     }
 
   
-    // @LINE:44
+    // @LINE:66
+    def markWorkingSolution: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.answerQuery.markWorkingSolution",
+      """
+        function(slno0,bookNameTemp1,working2,qsno3) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "markCorrectSol" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[Int]].javascriptUnbind + """)("slno", slno0), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("bookNameTemp", bookNameTemp1), (""" + implicitly[play.api.mvc.QueryStringBindable[Int]].javascriptUnbind + """)("working", working2), (""" + implicitly[play.api.mvc.QueryStringBindable[Int]].javascriptUnbind + """)("qsno", qsno3)])})
+        }
+      """
+    )
+  
+    // @LINE:65
     def getQuestionToAnswer: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.answerQuery.getQuestionToAnswer",
       """
@@ -118,12 +158,12 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:48
+    // @LINE:67
     def answerThequestion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.answerQuery.answerThequestion",
       """
         function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "trial2"})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "answerquestion"})
         }
       """
     )
@@ -137,30 +177,6 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
-  
-    // @LINE:49
-    def upload: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.upload",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "trial1"})
-        }
-      """
-    )
-  
-    // @LINE:7
-    def trialPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.trialPage",
-      """
-        function() {
-        
-          if (true) {
-            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "trial"})
-          }
-        
-        }
-      """
-    )
   
     // @LINE:6
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
@@ -194,6 +210,86 @@ package controllers.javascript {
   
   }
 
+  // @LINE:27
+  class ReverseresetPassword(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:29
+    def getOTP: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.resetPassword.getOTP",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "resetPassword/otpverify/resultofotp"})
+        }
+      """
+    )
+  
+    // @LINE:28
+    def sendEmail: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.resetPassword.sendEmail",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "resetPassword/otpverify"})
+        }
+      """
+    )
+  
+    // @LINE:38
+    def sendPasswordChangePage: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.resetPassword.sendPasswordChangePage",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "changePassword"})
+        }
+      """
+    )
+  
+    // @LINE:31
+    def forgetSendPasswordTwo: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.resetPassword.forgetSendPasswordTwo",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "forgotPasswords"})
+        }
+      """
+    )
+  
+    // @LINE:30
+    def forgetSendPasswordOne: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.resetPassword.forgetSendPasswordOne",
+      """
+        function(userEmail0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "inputnewPasswords" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("userEmail", userEmail0)])})
+        }
+      """
+    )
+  
+    // @LINE:27
+    def sendOtpChange: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.resetPassword.sendOtpChange",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "resetPassword"})
+        }
+      """
+    )
+  
+    // @LINE:39
+    def setNewPassword: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.resetPassword.setNewPassword",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "validatePasswordChange"})
+        }
+      """
+    )
+  
+  }
+
   // @LINE:18
   class ReversemeetTheTeam(_prefix: => String) {
 
@@ -201,6 +297,16 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:19
+    def documentation: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.meetTheTeam.documentation",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "documentation"})
+        }
+      """
+    )
   
     // @LINE:18
     def showTeamPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
@@ -214,7 +320,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:21
+  // @LINE:22
   class Reverselogin(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -222,7 +328,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:22
+    // @LINE:23
     def loginValidate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.login.loginValidate",
       """
@@ -232,7 +338,17 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:21
+    // @LINE:24
+    def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.login.logout",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "logout"})
+        }
+      """
+    )
+  
+    // @LINE:22
     def loginPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.login.loginPage",
       """
@@ -244,7 +360,27 @@ package controllers.javascript {
   
   }
 
-  // @LINE:25
+  // @LINE:54
+  class ReverseMailerService(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:54
+    def send: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MailerService.send",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "sendemailnotifications"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:43
   class ReversesignUp(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -252,7 +388,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:30
+    // @LINE:48
     def getSignupInfo: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.signUp.getSignupInfo",
       """
@@ -262,7 +398,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:25
+    // @LINE:43
     def sendSignupSetupPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.signUp.sendSignupSetupPage",
       """
@@ -272,19 +408,9 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:26
-    def sendSignupPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.signUp.sendSignupPage",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "signup"})
-        }
-      """
-    )
-  
   }
 
-  // @LINE:32
+  // @LINE:50
   class Reversesetup(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -292,7 +418,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:32
+    // @LINE:50
     def getSetUpInfo: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.setup.getSetUpInfo",
       """
@@ -302,7 +428,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:35
+    // @LINE:53
     def getAddRoles: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.setup.getAddRoles",
       """
@@ -312,7 +438,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:34
+    // @LINE:52
     def getEmpData: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.setup.getEmpData",
       """

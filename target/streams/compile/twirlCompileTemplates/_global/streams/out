@@ -1,3 +1,3 @@
-[0m[[0m[31merror[0m] [0m[0m[Error] C:\Users\DELL\Desktop\BugTracker\play-samples-play-scala-starter-example\app\views\createUserPage.scala.html:21[0m
-[0m[[0m[31merror[0m] [0m[0m	    <script src=""https://unpkg.com/feather-icons@4.10.0/dist/feather.min.js""></script>: Invalid '@' symbol[0m
+[0m[[0m[31merror[0m] [0m[0m[Error] C:\Users\DELL\Desktop\BugTracker\play-samples-play-scala-starter-example\app\views\errorPageTwo.scala.html:108[0m
+[0m[[0m[31merror[0m] [0m[0m</html>: Expected ending '}'[0m
 [0m[[0m[31merror[0m] [0m[0m(Compile / [31mtwirlCompileTemplates[0m) Twirl compilation failed[0m

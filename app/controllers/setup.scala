@@ -44,7 +44,8 @@ class setup @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
     def getSetUpInfo = Action { implicit request =>
      val postVals = request.body.asFormUrlEncoded
      postVals.map{ args => 
-     val name = args("username").head
+     val nameInitial = args("username").head
+     val name = nameInitial.replace('.','_')
      val orgname = args("org").head
      val domain = args("domain").head
      val sysemail = args("sysemail").head     
@@ -108,7 +109,8 @@ class setup @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
            }catch{
              case x: Throwable => println(x)
            }
-           var str = "LOAD DATA INFILE 'C://Users//DELL//Desktop//BugTracker//play-samples-play-scala-starter-example//app//assets//sysTable//userTable.csv' INTO TABLE csvtable FIELDS TERMINATED BY ',' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS"
+           //var str = "LOAD DATA INFILE 'C://Users//DELL//Desktop//BugTracker//play-samples-play-scala-starter-example//app//assets//sysTable//userTable.csv' INTO TABLE csvtable FIELDS TERMINATED BY ',' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS"
+           var str ="LOAD DATA INFILE path//userTable.csv INTO TABLE csvtable FIELDS TERMINATED BY ',' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS"
            var result: Boolean = SQL(str).execute();
            
           
@@ -137,6 +139,7 @@ class setup @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
            var i = 2
            for( a <- initialUsername){
              var username = (a.split("@"))(0)  + i.toString
+             username = username.replace('.','_')
              println(username)
              val str2 = "update usertable set empusername = '" + username + s"' where EmpUserId <> 1 and empuserid = $i"
              println(str2)
@@ -148,9 +151,16 @@ class setup @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
            str=s"update usertable set empbook = concat(usertable.empusername,'book')";
            result = SQL(str).execute();
            
+           val r1 = SQL("create table qsNO(qsNO int);").execute()
+           val r12 = SQL("insert into qsNo(qsno) values ({qsno})").on(("qsno",0)).execute()
+           
+           val r2 = SQL("create table ansNO(ansNO int);").execute()
+           val r22 = SQL("insert into ansNo(ansno) values ({ansno})").on(("ansno",0)).execute()
+           
            var r :List[String] = {
              SQL("select distinct empdept from usertable").as(get[String]("empdept") *)
            }
+           
            
            
            Ok(views.html.setupPageThree(r))                      
@@ -202,8 +212,8 @@ class setup @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
          //Ok(views.html.loginPage())
          
          //Subject : String, SenderEmail:String, ReceiverEmail : String, body:String
-         //Redirect{routes.MailerService.send()}
-         Redirect{routes.login.loginPage()}
+         Redirect{routes.MailerService.send()}
+         //Redirect{routes.login.loginPage()}
        }.getOrElse(Ok("Something went wrong"))
      }
     

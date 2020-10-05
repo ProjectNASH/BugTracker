@@ -24,7 +24,7 @@
 	</head>
     <body>
 			<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="@routes.HomeController.index">
       <img src="@assetsFinder.path("/images/images.jpeg")" width="45" alt="" class="d-inline-block align-middle rounded-circle mr-1"><span class="image1">BUG TRACKER</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -39,7 +39,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="sidebar-sticky pt-3 part1">
         <ul class="nav flex-column">
           <li class="nav-item">
@@ -49,40 +49,37 @@
             </a><hr class="my-1">
           </li>
           <li>
-            <a class="nav-link hel" href="#">
+            <a class="nav-link hel" href="@routes.dashboard.viewDashboard">
               <span data-feather="airplay"></span>
               Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hel" href="#">
+            <a class="nav-link hel" href="@routes.dashboard.viewMyPages">
               <span data-feather="file"></span>
-              Pages
+              My Queries/Answers
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hel" href="#">
+            <a class="nav-link hel" href="@routes.dashboard.viewPages">
               <span data-feather="help-circle"></span>
-              Questions Asked
+              View All Questions
             </a>
           </li>
         <span style="padding:2%"></span>
         </ul>
-          <a class="nav-link sidebar-heading" href="#">ACCOUNT</a><hr class="my-1">
+          <a class="nav-link sidebar-heading" href="#">
+          ACCOUNT
+          </a>
+          <hr class="my-1">
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link hel" href="#">
+            <a class="nav-link hel" href="@routes.dashboard.changePassWordOne">
               <span data-feather="edit"></span>
               Change password
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link hel" href="#">
-              <span data-feather="trash"></span>
-              Delete Account
-            </a>
-          </li>
+          </li>          
           <li class="nav-item">
             <a class="nav-link hel" href="#">
               <span data-feather="message-square"></span>
@@ -93,11 +90,13 @@
       <div class="space"></div>
       <ul class="navbar-nav px-3 col-12">
         <li class="nav-item text-nowrap d-flex justify-content-center">
-        <a class="nav-link " href="#"><span class="sign">Sign out</span></a>
+        <form class="nav-link " action="@routes.login.logout()" method ="GET"><input type = "submit" class="btn btn-danger" value ="Sign Out"></input></form>
         </li>
       </ul>
       </div>
     </nav>
+    
+    
 		<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Write a Query</h1>
@@ -117,10 +116,12 @@
 				<div class="form-group">
 					<label for="body"><span class="subhead">BODY</span></label><br>
 					<textarea id="body" class="body" name="pageBody"></textarea>
-				</div>
+				</div>				
 			
 			<div><span class="subhead2">Target</span></div>
-
+			<div class="subhead3">
+			Select the team with whom you want to share this query. If none selected, query will be shared with all teams.
+			</div><br>
 			@for(data<-r){
 			<div class="form-check form-check-inline">
 					<input class="form-check-input" type="checkbox" id="@data" value="@data" name="pageTarget">

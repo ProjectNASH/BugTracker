@@ -47,7 +47,7 @@ Seq[Any](format.raw/*4.1*/("""
 	</head>
     <body>
 			<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href=""""),_display_(/*27.62*/routes/*27.68*/.HomeController.index),format.raw/*27.89*/("""">
       <img src=""""),_display_(/*28.18*/assetsFinder/*28.30*/.path("/images/images.jpeg")),format.raw/*28.58*/("""" width="45" alt="" class="d-inline-block align-middle rounded-circle mr-1"><span class="image1">BUG TRACKER</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -62,7 +62,7 @@ Seq[Any](format.raw/*4.1*/("""
 
 <div class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="sidebar-sticky pt-3 part1">
         <ul class="nav flex-column">
           <li class="nav-item">
@@ -72,40 +72,37 @@ Seq[Any](format.raw/*4.1*/("""
             </a><hr class="my-1">
           </li>
           <li>
-            <a class="nav-link hel" href="#">
+            <a class="nav-link hel" href=""""),_display_(/*52.44*/routes/*52.50*/.dashboard.viewDashboard),format.raw/*52.74*/("""">
               <span data-feather="airplay"></span>
               Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hel" href="#">
+            <a class="nav-link hel" href=""""),_display_(/*58.44*/routes/*58.50*/.dashboard.viewMyPages),format.raw/*58.72*/("""">
               <span data-feather="file"></span>
-              Pages
+              My Queries/Answers
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hel" href="#">
+            <a class="nav-link hel" href=""""),_display_(/*64.44*/routes/*64.50*/.dashboard.viewPages),format.raw/*64.70*/("""">
               <span data-feather="help-circle"></span>
-              Questions Asked
+              View All Questions
             </a>
           </li>
         <span style="padding:2%"></span>
         </ul>
-          <a class="nav-link sidebar-heading" href="#">ACCOUNT</a><hr class="my-1">
+          <a class="nav-link sidebar-heading" href="#">
+          ACCOUNT
+          </a>
+          <hr class="my-1">
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link hel" href="#">
+            <a class="nav-link hel" href=""""),_display_(/*78.44*/routes/*78.50*/.dashboard.changePassWordOne),format.raw/*78.78*/("""">
               <span data-feather="edit"></span>
               Change password
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link hel" href="#">
-              <span data-feather="trash"></span>
-              Delete Account
-            </a>
-          </li>
+          </li>          
           <li class="nav-item">
             <a class="nav-link hel" href="#">
               <span data-feather="message-square"></span>
@@ -116,11 +113,13 @@ Seq[Any](format.raw/*4.1*/("""
       <div class="space"></div>
       <ul class="navbar-nav px-3 col-12">
         <li class="nav-item text-nowrap d-flex justify-content-center">
-        <a class="nav-link " href="#"><span class="sign">Sign out</span></a>
+        <form class="nav-link " action=""""),_display_(/*93.42*/routes/*93.48*/.login.logout()),format.raw/*93.63*/("""" method ="GET"><input type = "submit" class="btn btn-danger" value ="Sign Out"></input></form>
         </li>
       </ul>
       </div>
     </nav>
+    
+    
 		<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Write a Query</h1>
@@ -131,27 +130,29 @@ Seq[Any](format.raw/*4.1*/("""
 		</div>
   <div class="card-body">
 		<div class="cotainer">
-			<form name="getPageInfo" action =""""),_display_(/*111.39*/routes/*111.45*/.dashboard.getPageData),format.raw/*111.67*/("""" method="POST">
-			 """),_display_(/*112.6*/helper/*112.12*/.CSRF.formField),format.raw/*112.27*/("""
-				"""),format.raw/*113.5*/("""<div class="form-group">
+			<form name="getPageInfo" action =""""),_display_(/*110.39*/routes/*110.45*/.dashboard.getPageData),format.raw/*110.67*/("""" method="POST">
+			 """),_display_(/*111.6*/helper/*111.12*/.CSRF.formField),format.raw/*111.27*/("""
+				"""),format.raw/*112.5*/("""<div class="form-group">
 					<label for="title"><span class="subhead">TITLE</span></label></br>
 					<input type="text" name="pageName" value="" />
 				</div>
 				<div class="form-group">
 					<label for="body"><span class="subhead">BODY</span></label><br>
 					<textarea id="body" class="body" name="pageBody"></textarea>
-				</div>
+				</div>				
 			
 			<div><span class="subhead2">Target</span></div>
-
-			"""),_display_(/*124.5*/for(data<-r) yield /*124.17*/{_display_(Seq[Any](format.raw/*124.18*/("""
-			"""),format.raw/*125.4*/("""<div class="form-check form-check-inline">
-					<input class="form-check-input" type="checkbox" id=""""),_display_(/*126.59*/data),format.raw/*126.63*/("""" value=""""),_display_(/*126.73*/data),format.raw/*126.77*/("""" name="pageTarget">
-					<label class="form-check-label" for=""""),_display_(/*127.44*/data),format.raw/*127.48*/("""">"""),_display_(/*127.51*/data),format.raw/*127.55*/("""</label>
+			<div class="subhead3">
+			Select the team with whom you want to share this query. If none selected, query will be shared with all teams.
+			</div><br>
+			"""),_display_(/*125.5*/for(data<-r) yield /*125.17*/{_display_(Seq[Any](format.raw/*125.18*/("""
+			"""),format.raw/*126.4*/("""<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id=""""),_display_(/*127.59*/data),format.raw/*127.63*/("""" value=""""),_display_(/*127.73*/data),format.raw/*127.77*/("""" name="pageTarget">
+					<label class="form-check-label" for=""""),_display_(/*128.44*/data),format.raw/*128.48*/("""">"""),_display_(/*128.51*/data),format.raw/*128.55*/("""</label>
 			</div>
-			""")))}),format.raw/*129.5*/("""
+			""")))}),format.raw/*130.5*/("""
 
-			"""),format.raw/*131.4*/("""<div class="row">
+			"""),format.raw/*132.4*/("""<div class="row">
 				<div class="col-lg-9 col-md-7 col-sm-12"><span class="page"></span></div>
 				<div class="col-lg-3 col-md-5 col-sm-12  justify-content-center">	
 						<div class="btn-toolbar mb-2 mb-md-0">
@@ -178,11 +179,11 @@ Seq[Any](format.raw/*4.1*/("""
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 		<script src="track.js">
-		(function () """),format.raw/*158.16*/("""{"""),format.raw/*158.17*/("""
-	          """),format.raw/*159.12*/("""'use strict'
+		(function () """),format.raw/*159.16*/("""{"""),format.raw/*159.17*/("""
+	          """),format.raw/*160.12*/("""'use strict'
 
 	        feather.replace()
-	              """),format.raw/*162.16*/("""}"""),format.raw/*162.17*/("""())
+	              """),format.raw/*163.16*/("""}"""),format.raw/*163.17*/("""())
 		</script>
     </body>  
      
@@ -206,11 +207,11 @@ Seq[Any](format.raw/*4.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-08-04T15:04:29.078
+                  DATE: 2020-08-25T00:31:16.871
                   SOURCE: C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/app/views/createUserPage.scala.html
-                  HASH: 3eec8a93d830730060fd147a5f1a36e428a7d52f
-                  MATRIX: 801->36|953->117|997->133|1024->134|1842->925|1863->937|1935->987|2022->1047|2043->1059|2112->1106|2199->1166|2220->1178|2289->1225|2349->1258|2370->1270|2437->1316|2521->1373|2542->1385|2600->1421|2973->1767|2994->1779|3043->1807|6300->5036|6316->5042|6360->5064|6409->5086|6425->5092|6462->5107|6495->5112|6917->5507|6946->5519|6986->5520|7018->5524|7147->5625|7173->5629|7211->5639|7237->5643|7329->5707|7355->5711|7386->5714|7412->5718|7466->5741|7499->5746|8757->6975|8787->6976|8828->6988|8913->7044|8943->7045
-                  LINES: 21->2|24->3|27->4|28->5|38->15|38->15|38->15|39->16|39->16|39->16|40->17|40->17|40->17|41->18|41->18|41->18|43->20|43->20|43->20|51->28|51->28|51->28|134->111|134->111|134->111|135->112|135->112|135->112|136->113|147->124|147->124|147->124|148->125|149->126|149->126|149->126|149->126|150->127|150->127|150->127|150->127|152->129|154->131|181->158|181->158|182->159|185->162|185->162
+                  HASH: 9eeb45c115d7261fa8ed9b98addbba3315c1ffcd
+                  MATRIX: 801->36|953->117|997->133|1024->134|1842->925|1863->937|1935->987|2022->1047|2043->1059|2112->1106|2199->1166|2220->1178|2289->1225|2349->1258|2370->1270|2437->1316|2521->1373|2542->1385|2600->1421|2953->1747|2968->1753|3010->1774|3057->1794|3078->1806|3127->1834|4157->2837|4172->2843|4217->2867|4430->3053|4445->3059|4488->3081|4707->3273|4722->3279|4763->3299|5217->3726|5232->3732|5281->3760|5820->4272|5835->4278|5871->4293|6752->5146|6768->5152|6812->5174|6861->5196|6877->5202|6914->5217|6947->5222|7526->5774|7555->5786|7595->5787|7627->5791|7756->5892|7782->5896|7820->5906|7846->5910|7938->5974|7964->5978|7995->5981|8021->5985|8075->6008|8108->6013|9366->7242|9396->7243|9437->7255|9522->7311|9552->7312
+                  LINES: 21->2|24->3|27->4|28->5|38->15|38->15|38->15|39->16|39->16|39->16|40->17|40->17|40->17|41->18|41->18|41->18|43->20|43->20|43->20|50->27|50->27|50->27|51->28|51->28|51->28|75->52|75->52|75->52|81->58|81->58|81->58|87->64|87->64|87->64|101->78|101->78|101->78|116->93|116->93|116->93|133->110|133->110|133->110|134->111|134->111|134->111|135->112|148->125|148->125|148->125|149->126|150->127|150->127|150->127|150->127|151->128|151->128|151->128|151->128|153->130|155->132|182->159|182->159|183->160|186->163|186->163
                   -- GENERATED --
               */
           

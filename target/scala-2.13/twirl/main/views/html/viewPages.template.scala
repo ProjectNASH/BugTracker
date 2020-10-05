@@ -15,10 +15,10 @@ import play.api.templates.PlayMagic._
 import play.api.mvc._
 import play.api.data._
 
-object viewPages extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[Map[String, List[scala.Tuple3[Int, String, String]]],RequestHeader,AssetsFinder,play.twirl.api.HtmlFormat.Appendable] {
+object viewPages extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template5[Map[String, List[scala.Tuple3[Int, String, String]]],String,String,RequestHeader,AssetsFinder,play.twirl.api.HtmlFormat.Appendable] {
 
   /* viewPages Template File */
-  def apply/*2.2*/(userToBookMap : Map[String,List[(Int,String,String)]])(implicit request: RequestHeader, assetsFinder: AssetsFinder):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*2.2*/(userToBookMap : Map[String,List[(Int,String,String)]], myall: String,temp:String)(implicit request: RequestHeader, assetsFinder: AssetsFinder):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*3.2*/import helper._
@@ -44,24 +44,19 @@ Seq[Any](format.raw/*4.1*/("""
     <body>
 			
 	<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href=""""),_display_(/*24.62*/routes/*24.68*/.dashboard.viewDashboard),format.raw/*24.92*/("""">
       <img src=""""),_display_(/*25.18*/assetsFinder/*25.30*/.path("/images/images.jpeg")),format.raw/*25.58*/("""" width="45" alt="" class="d-inline-block align-middle rounded-circle mr-1"><span class="image1">BUG TRACKER</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <ul class="navbar-nav px-3">
-    <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#">Home</a>
-    </li>
-  </ul>
+
   
 </nav>
 <div class="container-fluid">
  
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="sidebar-sticky pt-3 part1">
-	  <div class="space"></div>
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link sidebar-heading" href="#">
@@ -70,51 +65,48 @@ Seq[Any](format.raw/*4.1*/("""
             </a><hr class="my-1">
           </li>
           <li>
-            <a class="nav-link hel" href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg>
+            <a class="nav-link hel" href=""""),_display_(/*45.44*/routes/*45.50*/.dashboard.viewDashboard),format.raw/*45.74*/("""">
+              <span data-feather="airplay"></span>
               Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hel" href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-              Pages
+            <a class="nav-link hel" href=""""),_display_(/*51.44*/routes/*51.50*/.dashboard.viewMyPages),format.raw/*51.72*/("""">
+              <span data-feather="file"></span>
+              My Queries/Answers
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hel" href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12" y2="17"></line></svg>
-              Questions Asked
+            <a class="nav-link hel" href=""""),_display_(/*57.44*/routes/*57.50*/.dashboard.viewPages),format.raw/*57.70*/("""">
+              <span data-feather="help-circle"></span>
+              View All Questions
             </a>
           </li>
         <span style="padding:2%"></span>
         </ul>
-          <a class="nav-link sidebar-heading" href="#">ACCOUNT</a><hr class="my-1">
-        
+          <a class="nav-link sidebar-heading" href="#">
+          ACCOUNT
+          </a>
+          <hr class="my-1">
+        </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link hel" href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg>
+            <a class="nav-link hel" href=""""),_display_(/*71.44*/routes/*71.50*/.dashboard.changePassWordOne),format.raw/*71.78*/("""">
+              <span data-feather="edit"></span>
               Change password
             </a>
-          </li>
+          </li>          
           <li class="nav-item">
             <a class="nav-link hel" href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-              Delete Account
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link hel" href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <span data-feather="message-square"></span>
               FAQ
             </a>
           </li>
         </ul>
-       
+      <div class="space"></div>
       <ul class="navbar-nav px-3 col-12">
         <li class="nav-item text-nowrap d-flex justify-content-center">
-        <a class="nav-link " href="#"><span class="sign">Sign out</span></a>
+        <form class="nav-link " action=""""),_display_(/*86.42*/routes/*86.48*/.login.logout()),format.raw/*86.63*/("""" method ="GET"><input type = "submit" class="btn btn-danger" value ="Sign Out"></input></form>
         </li>
       </ul>
       </div>
@@ -122,22 +114,22 @@ Seq[Any](format.raw/*4.1*/("""
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">ALL Queries</h1>
+        <h1 class="h2">"""),_display_(/*94.25*/myall),format.raw/*94.30*/(""" """),format.raw/*94.31*/("""Queries</h1>
       </div>
       
-      """),_display_(/*105.8*/for((name,infoList)<-userToBookMap) yield /*105.43*/{_display_(Seq[Any](format.raw/*105.44*/("""
- """),_display_(/*106.3*/for((qsNo,pageName,pageTarget)<-infoList) yield /*106.44*/{_display_(Seq[Any](format.raw/*106.45*/("""
-"""),format.raw/*107.1*/("""<div class="card">
+      """),_display_(/*97.8*/for((name,infoList)<-userToBookMap) yield /*97.43*/{_display_(Seq[Any](format.raw/*97.44*/("""
+ """),_display_(/*98.3*/for((qsNo,pageName,pageTarget)<-infoList) yield /*98.44*/{_display_(Seq[Any](format.raw/*98.45*/("""
+"""),format.raw/*99.1*/("""<div class="card">
 		<div class="card-header">
 			<div class="row">
-				<div class="col-lg-9 col-md-7 col-sm-12 d-flex justify-content-start"><span class="page" style ="display:inline;">"""),_display_(/*110.120*/pageName),format.raw/*110.128*/("""</span></div>
+				<div class="col-lg-9 col-md-7 col-sm-12 d-flex justify-content-start"><span class="page" style ="display:inline;">"""),_display_(/*102.120*/pageName),format.raw/*102.128*/("""</span></div>
 				<div class="col-lg-3 col-md-5 col-sm-12  justify-content-center">	
 						<div class="btn-toolbar mb-2 mb-md-0">
 							<form action="answer" method="GET">
-							<input type ="text" name = "bookNametemp"  value="""),_display_(/*114.58*/name),format.raw/*114.62*/(""" """),format.raw/*114.63*/("""style ="visibility:hidden">
-  			 				<input type ="number" name = "qsNo"  value="""),_display_(/*115.55*/qsNo),format.raw/*115.59*/(""" """),format.raw/*115.60*/("""style ="visibility:hidden"> 
-  			 				<input type ="text" name = "pageTarget"  value="""),_display_(/*116.59*/pageTarget),format.raw/*116.69*/(""" """),format.raw/*116.70*/("""style ="visibility:hidden"> 
-							<input type="submit" class="btn  btn-success btn-sm" value ="Ans" id="Ans">
+							<input type ="text" name = "bookNametemp"  value="""),_display_(/*106.58*/name),format.raw/*106.62*/(""" """),format.raw/*106.63*/("""style ="visibility:hidden">
+  			 				<input type ="number" name = "qsNo"  value="""),_display_(/*107.55*/qsNo),format.raw/*107.59*/(""" """),format.raw/*107.60*/("""style ="visibility:hidden"> 
+  			 				<input type ="text" name = "pageTarget"  value="""),_display_(/*108.59*/pageTarget),format.raw/*108.69*/(""" """),format.raw/*108.70*/("""style ="visibility:hidden"> 
+							<input type="submit" class="btn  btn-success btn-sm" value =""""),_display_(/*109.70*/temp),format.raw/*109.74*/("""" id="Ans">
 								
 								
 							</form>
@@ -152,23 +144,23 @@ Seq[Any](format.raw/*4.1*/("""
   <div class="inner1">
 	<div class="row">
 		<div class="card-text col-sm-3 font-weight-bolder text-wrap"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem"> Created By</span></div>
-		<div class="col-sm-9"><span class="me"> """),_display_(/*132.44*/name),format.raw/*132.48*/("""</span></div>
+		<div class="col-sm-9"><span class="me"> """),_display_(/*124.44*/name),format.raw/*124.48*/("""</span></div>
 
 	</div>
 		<div class="space"></div>
 	<div class="row">
 		<div class="card-text col-sm-3 font-weight-bold"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem">Target</span></div>
-		<div class="col-sm-9"><span class="me">"""),_display_(/*138.43*/pageTarget),format.raw/*138.53*/("""</span></div>
+		<div class="col-sm-9"><span class="me">"""),_display_(/*130.43*/pageTarget),format.raw/*130.53*/("""</span></div>
 	</div>
   </div>
   </div>
   </div>
 	</div>
 	<div class="space"></div>
-	""")))}),format.raw/*145.3*/("""
-""")))}),format.raw/*146.2*/("""
+	""")))}),format.raw/*137.3*/("""
+""")))}),format.raw/*138.2*/("""
 	 
-	"""),format.raw/*148.2*/("""<div class="container space"></div>		
+	"""),format.raw/*140.2*/("""<div class="container space"></div>		
 			
 			
 			
@@ -188,9 +180,9 @@ Seq[Any](format.raw/*4.1*/("""
     }
   }
 
-  def render(userToBookMap:Map[String, List[scala.Tuple3[Int, String, String]]],request:RequestHeader,assetsFinder:AssetsFinder): play.twirl.api.HtmlFormat.Appendable = apply(userToBookMap)(request,assetsFinder)
+  def render(userToBookMap:Map[String, List[scala.Tuple3[Int, String, String]]],myall:String,temp:String,request:RequestHeader,assetsFinder:AssetsFinder): play.twirl.api.HtmlFormat.Appendable = apply(userToBookMap,myall,temp)(request,assetsFinder)
 
-  def f:((Map[String, List[scala.Tuple3[Int, String, String]]]) => (RequestHeader,AssetsFinder) => play.twirl.api.HtmlFormat.Appendable) = (userToBookMap) => (request,assetsFinder) => apply(userToBookMap)(request,assetsFinder)
+  def f:((Map[String, List[scala.Tuple3[Int, String, String]]],String,String) => (RequestHeader,AssetsFinder) => play.twirl.api.HtmlFormat.Appendable) = (userToBookMap,myall,temp) => (request,assetsFinder) => apply(userToBookMap,myall,temp)(request,assetsFinder)
 
   def ref: this.type = this
 
@@ -199,11 +191,11 @@ Seq[Any](format.raw/*4.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-08-06T17:10:27.143
+                  DATE: 2020-08-24T17:53:48.762
                   SOURCE: C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/app/views/viewPages.scala.html
-                  HASH: de8d8efff0f66409fb85e69462f816f04c75d491
-                  MATRIX: 831->31|1020->149|1064->165|1091->166|1570->618|1591->630|1651->669|1754->745|1775->757|1847->807|1934->867|1955->879|2024->926|2111->986|2132->998|2201->1045|2261->1078|2282->1090|2349->1136|2644->1404|2665->1416|2714->1444|7394->6097|7446->6132|7486->6133|7516->6136|7574->6177|7614->6178|7643->6179|7859->6366|7890->6374|8148->6604|8174->6608|8204->6609|8314->6691|8340->6695|8370->6696|8485->6783|8517->6793|8547->6794|9077->7296|9103->7300|9387->7556|9419->7566|9536->7652|9569->7654|9602->7659
-                  LINES: 21->2|24->3|27->4|28->5|34->11|34->11|34->11|35->12|35->12|35->12|36->13|36->13|36->13|37->14|37->14|37->14|38->15|38->15|38->15|48->25|48->25|48->25|128->105|128->105|128->105|129->106|129->106|129->106|130->107|133->110|133->110|137->114|137->114|137->114|138->115|138->115|138->115|139->116|139->116|139->116|155->132|155->132|161->138|161->138|168->145|169->146|171->148
+                  HASH: 9b3a0d37657f0b78bcc30af716829089f40773a7
+                  MATRIX: 845->31|1061->176|1105->192|1132->193|1611->645|1632->657|1692->696|1795->772|1816->784|1888->834|1975->894|1996->906|2065->953|2152->1013|2173->1025|2242->1072|2302->1105|2323->1117|2390->1163|2665->1411|2680->1417|2725->1441|2772->1461|2793->1473|2842->1501|3743->2375|3758->2381|3803->2405|4016->2591|4031->2597|4074->2619|4293->2811|4308->2817|4349->2837|4803->3264|4818->3270|4867->3298|5406->3810|5421->3816|5457->3831|5848->4195|5874->4200|5903->4201|5969->4241|6020->4276|6059->4277|6088->4280|6145->4321|6184->4322|6212->4323|6428->4510|6459->4518|6717->4748|6743->4752|6773->4753|6883->4835|6909->4839|6939->4840|7054->4927|7086->4937|7116->4938|7242->5036|7268->5040|7698->5442|7724->5446|8008->5702|8040->5712|8157->5798|8190->5800|8223->5805
+                  LINES: 21->2|24->3|27->4|28->5|34->11|34->11|34->11|35->12|35->12|35->12|36->13|36->13|36->13|37->14|37->14|37->14|38->15|38->15|38->15|47->24|47->24|47->24|48->25|48->25|48->25|68->45|68->45|68->45|74->51|74->51|74->51|80->57|80->57|80->57|94->71|94->71|94->71|109->86|109->86|109->86|117->94|117->94|117->94|120->97|120->97|120->97|121->98|121->98|121->98|122->99|125->102|125->102|129->106|129->106|129->106|130->107|130->107|130->107|131->108|131->108|131->108|132->109|132->109|147->124|147->124|153->130|153->130|160->137|161->138|163->140
                   -- GENERATED --
               */
           

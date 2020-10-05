@@ -34,8 +34,7 @@ class login @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
   def loginValidate = Action{ implicit request =>
    val postVals = request.body.asFormUrlEncoded
    postVals.map{ args => 
-     
-     var username ="";
+      var username ="";
      //if you get Exception then you got Username
      // if you do not get Exception you get Email
      try{
@@ -50,7 +49,13 @@ class login @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
        catch{
          case x:Throwable => 
          println(x)
-         Ok("Mysql Server is not Running. Switch on MySQL server and reload Page.")
+         val title = "SERVER OFFLINE"
+         val head = "SERVER IS OFFLINE"
+         val time = "10"
+         val body = s"Looks like MySQL server is offline.\n Ask System Admin to start MySQL server. Redirecting to homepage"
+         val url = "/"         
+         Ok(views.html.errorPageTwo(time,title,head,body,url))
+         //Ok("Mysql Server is not Running. Switch on MySQL server and reload Page.")
        }
      }
      catch{
@@ -86,12 +91,24 @@ class login @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
             Redirect{routes.dashboard.viewDashboard()}.withSession("username"->username);          
           }
           else{
-              Ok("you have not entered the right password")
+             val title = "No User"
+             val head = "No such user exists"
+             val time = "7"
+             val body = s"No such user exists. Check your email/username/password.Redirecting to login page"
+             val url = "/"           
+             Ok(views.html.errorPageTwo(time,title,head,body,url))
+              //Ok("you have not entered the right password")
           }
         }
         else
         {
-          Ok("No such User exists!!")
+           val title = "No User"
+           val head = "No such user exists"
+           val time = "7"
+           val body = s"No such user exists. Check your email/username/password.Redirecting to login page"
+           val url = "/login"         
+           Ok(views.html.errorPageTwo(time,title,head,body,url))
+          //Ok("No such User exists!!")
           //Redirect{routes.login.loginPage()}
         }
        }
@@ -99,13 +116,24 @@ class login @Inject()(db: Database,cc: ControllerComponents) (implicit assetsFin
      catch{
        case x:Throwable => 
          println(x)
-         Ok("Mysql Server is not Running. Switch on MySQL server and reload Page.")
+         val title = "SERVER OFFLINE"
+         val head = "SERVER IS OFFLINE"
+         val time = "10"
+         val body = s"Looks like MySQL server is offline.\n Ask System Admin to start MySQL server. Redirecting to homepage"
+         val url = "/"         
+         Ok(views.html.errorPageTwo(time,title,head,body,url))
+         //Ok("Mysql Server is not Running. Switch on MySQL server and reload Page.")
      }
      
      
-    }.getOrElse(Ok("Something went wrong with postVals"))
+    }.getOrElse(Ok(views.html.errorPageThree(500,"Oops","Something went wrong. Automatic Redirect","5","/login")))
+    
   }
   
+  
+  def logout = Action{ 
+      Redirect(routes.HomeController.index).withNewSession    
+   }
   
   
 }

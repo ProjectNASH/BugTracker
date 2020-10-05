@@ -23,24 +23,41 @@ class signUp  @Inject()(db: Database,cc: ControllerComponents) (implicit assetsF
   extends AbstractController(cc) {
   
   def sendSignupSetupPage = Action { implicit request=>
-    db.withConnection { implicit connection => 
-     try{
-       val str = s"select * from usertable";
-       val result = SQL(str).execute();
-       Ok("Hey BigTracker has already been setup.Login/Sign in")
-       
-     }
-     catch{       
-       case x: Throwable =>
-         println("Looks like BugTracker has not been setup")
-         Ok(views.html.signupPage())
-     }
-    }  
+    try{
+      db.withConnection { implicit connection => 
+       try{
+         val str = s"select * from usertable";
+         val result = SQL(str).execute();
+         val title = "BT Database Exsits"
+         val head = "OOPS Database alrady Exists"
+         val time = "10"
+         val body = s"Looks like a BugTracker Database has been already setup on this server.\n You will be redirected to login page in $time seconds "
+         val url = "/login"         
+         Ok(views.html.errorPageTwo(time,title,head,body,url))
+         
+       }
+       catch{       
+         case x: Throwable =>
+           println("Looks like BugTracker has not been setup")
+           Ok(views.html.signupPage())
+       }
+      }
+    }
+    catch{
+      case x: Throwable =>
+           println("Server Offline")
+           val title = "MYSQL Server offline"
+           val head = "MYSQL Server Offline"
+           val time = "7"
+           val body = s"Looks like your MySQL server is offline. Start your MySQL server. (For Windows: MYSQL80 service may be switched off) "
+           val url = "/" 
+           Ok(views.html.errorPageTwo(time,title,head,body,url))
+    }
   }
   
-  def sendSignupPage = Action { implicit request=>
+  /*def sendSignupPage = Action { implicit request=>
     Ok(views.html.signupPage())
-  }
+  }*/
   
   def getSignupInfo = Action{ implicit request =>
     val postVals = request.body.asFormUrlEncoded
@@ -91,14 +108,22 @@ class signUp  @Inject()(db: Database,cc: ControllerComponents) (implicit assetsF
            if(flag == 1){
              Ok(views.html.loginPage()) 
            }  
-           else
-             Ok(views.html.setupPageOne())    
+           else{
+             //Ok(views.html.setupPageOne())
+             Ok(views.html.setupPageTwo())   
+           }    
+          
          }
          else{
-           Ok("Email already exists!")
+           val title = "Username Exists in database"
+           val head = "Username Exists in database"
+           val time = "5"
+           val body = s"Username already exists. Automatic Redirect"
+           val url = "/" 
+           Ok(views.html.errorPageTwo(time,title,head,body,url))
+           //Ok("Email already exists!")
          }
-       }
-       
+       }       
        
        
     }.getOrElse(Ok("Something went wrong with postVals"))

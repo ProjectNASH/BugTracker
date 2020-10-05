@@ -8,5 +8,10 @@ import java.nio.file.{Files, Paths}
 
 object MethodsForSetup {
   
-
+  def funcCall(): Unit = {
+    for(i<- 0 to 10){
+      Thread.sleep(100)  
+      println(i)
+    }
+  }
 }

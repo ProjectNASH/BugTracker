@@ -1,7 +1,7 @@
-2020-08-06 12:36:30,472 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-8 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 12:36:30,487 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
-2020-08-06 12:36:30,513 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-8 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 12:36:31,305 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 11:20:44,805 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-55 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 11:20:44,832 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-55 - Creating Pool for datasource 'default'
+2020-10-05 11:20:44,886 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-55 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 11:20:45,644 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-55 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -9,194 +9,12 @@
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 12:36:31,313 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev) (no global state)
-2020-08-06 12:51:09,040 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-21 - 
-
-! @7gkih5p7i - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
- found   : Any
- required: play.api.mvc.Result]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 12:52:22,712 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-24 - 
-
-! @7gkiha4jp - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
- found   : Any
- required: play.api.mvc.Result]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 12:53:15,399 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-24 - 
-
-! @7gkihd4hn - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
- found   : Any
- required: play.api.mvc.Result]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 12:53:50,830 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-24 - 
-
-! @7gkihf533 - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value answerThequestion is not a member of controllers.ReverseanswerQuery]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 12:55:01,392 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-8 - Shutting down connection pool.
-2020-08-06 12:55:02,672 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-25 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 12:55:02,672 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-25 - Creating Pool for datasource 'default'
-2020-08-06 12:55:02,673 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-25 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 12:55:03,155 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-25 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 11:20:45,650 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-55 - Application started (Dev) (no global state)
+2020-10-05 11:30:53,971 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-16 - Shutting down connection pool.
+2020-10-05 11:30:55,199 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-112 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 11:30:55,200 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-112 - Creating Pool for datasource 'default'
+2020-10-05 11:30:55,201 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-112 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 11:30:55,531 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-112 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -204,12 +22,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value answerTheq
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 12:55:03,158 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-25 - Application started (Dev) (no global state)
-2020-08-06 12:55:42,074 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-8 - Shutting down connection pool.
-2020-08-06 12:55:42,925 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-19 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 12:55:42,925 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-19 - Creating Pool for datasource 'default'
-2020-08-06 12:55:42,926 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-19 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 12:55:43,176 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-19 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 11:30:55,547 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-112 - Application started (Dev) (no global state)
+2020-10-05 11:36:58,144 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-6 - Shutting down connection pool.
+2020-10-05 11:36:59,658 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-126 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 11:36:59,659 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-126 - Creating Pool for datasource 'default'
+2020-10-05 11:36:59,659 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-126 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 11:36:59,956 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-126 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -217,12 +35,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value answerTheq
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 12:55:43,180 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-19 - Application started (Dev) (no global state)
-2020-08-06 12:59:07,122 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-11 - Shutting down connection pool.
-2020-08-06 12:59:07,838 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-21 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 12:59:07,838 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-21 - Creating Pool for datasource 'default'
-2020-08-06 12:59:07,838 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-21 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 12:59:08,136 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-21 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 11:36:59,963 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-126 - Application started (Dev) (no global state)
+2020-10-05 11:37:53,683 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-8 - Shutting down connection pool.
+2020-10-05 11:37:54,317 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-126 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 11:37:54,318 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-126 - Creating Pool for datasource 'default'
+2020-10-05 11:37:54,318 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-126 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 11:37:54,617 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-126 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -230,12 +48,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value answerTheq
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 12:59:08,141 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-21 - Application started (Dev) (no global state)
-2020-08-06 13:01:35,073 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-13 - Shutting down connection pool.
-2020-08-06 13:01:35,392 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-21 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 13:01:35,393 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-21 - Creating Pool for datasource 'default'
-2020-08-06 13:01:35,393 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-21 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 13:01:35,595 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-21 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 11:37:54,619 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-126 - Application started (Dev) (no global state)
+2020-10-05 12:34:54,923 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-21 - Shutting down connection pool.
+2020-10-05 12:34:55,504 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-195 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:34:55,505 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-195 - Creating Pool for datasource 'default'
+2020-10-05 12:34:55,506 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-195 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:34:55,697 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-195 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -243,12 +61,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value answerTheq
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 13:01:35,599 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-21 - Application started (Dev) (no global state)
-2020-08-06 13:03:17,887 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-12 - Shutting down connection pool.
-2020-08-06 13:03:18,331 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-69 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 13:03:18,331 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-69 - Creating Pool for datasource 'default'
-2020-08-06 13:03:18,332 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-69 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 13:03:18,538 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-69 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:34:55,699 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-195 - Application started (Dev) (no global state)
+2020-10-05 12:35:17,737 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-10 - Shutting down connection pool.
+2020-10-05 12:35:18,278 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-193 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:35:18,278 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-193 - Creating Pool for datasource 'default'
+2020-10-05 12:35:18,279 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-193 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:35:18,500 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-193 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -256,12 +74,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value answerTheq
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 13:03:18,542 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-69 - Application started (Dev) (no global state)
-2020-08-06 13:12:08,873 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-12 - Shutting down connection pool.
-2020-08-06 13:12:09,383 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-106 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 13:12:09,384 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-106 - Creating Pool for datasource 'default'
-2020-08-06 13:12:09,385 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-106 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 13:12:09,634 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-106 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:35:18,506 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-193 - Application started (Dev) (no global state)
+2020-10-05 12:35:50,339 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-9 - Shutting down connection pool.
+2020-10-05 12:35:50,748 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-197 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:35:50,749 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-197 - Creating Pool for datasource 'default'
+2020-10-05 12:35:50,749 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-197 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:35:50,938 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-197 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -269,12 +87,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value answerTheq
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 13:12:09,639 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-106 - Application started (Dev) (no global state)
-2020-08-06 13:26:51,457 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-10 - Shutting down connection pool.
-2020-08-06 13:26:51,935 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-124 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 13:26:51,935 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-124 - Creating Pool for datasource 'default'
-2020-08-06 13:26:51,936 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-124 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 13:26:52,216 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-124 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:35:50,941 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-197 - Application started (Dev) (no global state)
+2020-10-05 12:37:13,441 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-9 - Shutting down connection pool.
+2020-10-05 12:37:14,034 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-196 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:37:14,034 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-196 - Creating Pool for datasource 'default'
+2020-10-05 12:37:14,035 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-196 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:37:14,220 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-196 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -282,12 +100,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value answerTheq
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 13:26:52,228 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-124 - Application started (Dev) (no global state)
-2020-08-06 13:34:19,035 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-13 - Shutting down connection pool.
-2020-08-06 13:34:19,453 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-151 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 13:34:19,454 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-151 - Creating Pool for datasource 'default'
-2020-08-06 13:34:19,454 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-151 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 13:34:19,714 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-151 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:37:14,223 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-196 - Application started (Dev) (no global state)
+2020-10-05 12:37:59,713 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-9 - Shutting down connection pool.
+2020-10-05 12:38:00,118 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-193 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:38:00,118 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-193 - Creating Pool for datasource 'default'
+2020-10-05 12:38:00,118 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-193 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:38:00,276 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-193 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -295,12 +113,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value answerTheq
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 13:34:19,716 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-151 - Application started (Dev) (no global state)
-2020-08-06 13:44:12,828 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-11 - Shutting down connection pool.
-2020-08-06 13:44:13,434 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-174 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 13:44:13,435 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-174 - Creating Pool for datasource 'default'
-2020-08-06 13:44:13,435 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-174 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 13:44:13,787 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-174 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:38:00,278 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-193 - Application started (Dev) (no global state)
+2020-10-05 12:38:37,296 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-9 - Shutting down connection pool.
+2020-10-05 12:38:37,799 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-197 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:38:37,799 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-197 - Creating Pool for datasource 'default'
+2020-10-05 12:38:37,799 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-197 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:38:38,064 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-197 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -308,56 +126,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value answerTheq
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 13:44:13,790 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-174 - Application started (Dev) (no global state)
-2020-08-06 13:54:16,300 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-189 - 
-
-! @7gkipdc11 - Internal server error, for (GET) [/trial1] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[(String, Seq[String]) does not take parameters]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 13:54:39,502 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-11 - Shutting down connection pool.
-2020-08-06 13:54:39,860 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-190 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 13:54:39,860 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-190 - Creating Pool for datasource 'default'
-2020-08-06 13:54:39,861 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-190 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 13:54:40,036 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-190 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:38:38,066 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-197 - Application started (Dev) (no global state)
+2020-10-05 12:41:27,803 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-10 - Shutting down connection pool.
+2020-10-05 12:41:28,145 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-242 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:41:28,145 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-242 - Creating Pool for datasource 'default'
+2020-10-05 12:41:28,146 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-242 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:41:28,461 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-242 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -365,188 +139,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[(String, Seq[Str
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 13:54:40,038 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-190 - Application started (Dev) (no global state)
-2020-08-06 13:57:06,168 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-206 - 
-
-! @7gkipn35p - Internal server error, for (GET) [/trial1] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value file is not a member of play.api.mvc.AnyContent]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 13:57:08,857 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-205 - 
-
-! @7gkipn7d2 - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value file is not a member of play.api.mvc.AnyContent]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 13:57:41,355 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-212 - 
-
-! @7gkipp3f1 - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value file is not a member of play.api.mvc.AnyContent]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 13:59:33,069 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-205 - 
-
-! @7gkj05clj - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[Unmatched closing brace '}' ignored here]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 13:59:54,432 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-7 - Shutting down connection pool.
-2020-08-06 13:59:54,795 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-224 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 13:59:54,796 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-224 - Creating Pool for datasource 'default'
-2020-08-06 13:59:54,796 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-224 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 13:59:54,966 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-224 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:41:28,464 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-242 - Application started (Dev) (no global state)
+2020-10-05 12:42:02,021 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-10 - Shutting down connection pool.
+2020-10-05 12:42:02,377 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-248 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:42:02,378 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-248 - Creating Pool for datasource 'default'
+2020-10-05 12:42:02,378 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-248 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:42:02,579 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-248 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -554,12 +152,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[Unmatched closin
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 13:59:54,968 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-224 - Application started (Dev) (no global state)
-2020-08-06 14:01:31,274 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-23 - Shutting down connection pool.
-2020-08-06 14:01:31,951 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-205 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 14:01:31,951 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-205 - Creating Pool for datasource 'default'
-2020-08-06 14:01:31,951 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-205 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 14:01:32,515 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-205 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:42:02,582 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-248 - Application started (Dev) (no global state)
+2020-10-05 12:43:35,537 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-10 - Shutting down connection pool.
+2020-10-05 12:43:35,976 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-247 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:43:35,977 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-247 - Creating Pool for datasource 'default'
+2020-10-05 12:43:35,977 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-247 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:43:36,274 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-247 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -567,12 +165,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[Unmatched closin
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 14:01:32,518 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-205 - Application started (Dev) (no global state)
-2020-08-06 14:03:41,642 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-17 - Shutting down connection pool.
-2020-08-06 14:03:42,002 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-226 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 14:03:42,003 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-226 - Creating Pool for datasource 'default'
-2020-08-06 14:03:42,003 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-226 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 14:03:42,180 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-226 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:43:36,276 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-247 - Application started (Dev) (no global state)
+2020-10-05 12:44:10,665 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-9 - Shutting down connection pool.
+2020-10-05 12:44:11,029 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-242 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:44:11,029 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-242 - Creating Pool for datasource 'default'
+2020-10-05 12:44:11,029 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-242 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:44:11,184 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-242 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -580,12 +178,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[Unmatched closin
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 14:03:42,185 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-226 - Application started (Dev) (no global state)
-2020-08-06 14:04:48,747 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-8 - Shutting down connection pool.
-2020-08-06 14:04:49,084 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-205 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 14:04:49,084 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-205 - Creating Pool for datasource 'default'
-2020-08-06 14:04:49,084 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-205 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 14:04:49,275 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-205 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:44:11,186 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-242 - Application started (Dev) (no global state)
+2020-10-05 12:45:09,707 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-10 - Shutting down connection pool.
+2020-10-05 12:45:10,068 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-247 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:45:10,068 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-247 - Creating Pool for datasource 'default'
+2020-10-05 12:45:10,068 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-247 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:45:10,222 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-247 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -593,12 +191,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[Unmatched closin
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 14:04:49,277 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-205 - Application started (Dev) (no global state)
-2020-08-06 14:07:52,814 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-9 - Shutting down connection pool.
-2020-08-06 14:07:53,162 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-265 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 14:07:53,162 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-265 - Creating Pool for datasource 'default'
-2020-08-06 14:07:53,163 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-265 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 14:07:53,375 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-265 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:45:10,225 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-247 - Application started (Dev) (no global state)
+2020-10-05 12:48:39,536 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-13 - Shutting down connection pool.
+2020-10-05 12:48:39,871 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-284 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:48:39,871 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-284 - Creating Pool for datasource 'default'
+2020-10-05 12:48:39,872 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-284 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:48:40,045 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-284 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -606,100 +204,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[Unmatched closin
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 14:07:53,378 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-265 - Application started (Dev) (no global state)
-2020-08-06 14:14:36,373 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-283 - 
-
-! @7gkj24mnh - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[play.api.mvc.MultipartFormData[play.api.libs.Files.TemporaryFile] does not take parameters]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 14:19:59,374 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-294 - 
-
-! @7gkj2n6n8 - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value file is not a member of play.api.mvc.AnyContent]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 14:22:17,895 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-12 - Shutting down connection pool.
-2020-08-06 14:22:18,224 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-303 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 14:22:18,224 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-303 - Creating Pool for datasource 'default'
-2020-08-06 14:22:18,225 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-303 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 14:22:18,421 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-303 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:48:40,048 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-284 - Application started (Dev) (no global state)
+2020-10-05 12:49:06,249 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-8 - Shutting down connection pool.
+2020-10-05 12:49:06,569 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-284 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:49:06,569 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-284 - Creating Pool for datasource 'default'
+2020-10-05 12:49:06,569 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-284 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:49:06,716 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-284 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -707,12 +217,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value file is no
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 14:22:18,423 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-303 - Application started (Dev) (no global state)
-2020-08-06 14:24:28,499 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-15 - Shutting down connection pool.
-2020-08-06 14:24:28,883 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-303 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 14:24:28,883 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-303 - Creating Pool for datasource 'default'
-2020-08-06 14:24:28,884 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-303 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 14:24:29,111 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-303 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:49:06,720 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-284 - Application started (Dev) (no global state)
+2020-10-05 12:51:05,526 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-9 - Shutting down connection pool.
+2020-10-05 12:51:05,837 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-286 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:51:05,837 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-286 - Creating Pool for datasource 'default'
+2020-10-05 12:51:05,837 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-286 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:51:05,983 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-286 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -720,189 +230,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value file is no
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 14:24:29,113 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-303 - Application started (Dev) (no global state)
-2020-08-06 14:58:07,126 [WARN] from com.zaxxer.hikari.pool.HikariPool in HikariPool-18 housekeeper - HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=2m8s69ms900µs300ns).
-2020-08-06 15:16:27,546 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-342 - 
-
-! @7gkja80jf - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value map is not a member of play.api.mvc.MultipartFormData[play.api.libs.Files.TemporaryFile]]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 15:19:19,279 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-354 - 
-
-! @7gkjahl0j - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value file is not a member of play.api.mvc.AnyContent]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 15:19:46,234 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-353 - 
-
-! @7gkjaj8nc - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value dataPart is not a member of play.api.mvc.AnyContent]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 15:19:55,289 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-355 - 
-
-! @7gkjajm7j - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value dataParts is not a member of play.api.mvc.AnyContent]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 15:20:24,731 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-28 - Shutting down connection pool.
-2020-08-06 15:20:25,192 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-355 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 15:20:25,193 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-355 - Creating Pool for datasource 'default'
-2020-08-06 15:20:25,194 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-355 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 15:20:25,415 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-355 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:51:05,986 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-286 - Application started (Dev) (no global state)
+2020-10-05 12:51:45,643 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-9 - Shutting down connection pool.
+2020-10-05 12:51:46,040 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-282 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:51:46,041 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-282 - Creating Pool for datasource 'default'
+2020-10-05 12:51:46,041 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-282 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:51:46,251 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-282 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -910,147 +243,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value dataParts 
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 15:20:25,417 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-355 - Application started (Dev) (no global state)
-2020-08-06 15:22:49,744 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-354 - 
-
-! @7gkjb3k36 - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value body is not a member of play.api.mvc.MultipartFormData[play.api.libs.Files.TemporaryFile]
-did you mean copy?]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 15:23:07,364 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-357 - 
-
-! @7gkjb4kb5 - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[missing argument list for method copy in class MultipartFormData
-Unapplied methods are only converted to functions when a function type is expected.
-You can make this conversion explicit by writing `copy _` or `copy(_,_,_)` instead of `copy`.]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 15:25:44,420 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-384 - 
-
-! @7gkjbdijn - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value dataParts is not a member of play.api.mvc.AnyContent]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 15:26:18,811 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-17 - Shutting down connection pool.
-2020-08-06 15:26:19,126 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-384 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 15:26:19,126 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-384 - Creating Pool for datasource 'default'
-2020-08-06 15:26:19,127 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-384 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 15:26:19,303 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-384 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:51:46,254 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-282 - Application started (Dev) (no global state)
+2020-10-05 12:52:02,430 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-3 - Shutting down connection pool.
+2020-10-05 12:52:02,762 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-300 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:52:02,763 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-300 - Creating Pool for datasource 'default'
+2020-10-05 12:52:02,763 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-300 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:52:02,948 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-300 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -1058,12 +256,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value dataParts 
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 15:26:19,305 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-384 - Application started (Dev) (no global state)
-2020-08-06 15:27:23,328 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-26 - Shutting down connection pool.
-2020-08-06 15:27:23,729 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-393 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 15:27:23,729 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-393 - Creating Pool for datasource 'default'
-2020-08-06 15:27:23,730 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-393 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 15:27:23,934 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-393 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:52:02,951 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-300 - Application started (Dev) (no global state)
+2020-10-05 12:52:36,953 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-10 - Shutting down connection pool.
+2020-10-05 12:52:37,250 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-286 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:52:37,250 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-286 - Creating Pool for datasource 'default'
+2020-10-05 12:52:37,251 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-286 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:52:37,410 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-286 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -1071,12 +269,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value dataParts 
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 15:27:23,936 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-393 - Application started (Dev) (no global state)
-2020-08-06 15:28:49,651 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-20 - Shutting down connection pool.
-2020-08-06 15:28:49,989 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-388 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 15:28:49,989 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-388 - Creating Pool for datasource 'default'
-2020-08-06 15:28:49,989 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-388 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 15:28:50,187 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-388 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:52:37,414 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-286 - Application started (Dev) (no global state)
+2020-10-05 12:53:08,268 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-9 - Shutting down connection pool.
+2020-10-05 12:53:08,579 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-286 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:53:08,580 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-286 - Creating Pool for datasource 'default'
+2020-10-05 12:53:08,582 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-286 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:53:08,780 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-286 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -1084,12 +282,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value dataParts 
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 15:28:50,196 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-388 - Application started (Dev) (no global state)
-2020-08-06 15:29:44,041 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-15 - Shutting down connection pool.
-2020-08-06 15:29:44,378 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-388 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 15:29:44,378 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-388 - Creating Pool for datasource 'default'
-2020-08-06 15:29:44,378 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-388 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 15:29:44,535 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-388 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:53:08,784 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-286 - Application started (Dev) (no global state)
+2020-10-05 12:53:27,881 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-4 - Shutting down connection pool.
+2020-10-05 12:53:28,281 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-300 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:53:28,281 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-300 - Creating Pool for datasource 'default'
+2020-10-05 12:53:28,282 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-300 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:53:28,467 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-300 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -1097,12 +295,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value dataParts 
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 15:29:44,537 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-388 - Application started (Dev) (no global state)
-2020-08-06 15:33:33,495 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-21 - Shutting down connection pool.
-2020-08-06 15:33:33,891 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-431 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 15:33:33,891 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-431 - Creating Pool for datasource 'default'
-2020-08-06 15:33:33,892 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-431 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 15:33:34,121 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-431 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:53:28,469 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-300 - Application started (Dev) (no global state)
+2020-10-05 12:54:44,261 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-9 - Shutting down connection pool.
+2020-10-05 12:54:44,572 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-301 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:54:44,572 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-301 - Creating Pool for datasource 'default'
+2020-10-05 12:54:44,573 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-301 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:54:44,881 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-301 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -1110,56 +308,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[value dataParts 
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 15:33:34,123 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-431 - Application started (Dev) (no global state)
-2020-08-06 15:44:23,917 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-443 - 
-
-! @7gkjdpafl - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[not found: value Paths]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 15:45:03,349 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-26 - Shutting down connection pool.
-2020-08-06 15:45:03,940 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-447 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 15:45:03,940 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-447 - Creating Pool for datasource 'default'
-2020-08-06 15:45:03,940 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-447 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 15:45:04,218 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-447 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:54:44,883 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-301 - Application started (Dev) (no global state)
+2020-10-05 12:55:03,141 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-5 - Shutting down connection pool.
+2020-10-05 12:55:03,476 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-283 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:55:03,476 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-283 - Creating Pool for datasource 'default'
+2020-10-05 12:55:03,477 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-283 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:55:03,669 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-283 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -1167,12 +321,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[not found: value
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 15:45:04,222 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-447 - Application started (Dev) (no global state)
-2020-08-06 15:49:44,597 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-30 - Shutting down connection pool.
-2020-08-06 15:49:44,907 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-465 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 15:49:44,907 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-465 - Creating Pool for datasource 'default'
-2020-08-06 15:49:44,907 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-465 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 15:49:45,081 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-465 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:55:03,670 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-283 - Application started (Dev) (no global state)
+2020-10-05 12:55:33,952 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-9 - Shutting down connection pool.
+2020-10-05 12:55:34,257 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-283 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:55:34,258 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-283 - Creating Pool for datasource 'default'
+2020-10-05 12:55:34,258 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-283 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:55:34,387 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-283 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -1180,12 +334,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[not found: value
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 15:49:45,091 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-465 - Application started (Dev) (no global state)
-2020-08-06 16:14:52,145 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-26 - Shutting down connection pool.
-2020-08-06 16:14:52,614 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-479 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 16:14:52,616 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-479 - Creating Pool for datasource 'default'
-2020-08-06 16:14:52,616 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-479 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 16:14:52,831 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-479 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:55:34,390 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-283 - Application started (Dev) (no global state)
+2020-10-05 12:56:10,001 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-10 - Shutting down connection pool.
+2020-10-05 12:56:10,299 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-301 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:56:10,299 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-301 - Creating Pool for datasource 'default'
+2020-10-05 12:56:10,300 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-301 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:56:10,433 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-301 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -1193,12 +347,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[not found: value
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 16:14:52,832 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-479 - Application started (Dev) (no global state)
-2020-08-06 16:18:42,874 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-8 - Shutting down connection pool.
-2020-08-06 16:18:43,283 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-489 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 16:18:43,284 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-489 - Creating Pool for datasource 'default'
-2020-08-06 16:18:43,284 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-489 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 16:18:43,492 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-489 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:56:10,436 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-301 - Application started (Dev) (no global state)
+2020-10-05 12:59:00,051 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-13 - Shutting down connection pool.
+2020-10-05 12:59:00,370 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-286 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 12:59:00,370 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-286 - Creating Pool for datasource 'default'
+2020-10-05 12:59:00,370 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-286 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 12:59:00,518 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-286 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -1206,12 +360,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[not found: value
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 16:18:43,493 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-489 - Application started (Dev) (no global state)
-2020-08-06 16:19:12,749 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-8 - Shutting down connection pool.
-2020-08-06 16:19:13,127 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-489 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 16:19:13,127 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-489 - Creating Pool for datasource 'default'
-2020-08-06 16:19:13,128 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-489 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 16:19:13,349 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-489 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 12:59:00,520 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-286 - Application started (Dev) (no global state)
+2020-10-05 13:00:05,572 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-9 - Shutting down connection pool.
+2020-10-05 13:00:05,879 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-286 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 13:00:05,879 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-286 - Creating Pool for datasource 'default'
+2020-10-05 13:00:05,880 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-286 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 13:00:06,046 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-286 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -1219,56 +373,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[not found: value
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 16:19:13,350 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-489 - Application started (Dev) (no global state)
-2020-08-06 16:35:32,158 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-523 - 
-
-! @7gkjkhpcn - Internal server error, for (GET) [/trial] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error['=' expected.]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:40)
-	at scala.Option.map(Option.scala:230)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:35)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:28)
-	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:63)
-	at scala.util.Either$LeftProjection.map(Either.scala:573)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:63)
-	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:78)
-	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
-	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
-	at play.runsupport.Reloader.reload(Reloader.scala:496)
-	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:141)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:300)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:190)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1289)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:624)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:501)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:599)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:768)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:783)
-	at akka.actor.Actor.aroundReceive(Actor.scala:534)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:532)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:690)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:573)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:543)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:269)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:230)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:242)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2020-08-06 16:37:14,530 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-29 - Shutting down connection pool.
-2020-08-06 16:37:14,984 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-520 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 16:37:14,985 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-520 - Creating Pool for datasource 'default'
-2020-08-06 16:37:14,985 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-520 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 16:37:15,224 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-520 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 13:00:06,048 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-286 - Application started (Dev) (no global state)
+2020-10-05 13:00:25,185 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-5 - Shutting down connection pool.
+2020-10-05 13:00:25,501 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-302 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 13:00:25,501 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-302 - Creating Pool for datasource 'default'
+2020-10-05 13:00:25,501 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-302 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 13:00:25,635 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-302 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -1276,12 +386,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error['=' expected.]
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 16:37:15,226 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-520 - Application started (Dev) (no global state)
-2020-08-06 16:40:22,185 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-29 - Shutting down connection pool.
-2020-08-06 16:40:22,613 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-524 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 16:40:22,613 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-524 - Creating Pool for datasource 'default'
-2020-08-06 16:40:22,613 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-524 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 16:40:22,814 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-524 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 13:00:25,637 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-302 - Application started (Dev) (no global state)
+2020-10-05 13:01:18,290 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-10 - Shutting down connection pool.
+2020-10-05 13:01:18,574 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-302 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 13:01:18,574 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-302 - Creating Pool for datasource 'default'
+2020-10-05 13:01:18,574 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-302 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 13:01:18,733 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-302 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -1289,12 +399,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error['=' expected.]
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 16:40:22,816 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-524 - Application started (Dev) (no global state)
-2020-08-06 16:41:23,628 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-27 - Shutting down connection pool.
-2020-08-06 16:41:24,093 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-538 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 16:41:24,093 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-538 - Creating Pool for datasource 'default'
-2020-08-06 16:41:24,093 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-538 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 16:41:24,338 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-538 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 13:01:18,735 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-302 - Application started (Dev) (no global state)
+2020-10-05 13:01:28,015 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-3 - Shutting down connection pool.
+2020-10-05 13:01:28,309 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-302 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 13:01:28,310 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-302 - Creating Pool for datasource 'default'
+2020-10-05 13:01:28,310 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-302 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 13:01:28,442 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-302 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -1302,12 +412,12 @@ play.sbt.PlayExceptions$CompilationException: Compilation error['=' expected.]
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 16:41:24,339 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-538 - Application started (Dev) (no global state)
-2020-08-06 17:01:44,252 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-56 - Shutting down connection pool.
-2020-08-06 17:01:44,842 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-593 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
-2020-08-06 17:01:44,842 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-593 - Creating Pool for datasource 'default'
-2020-08-06 17:01:44,843 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-593 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-08-06 17:01:45,060 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-593 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2020-10-05 13:01:28,445 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-302 - Application started (Dev) (no global state)
+2020-10-05 13:01:58,581 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-9 - Shutting down connection pool.
+2020-10-05 13:01:58,912 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-343 - Database [default] initialized at jdbc:mysql://localhost:3306/bugTracker?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+2020-10-05 13:01:58,913 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-343 - Creating Pool for datasource 'default'
+2020-10-05 13:01:58,913 [WARN] from com.zaxxer.hikari.util.DriverDataSource in play-dev-mode-akka.actor.default-dispatcher-343 - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-05 13:01:59,073 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-343 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -1315,10 +425,9 @@ play.sbt.PlayExceptions$CompilationException: Compilation error['=' expected.]
     filters.ExampleFilter
     play.filters.hosts.AllowedHostsFilter
 
-2020-08-06 17:01:45,062 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-593 - Application started (Dev) (no global state)
-2020-08-06 17:10:26,930 [INFO] from play.api.internal.libs.concurrent.CoordinatedShutdownSupport in pool-10-thread-1 - Starting synchronous coordinated shutdown with ServerStoppedReason reason and 35000 milliseconds timeout
-2020-08-06 17:10:26,931 [INFO] from play.core.server.AkkaHttpServer in pool-10-thread-1 - Stopping Akka HTTP server...
-2020-08-06 17:10:26,934 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-akka.actor.internal-dispatcher-629 - Terminating server binding for /0:0:0:0:0:0:0:0:9000
-2020-08-06 17:10:31,981 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-akka.actor.internal-dispatcher-631 - Running provided shutdown stop hooks
-2020-08-06 17:10:31,982 [WARN] from akka.actor.CoordinatedShutdown in play-dev-mode-akka.actor.default-dispatcher-632 - Task [shutdown-application-dev-mode] failed in phase [service-stop]: Compilation error[not enough arguments for method apply: (qsNo: Int, bookname: String, pageTarget: String)(implicit request: play.api.mvc.RequestHeader, implicit assetsFinder: controllers.AssetsFinder)play.twirl.api.HtmlFormat.Appendable in object trial.
-Unspecified value parameter pageTarget.]
+2020-10-05 13:01:59,074 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-343 - Application started (Dev) (no global state)
+2020-10-05 13:07:10,203 [INFO] from play.api.internal.libs.concurrent.CoordinatedShutdownSupport in pool-10-thread-6 - Starting synchronous coordinated shutdown with ServerStoppedReason reason and 35000 milliseconds timeout
+2020-10-05 13:07:10,204 [INFO] from play.core.server.AkkaHttpServer in pool-10-thread-6 - Stopping Akka HTTP server...
+2020-10-05 13:07:10,210 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-akka.actor.internal-dispatcher-353 - Terminating server binding for /0:0:0:0:0:0:0:0:9000
+2020-10-05 13:07:10,238 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-10 - Shutting down connection pool.
+2020-10-05 13:07:10,263 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-akka.actor.internal-dispatcher-355 - Running provided shutdown stop hooks

@@ -1,6 +1,6 @@
 @* trails Template File *@
-@()(implicit request: RequestHeader, assetsFinder: AssetsFinder)
-@import helper._
+@()(implicit assetsFinder: AssetsFinder)
+
 
 <!DOCTYPE html>
 <html>
@@ -17,7 +17,7 @@
     </head>
     <body onload="showText()">
 	  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="#">
+	  <a class="navbar-brand" href="@routes.HomeController.index">
 	  	<img src="@assetsFinder.path("/images/images.jpeg")" width="40" height="40" class="d-inline-block align-top" alt=""/>
 	  </a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,19 +27,11 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
-	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	        <a class="nav-link" href="@routes.HomeController.index">Home <span class="sr-only">(current)</span></a>
 	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Documentation
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">What is BugTracker</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">How to upload your queries</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">How to create an account</a>
-	        </div>
+
+	      <li class="nav-item">
+	        <a class="nav-link" href="@routes.meetTheTeam.documentation">Documentation</a>
 	      </li>
 
 	      <li class="nav-item">
@@ -66,22 +58,17 @@
 
 				   <div class="text-center">
 				   
-				   <form method ="GET" action = "" id="signupSetupForm" >
-					@helper.CSRF.formField
-				   	<input type="submit" class="btn btn-outline-secondary btn-lg" value="Set Up"  onclick="signupsetup()" />
-				   	</form>
+				   <a href = "@routes.signUp.sendSignupSetupPage">					
+				   	<button class="btn btn-outline-secondary btn-lg">Setup</button>
+				   	</a>
 				   	
 				   	
-				   	<form method ="GET" action = "" id="loginForm">
-					@helper.CSRF.formField
-				   	<input type="submit" class="btn btn-outline-secondary btn-lg" value="Login" onclick="login()" />
-				   	</form>
+				   	
+				   	<a href = "@routes.login.loginPage">	
+				   	<button class="btn btn-outline-secondary btn-lg">Login</button>
+				   	</a>				   
 				   
 				   
-				    <form method ="GET" action = "" id="signupForm" >
-					@helper.CSRF.formField
-				   	<input type="submit" class="btn btn-outline-secondary btn-lg" value="Sign Up"  onclick="signup()" />
-				   	</form> 
 				   	
 				   
 				   </div>
@@ -95,16 +82,16 @@
 			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   			<div class="carousel-inner">
    				<div class="carousel-item active">
-					<h2>Absolute delight to work with Bugtracker, was able to quicly solve all the bus</h2>
+					<h2>"Absolute delight to work with Bugtracker, was able to quicly solve all the bus"</h2>
 					<h3>-Sam Smith</h3>
 				</div>
 				<div class="carousel-item">
-					<h2>Dosent work absolute garbage plese fix it before i call the cops</h2>
-					<h3>-Sam Smith</h3>
+					<h2>"It is better than putting up all the bugs on a public forum."</h2>
+					<h3>-Mike Tyson</h3>
 				</div>	
 				<div class="carousel-item">
-					<h2>ASdknjdka Jndoanms, soidja nfdi us idjsojdoam fidfnika sdiojnfkjdsn jindkk sjd</h2>
-					<h3>-Sam Smith</h3>
+					<h2>"Quick and simple mechanism to post and solve bugs"</h2>
+					<h3>-Thanos Stark</h3>
 				</div>	
 
 			</div>
@@ -124,26 +111,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		
 	    <script type="text/javascript" src="@assetsFinder.path("js/homePage.js")"> </script> 
-	    <script>
-	    function signupsetup(){
-	    	document.getElementById("signupSetupForm").action = "@routes.signUp.sendSignupSetupPage";
-	    	document.getElementById("signupSetupForm").submit();						
-		}
-		
-		function login(){
-	    	document.getElementById("loginForm").action = "@routes.login.loginPage";
-	    	document.getElementById("loginForm").submit();			
-			
-		}
-		
-		function signup(){
-	    	document.getElementById("signupForm").action = "@routes.signUp.sendSignupPage";
-	    	document.getElementById("signupForm").submit();						
-		}
+	    
 		
 		
-		
-	    </script>
+	   
 	     
          
 </html>

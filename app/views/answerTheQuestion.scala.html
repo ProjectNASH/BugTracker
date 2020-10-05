@@ -1,0 +1,233 @@
+@* answerTheQuestion Template File *@
+@(bookNameTemp:String,qsNo: Int, bookname:String,pagehead: String, pageBody:List[String],existingAns : List[((Int,Int,String,String,Int))], no:Int, username: String)(implicit request: RequestHeader, assetsFinder: AssetsFinder)
+@import helper._
+
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    	<title>Answer a Query</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+      	
+      	<link rel="stylesheet" href="@assetsFinder.path("stylesheets/utils/answerTheQuestion.css")" type="text/css"/>  
+	<link rel="apple-touch-icon" sizes="180x180" href="@assetsFinder.path("/images/title images/apple-touch-icon.png")">
+	<link rel="icon" type="image/png" sizes="32x32" href="@assetsFinder.path("/images/title images/favicon-32x32.png")">
+	<link rel="icon" type="image/png" sizes="16x16" href="@assetsFinder.path("/images/title images/favicon-16x16.png")">
+	<link rel="manifest" href="@assetsFinder.path("/images/title images/site.webmanifest")">
+
+        	<!--Write your link and src tags after this comment-->
+        	
+
+    </head>
+    <body><nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="@routes.dashboard.viewDashboard">
+      <img src="@assetsFinder.path("/images/images.jpeg")" width="45" alt="" class="d-inline-block align-middle rounded-circle mr-1"><span class="image1">BUG TRACKER</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="sidebar-sticky pt-3 part1">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link sidebar-heading" href="#">
+              <span></span>
+              TRACK
+            </a><hr class="my-1">
+          </li>
+          <li>
+            <a class="nav-link hel" href="@routes.dashboard.viewDashboard">
+              <span data-feather="airplay"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hel" href="@routes.dashboard.viewMyPages">
+              <span data-feather="file"></span>
+              My Queries/Answers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hel" href="@routes.dashboard.viewPages">
+              <span data-feather="help-circle"></span>
+              View All Questions
+            </a>
+          </li>
+        <span style="padding:2%"></span>
+        </ul>
+          <a class="nav-link sidebar-heading" href="#">
+          ACCOUNT
+          </a>
+          <hr class="my-1">
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link hel" href="@routes.dashboard.changePassWordOne">
+              <span data-feather="edit"></span>
+              Change password
+            </a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link hel" href="#">
+              <span data-feather="message-square"></span>
+              FAQ
+            </a>
+          </li>
+        </ul>
+      <div class="space"></div>
+      <ul class="navbar-nav px-3 col-12">
+        <li class="nav-item text-nowrap d-flex justify-content-center">
+        <form class="nav-link " action="@routes.login.logout()" method ="GET"><input type = "submit" class="btn btn-danger" value ="Sign Out"></input></form>
+        </li>
+      </ul>
+      </div>
+    </nav>
+    
+          
+	 
+	<div class="container space"></div>	
+    
+    
+    
+    
+    
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <div class="h3">@pagehead</div>
+      </div>
+     
+	 <div class="card">
+	 
+		<div class="card-header">
+		<div class="card-text col-sm-3 font-weight-bolder text-wrap">Posted By<span class="badge badge-light" style="font-size:0.9rem">@bookNameTemp</span></div><br>
+		
+		<ol>@for(line<-pageBody){
+                   <li>@line</li><br>
+                 }
+        </ol>
+                 
+		</div>
+		<br>
+		<div class="h3">&nbsp;
+		@no Answers
+		</div>
+	@for((slno,qsno,ans,solver,working)<-existingAns){
+	@if(!ans.equals("null")){	
+    <div class="card-body">
+		<div class="container">		
+		@if(bookNameTemp.equals(username)){
+		<form action = "@routes.answerQuery.markWorkingSolution(slno,bookNameTemp,working,qsno)" type="GET">			
+			<div class="card-text col-sm-6 col-6 font-weight-bolder text-wrap" style="float:right;">
+			<input type="hidden" name="slno" value="@slno" style="visibility:hidden;">
+			<input type="hidden" name="bookNameTemp" value="@bookNameTemp" style="visibility:hidden;">
+			<input type="hidden" name="qsno" value="@qsno" style="visibility:hidden;">
+			<input type="hidden" name="working" value="@working" style="visibility:hidden;">
+			@if(working == 0){
+			<input type="submit" value="Mark as Working" style="background-color:red;color:white;border-radius: 25px;">
+			}
+			
+			@if(working == 1){
+			<input type="submit" value="Working Solution" style="background-color:green;color:white;border-radius: 25px;">		
+			}
+			
+			
+			</div>		
+			</form>
+		}
+		
+			<div class="card-text col-sm-6 col-6 font-weight-bolder text-wrap">By <span class="badge badge-secondary" style="font-size:0.85rem">@solver</span></div><br>
+			
+			
+			<div class="col-sm-12"><span class="me"> @ans</span></div>
+		</div>
+</div>
+<br>
+}
+}
+
+
+
+
+		
+		
+	
+	
+	<br>
+	
+  <div class="card-body" id ="quillEdit">
+		<div class="cotainer">
+			<form action = "@routes.answerQuery.answerThequestion" method ="POST" enctype="multipart/form-data">
+  	@helper.CSRF.formField
+				<div class="form-group">
+					<label for="body"><span class="subhead">Your Answer</span></label><br>
+					<textarea id="body" class="body" name = "answer"></textarea>
+				</div>
+			
+				
+				<input type="hidden" name="qsNo" value="@qsNo" style="visibility:hidden;">
+				<input type="hidden" name="bookname" value="@bookname" style="visibility:hidden;position:absolute; ">
+				
+				
+				<span id="third"></span>
+			
+			<div class="row">
+				<div class="col-lg-9 col-md-7 col-sm-12"><span class="page"></span></div>
+				<div class="col-lg-3 col-md-5 col-sm-12  justify-content-center">	
+						<div class="btn-toolbar mb-2 mb-md-0">						
+								
+								<input type="submit" value="Submit" class="btn btn-info" >
+								
+							<div class="space4"></div>							
+						</div>
+				   </div>
+			    </div>
+			    </form>
+			  </div>
+			</div>
+		  
+		  </div>
+		</main>	
+	</div>
+  </div>
+  		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script>
+      (function () {
+          'use strict'
+
+        feather.replace()
+}())
+const l = document.getElementById("first");
+const m = document.getElementById("second");
+const n = document.getElementById("third");
+
+m.addEventListener("click", function() {
+  l.click();
+});
+
+l.addEventListener("change", function() {
+  if (l.value) {
+    n.innerHTML = l.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+  } else {
+    n.innerHTML = "No file chosen, yet.";
+  }
+});
+
+
+      </script> 
+  </body>
+  </html>
+    
+
+

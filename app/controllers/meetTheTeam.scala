@@ -24,4 +24,8 @@ class meetTheTeam @Inject()(db: Database,cc: ControllerComponents) (implicit ass
    def showTeamPage = Action{ implicit request=>
      Ok(views.html.meetTheTeam())
    }
+
+   def documentation = Action{ implicit request=>
+     Ok(views.html.doc())
+   }
 }

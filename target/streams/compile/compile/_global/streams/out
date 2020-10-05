@@ -1,8 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\DELL\Desktop\BugTracker\play-samples-play-scala-starter-example\app\controllers\HomeController.scala:27:24: not enough arguments for method apply: (qsNo: Int, bookname: String, pageTarget: String)(implicit request: play.api.mvc.RequestHeader, implicit assetsFinder: controllers.AssetsFinder)play.twirl.api.HtmlFormat.Appendable in object trial.[0m
-[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter pageTarget.[0m
-[0m[[0m[31merror[0m] [0m[0m    Ok(views.html.trial(1,"abc"))[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\DELL\Desktop\BugTracker\play-samples-play-scala-starter-example\conf\routes:44:1: not enough arguments for method getQuestionToAnswer: (bookNametemp: String, qsNo: Int, pageTarget: String)play.api.mvc.Action[play.api.mvc.AnyContent].[0m
-[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter pageTarget.[0m
-[0m[[0m[31merror[0m] [0m[0mGET   /answer          controllers.answerQuery.getQuestionToAnswer(bookNametemp:String, qsNo: Int)[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\DELL\Desktop\BugTracker\play-samples-play-scala-starter-example\app\views\trial.scala.html:18:43: value upload is not a member of controllers.ReverseHomeController[0m
+[0m[[0m[31merror[0m] [0m[0m  	<form action = "@routes.HomeController.upload" method ="POST" enctype="multipart/form-data">[0m
+[0m[[0m[31merror[0m] [0m[0m  	                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

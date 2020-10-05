@@ -15,10 +15,10 @@ import play.api.templates.PlayMagic._
 import play.api.mvc._
 import play.api.data._
 
-object userDashboard extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[Map[String, String],RequestHeader,AssetsFinder,play.twirl.api.HtmlFormat.Appendable] {
+object userDashboard extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template6[Map[String, String],Int,Int,Int,RequestHeader,AssetsFinder,play.twirl.api.HtmlFormat.Appendable] {
 
   /* trails Template File */
-  def apply/*2.2*/(argsMaps:Map[String,String])(implicit request: RequestHeader, assetsFinder: AssetsFinder):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*2.2*/(argsMaps:Map[String,String], qsno:Int,ansno:Int,notans:Int)(implicit request: RequestHeader, assetsFinder: AssetsFinder):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*3.2*/import helper._
@@ -42,25 +42,58 @@ Seq[Any](format.raw/*4.1*/("""
 	<link rel="manifest" href=""""),_display_(/*19.30*/assetsFinder/*19.42*/.path("/images/title images/site.webmanifest")),format.raw/*19.88*/("""">
 
         	<!--Write your link and src tags after this comment-->
+        	
+        
+        	
+        	
+        	
+        	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', """),format.raw/*31.37*/("""{"""),format.raw/*31.38*/("""'packages':['corechart']"""),format.raw/*31.62*/("""}"""),format.raw/*31.63*/(""");
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() """),format.raw/*39.28*/("""{"""),format.raw/*39.29*/("""
+
+        """),format.raw/*41.9*/("""// Create the data table.
+              
+      var data = new google.visualization.DataTable();
+        data.addColumn('string', 'DomainQs');
+        data.addColumn('number', 'No');
+        data.addRows([
+          ['Unanswered', """),_display_(/*47.27*/notans),format.raw/*47.33*/("""],
+          ['Answered', """),_display_(/*48.25*/ansno),format.raw/*48.30*/("""]          
+        ]);
+
+var options = """),format.raw/*51.15*/("""{"""),format.raw/*51.16*/("""'title':'Total Qs:"""),_display_(/*51.35*/qsno),format.raw/*51.39*/("""',
+                       'width':300,
+                       'height':300"""),format.raw/*53.36*/("""}"""),format.raw/*53.37*/(""";
+
+var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      """),format.raw/*57.7*/("""}"""),format.raw/*57.8*/("""
+    """),format.raw/*58.5*/("""</script>
 
     </head>
     <body><nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">
-      <img src=""""),_display_(/*26.18*/assetsFinder/*26.30*/.path("/images/images.jpeg")),format.raw/*26.58*/("""" width="45" alt="" class="d-inline-block align-middle rounded-circle mr-1"><span class="image1">BUG TRACKER</a>
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href=""""),_display_(/*62.62*/routes/*62.68*/.dashboard.viewDashboard),format.raw/*62.92*/("""">
+      <img src=""""),_display_(/*63.18*/assetsFinder/*63.30*/.path("/images/images.jpeg")),format.raw/*63.58*/("""" width="45" alt="" class="d-inline-block align-middle rounded-circle mr-1"><span class="image1">BUG TRACKER</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <ul class="navbar-nav px-3">
-    <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#">Home</a>
-    </li>
-  </ul>
+
   
 </nav>
 
 <div class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="sidebar-sticky pt-3 part1">
         <ul class="nav flex-column">
           <li class="nav-item">
@@ -70,40 +103,37 @@ Seq[Any](format.raw/*4.1*/("""
             </a><hr class="my-1">
           </li>
           <li>
-            <a class="nav-link hel" href="#">
+            <a class="nav-link hel" href=""""),_display_(/*83.44*/routes/*83.50*/.dashboard.viewDashboard),format.raw/*83.74*/("""">
               <span data-feather="airplay"></span>
               Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hel" href="#">
+            <a class="nav-link hel" href=""""),_display_(/*89.44*/routes/*89.50*/.dashboard.viewMyPages),format.raw/*89.72*/("""">
               <span data-feather="file"></span>
-              Pages
+              My Queries/Answers
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link hel" href="#">
+            <a class="nav-link hel" href=""""),_display_(/*95.44*/routes/*95.50*/.dashboard.viewPages),format.raw/*95.70*/("""">
               <span data-feather="help-circle"></span>
-              Questions Asked
+              View All Questions
             </a>
           </li>
         <span style="padding:2%"></span>
         </ul>
-          <a class="nav-link sidebar-heading" href="#">ACCOUNT</a><hr class="my-1">
+          <a class="nav-link sidebar-heading" href="#">
+          ACCOUNT
+          </a>
+          <hr class="my-1">
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link hel" href="#">
+            <a class="nav-link hel" href=""""),_display_(/*109.44*/routes/*109.50*/.dashboard.changePassWordOne),format.raw/*109.78*/("""">
               <span data-feather="edit"></span>
               Change password
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link hel" href="#">
-              <span data-feather="trash"></span>
-              Delete Account
-            </a>
-          </li>
+          </li>          
           <li class="nav-item">
             <a class="nav-link hel" href="#">
               <span data-feather="message-square"></span>
@@ -114,7 +144,7 @@ Seq[Any](format.raw/*4.1*/("""
       <div class="space"></div>
       <ul class="navbar-nav px-3 col-12">
         <li class="nav-item text-nowrap d-flex justify-content-center">
-        <a class="nav-link " href="#"><span class="sign">Sign out</span></a>
+        <form class="nav-link " action=""""),_display_(/*124.42*/routes/*124.48*/.login.logout()),format.raw/*124.63*/("""" method ="GET"><input type = "submit" class="btn btn-danger" value ="Sign Out"></input></form>
         </li>
       </ul>
       </div>
@@ -126,10 +156,10 @@ Seq[Any](format.raw/*4.1*/("""
         		       
         <div class="btn-toolbar mb-2 mb-md-0">
         
-                <form name="createPage" action =""""),_display_(/*106.51*/routes/*106.57*/.dashboard.createPage),format.raw/*106.78*/("""" method="GET" style="display:inline-flex; margin:0px;
+                <form name="createPage" action =""""),_display_(/*136.51*/routes/*136.57*/.dashboard.createPage),format.raw/*136.78*/("""" method="GET" style="display:inline-flex; margin:0px;
     padding:0px;">
-        """),_display_(/*108.10*/helper/*108.16*/.CSRF.formField),format.raw/*108.31*/("""
-          """),format.raw/*109.11*/("""<button type="submit" class="btn btn-sm btn-outline-secondary">
+        """),_display_(/*138.10*/helper/*138.16*/.CSRF.formField),format.raw/*138.31*/("""
+          """),format.raw/*139.11*/("""<button type="submit" class="btn btn-sm btn-outline-secondary">
             <span data-feather="help-circle"></span>
             Post Query
           </button>
@@ -137,10 +167,10 @@ Seq[Any](format.raw/*4.1*/("""
            
           <div class="space"></div>
           
-          <form name="viewPage" action =""""),_display_(/*117.43*/routes/*117.49*/.dashboard.viewPages),format.raw/*117.69*/("""" method="GET" style="display:inline-flex; margin:0px;
+          <form name="viewPage" action =""""),_display_(/*147.43*/routes/*147.49*/.dashboard.viewPages),format.raw/*147.69*/("""" method="GET" style="display:inline-flex; margin:0px;
     padding:0px;">
-        """),_display_(/*119.10*/helper/*119.16*/.CSRF.formField),format.raw/*119.31*/("""
-          """),format.raw/*120.11*/("""<button type="submit" class="btn btn-sm btn-outline-secondary ">
+        """),_display_(/*149.10*/helper/*149.16*/.CSRF.formField),format.raw/*149.31*/("""
+          """),format.raw/*150.11*/("""<button type="submit" class="btn btn-sm btn-outline-secondary ">
             <span data-feather="book"></span>
             View Queries
           </button>
@@ -151,22 +181,19 @@ Seq[Any](format.raw/*4.1*/("""
 	 <div class="card first">
   <h5 class="card-header">PROFILE</h5>
   <div class="row">
-  <div class="card-body col-9">
+  <div class="card-body col-6" id ="userinfo">
   <div class="inner1">
+  		<h3><div class="col-sm-8">User Info</div></h3><br>
 		<div class="row">
 		<div class="card-text col-sm-3  text-wrap"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem"> Name </span></div>
-		<div class="col-sm-8">
-		 <span class="me">
-		 """),_display_(/*137.5*/argsMaps("name")),format.raw/*137.21*/("""
-		 """),format.raw/*138.4*/("""</span></div>
-		 
-		 
-	</div>
+		<div class="col-sm-8"><span class="me"> """),_display_(/*166.44*/argsMaps("name")),format.raw/*166.60*/("""</span></div>
+		 </div>
+	
 	<div class="space"></div>
 
 	<div class="row">
 		<div class="card-text col-sm-3 font-weight-bolder text-wrap"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem"> Username</span></div>
-		<div class="col-sm-9"><span class="me"> """),_display_(/*146.44*/argsMaps("username")),format.raw/*146.64*/("""</span></div>
+		<div class="col-sm-9"><span class="me"> """),_display_(/*173.44*/argsMaps("username")),format.raw/*173.64*/("""</span></div>
 		
 	</div>
 		
@@ -174,44 +201,24 @@ Seq[Any](format.raw/*4.1*/("""
 		<div class="space"></div>
 	<div class="row">
 		<div class="card-text col-sm-3 font-weight-bold"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem"> Profession </span></div>
-		<div class="col-sm-9"><span class="me">	"""),_display_(/*154.44*/argsMaps("dept")),format.raw/*154.60*/("""</span></div>
+		<div class="col-sm-9"><span class="me">	"""),_display_(/*181.44*/argsMaps("dept")),format.raw/*181.60*/("""</span></div>
 	</div>
 		<div class="space"></div>
 	<div class="row">
 		<div class="card-text col-sm-3 font-weight-bold text-wrap"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem">Email</span></div>
-		<div class="col-sm-9"><span class="me" >"""),_display_(/*159.44*/argsMaps("email")),format.raw/*159.61*/("""</span></div>
+		<div class="col-sm-9"><span class="me" >"""),_display_(/*186.44*/argsMaps("email")),format.raw/*186.61*/("""</span></div>
 	</div>
+ 
   </div>
   </div>
-  <div class="container d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center col-3">
+  <div class="container d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center col-6">
 	<div class="container inner">
-		<img src=""""),_display_(/*165.14*/assetsFinder/*165.26*/.path("/images/big_hero.PNG")),format.raw/*165.55*/("""" alt="profile pic" class="image img-fluid img-thumbnail">
-		<div class="overlay">
-			<a href="https://www.google.com" class="icon" title="Change Profile Picture">
-				<i class="fa fa-user"></i>
-			</a>
-		</div>
+ 		<div id="chart_div"></div>
 	</div>
   </div>
   </div>
 </div>
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-        <h2 class="h2"><span class="recent">Recent Pages</span></h2>
-      </div>
-	  <div class="card second w-75">
-	  <h5 class="card-header">PageName</h5>
-  <div class="card-body">
-	<div class="row">
-		<div class="card-text col-sm-3 font-weight-bold"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem ">Created By </span></div>
-		<div class="col-sm-9"><span class="me">Himanshu</span></div>
-	</div>
-	<div class="space"></div>
-	<div class="row">
-		<div class="card-text col-sm-3 font-weight-bold"><span class="badge badge-secondary" style="width:6rem;font-size:0.85rem">Domain</span></div>
-		<div class="col-sm-9"><span class="me">DomainName</span></div>
-	</div>
-  </div>
-</div>
+
 	  <div class="space1"></div>
     </main>
   </div>
@@ -221,11 +228,11 @@ Seq[Any](format.raw/*4.1*/("""
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
         <script>
-        (function () """),format.raw/*201.22*/("""{"""),format.raw/*201.23*/("""
-            """),format.raw/*202.13*/("""'use strict'
+        (function () """),format.raw/*208.22*/("""{"""),format.raw/*208.23*/("""
+            """),format.raw/*209.13*/("""'use strict'
 
           feather.replace()
-                """),format.raw/*205.17*/("""}"""),format.raw/*205.18*/("""())
+                """),format.raw/*212.17*/("""}"""),format.raw/*212.18*/("""())
           
 
         </script>
@@ -239,7 +246,9 @@ Seq[Any](format.raw/*4.1*/("""
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
          
-            
+
+      
+           
      </body>  
      
     
@@ -250,9 +259,9 @@ Seq[Any](format.raw/*4.1*/("""
     }
   }
 
-  def render(argsMaps:Map[String, String],request:RequestHeader,assetsFinder:AssetsFinder): play.twirl.api.HtmlFormat.Appendable = apply(argsMaps)(request,assetsFinder)
+  def render(argsMaps:Map[String, String],qsno:Int,ansno:Int,notans:Int,request:RequestHeader,assetsFinder:AssetsFinder): play.twirl.api.HtmlFormat.Appendable = apply(argsMaps,qsno,ansno,notans)(request,assetsFinder)
 
-  def f:((Map[String, String]) => (RequestHeader,AssetsFinder) => play.twirl.api.HtmlFormat.Appendable) = (argsMaps) => (request,assetsFinder) => apply(argsMaps)(request,assetsFinder)
+  def f:((Map[String, String],Int,Int,Int) => (RequestHeader,AssetsFinder) => play.twirl.api.HtmlFormat.Appendable) = (argsMaps,qsno,ansno,notans) => (request,assetsFinder) => apply(argsMaps,qsno,ansno,notans)(request,assetsFinder)
 
   def ref: this.type = this
 
@@ -261,11 +270,11 @@ Seq[Any](format.raw/*4.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-07-24T16:39:42.543
+                  DATE: 2020-08-31T01:47:07.347
                   SOURCE: C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/app/views/userDashboard.scala.html
-                  HASH: 91e9fdc4b6b761fbdf7f3499c718af08b8a4b6e4
-                  MATRIX: 799->28|962->120|1006->136|1033->137|1657->734|1678->746|1743->790|1845->865|1866->877|1938->927|2024->986|2045->998|2114->1045|2200->1104|2221->1116|2290->1163|2349->1195|2370->1207|2437->1253|2714->1503|2735->1515|2784->1543|5700->4431|5716->4437|5759->4458|5870->4541|5886->4547|5923->4562|5963->4573|6270->4852|6286->4858|6328->4878|6439->4961|6455->4967|6492->4982|6532->4993|7121->5555|7159->5571|7191->5575|7498->5854|7540->5874|7837->6143|7875->6159|8168->6424|8207->6441|8426->6632|8448->6644|8499->6673|10232->8377|10262->8378|10304->8391|10391->8449|10421->8450
-                  LINES: 21->2|24->3|27->4|28->5|38->15|38->15|38->15|39->16|39->16|39->16|40->17|40->17|40->17|41->18|41->18|41->18|42->19|42->19|42->19|49->26|49->26|49->26|129->106|129->106|129->106|131->108|131->108|131->108|132->109|140->117|140->117|140->117|142->119|142->119|142->119|143->120|160->137|160->137|161->138|169->146|169->146|177->154|177->154|182->159|182->159|188->165|188->165|188->165|224->201|224->201|225->202|228->205|228->205
+                  HASH: 31cf004f95c6e701d41b400370a8ebdbc5ac73df
+                  MATRIX: 811->28|1005->151|1049->167|1076->168|1700->765|1721->777|1786->821|1888->896|1909->908|1981->958|2067->1017|2088->1029|2157->1076|2243->1135|2264->1147|2333->1194|2392->1226|2413->1238|2480->1284|2858->1634|2887->1635|2939->1659|2968->1660|3292->1956|3321->1957|3358->1967|3616->2198|3643->2204|3697->2231|3723->2236|3790->2275|3819->2276|3865->2295|3890->2299|3992->2373|4021->2374|4177->2503|4205->2504|4237->2509|4436->2681|4451->2687|4496->2711|4543->2731|4564->2743|4613->2771|5513->3644|5528->3650|5573->3674|5786->3860|5801->3866|5844->3888|6063->4080|6078->4086|6119->4106|6574->4533|6590->4539|6640->4567|7180->5079|7196->5085|7233->5100|7763->5602|7779->5608|7822->5629|7933->5712|7949->5718|7986->5733|8026->5744|8333->6023|8349->6029|8391->6049|8502->6132|8518->6138|8555->6153|8595->6164|9248->6789|9286->6805|9589->7080|9631->7100|9928->7369|9966->7385|10259->7650|10298->7667|11218->8558|11248->8559|11290->8572|11377->8630|11407->8631
+                  LINES: 21->2|24->3|27->4|28->5|38->15|38->15|38->15|39->16|39->16|39->16|40->17|40->17|40->17|41->18|41->18|41->18|42->19|42->19|42->19|54->31|54->31|54->31|54->31|62->39|62->39|64->41|70->47|70->47|71->48|71->48|74->51|74->51|74->51|74->51|76->53|76->53|80->57|80->57|81->58|85->62|85->62|85->62|86->63|86->63|86->63|106->83|106->83|106->83|112->89|112->89|112->89|118->95|118->95|118->95|132->109|132->109|132->109|147->124|147->124|147->124|159->136|159->136|159->136|161->138|161->138|161->138|162->139|170->147|170->147|170->147|172->149|172->149|172->149|173->150|189->166|189->166|196->173|196->173|204->181|204->181|209->186|209->186|231->208|231->208|232->209|235->212|235->212
                   -- GENERATED --
               */
           

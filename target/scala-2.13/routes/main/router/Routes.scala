@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/conf/routes
-// @DATE:Thu Aug 06 12:54:35 IST 2020
+// @DATE:Mon Oct 05 12:41:16 IST 2020
 
 package router
 
@@ -14,24 +14,28 @@ import _root_.controllers.Assets.Asset
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
-  HomeController_9: controllers.HomeController,
+  HomeController_11: controllers.HomeController,
   // @LINE:9
-  CountController_6: controllers.CountController,
+  CountController_7: controllers.CountController,
   // @LINE:11
-  AsyncController_8: controllers.AsyncController,
+  AsyncController_10: controllers.AsyncController,
   // @LINE:14
-  Assets_7: controllers.Assets,
+  Assets_9: controllers.Assets,
   // @LINE:18
-  meetTheTeam_5: controllers.meetTheTeam,
-  // @LINE:21
+  meetTheTeam_6: controllers.meetTheTeam,
+  // @LINE:22
   login_0: controllers.login,
-  // @LINE:25
-  signUp_4: controllers.signUp,
-  // @LINE:32
-  setup_2: controllers.setup,
-  // @LINE:38
+  // @LINE:27
+  resetPassword_5: controllers.resetPassword,
+  // @LINE:34
   dashboard_1: controllers.dashboard,
-  // @LINE:44
+  // @LINE:43
+  signUp_4: controllers.signUp,
+  // @LINE:50
+  setup_2: controllers.setup,
+  // @LINE:54
+  MailerService_8: controllers.MailerService,
+  // @LINE:65
   answerQuery_3: controllers.answerQuery,
   val prefix: String
 ) extends GeneratedRouter {
@@ -39,31 +43,35 @@ class Routes(
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
-    HomeController_9: controllers.HomeController,
+    HomeController_11: controllers.HomeController,
     // @LINE:9
-    CountController_6: controllers.CountController,
+    CountController_7: controllers.CountController,
     // @LINE:11
-    AsyncController_8: controllers.AsyncController,
+    AsyncController_10: controllers.AsyncController,
     // @LINE:14
-    Assets_7: controllers.Assets,
+    Assets_9: controllers.Assets,
     // @LINE:18
-    meetTheTeam_5: controllers.meetTheTeam,
-    // @LINE:21
+    meetTheTeam_6: controllers.meetTheTeam,
+    // @LINE:22
     login_0: controllers.login,
-    // @LINE:25
-    signUp_4: controllers.signUp,
-    // @LINE:32
-    setup_2: controllers.setup,
-    // @LINE:38
+    // @LINE:27
+    resetPassword_5: controllers.resetPassword,
+    // @LINE:34
     dashboard_1: controllers.dashboard,
-    // @LINE:44
+    // @LINE:43
+    signUp_4: controllers.signUp,
+    // @LINE:50
+    setup_2: controllers.setup,
+    // @LINE:54
+    MailerService_8: controllers.MailerService,
+    // @LINE:65
     answerQuery_3: controllers.answerQuery
-  ) = this(errorHandler, HomeController_9, CountController_6, AsyncController_8, Assets_7, meetTheTeam_5, login_0, signUp_4, setup_2, dashboard_1, answerQuery_3, "/")
+  ) = this(errorHandler, HomeController_11, CountController_7, AsyncController_10, Assets_9, meetTheTeam_6, login_0, resetPassword_5, dashboard_1, signUp_4, setup_2, MailerService_8, answerQuery_3, "/")
 
   def withPrefix(addPrefix: String): Routes = {
     val prefix = play.api.routing.Router.concatPrefix(addPrefix, this.prefix)
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_9, CountController_6, AsyncController_8, Assets_7, meetTheTeam_5, login_0, signUp_4, setup_2, dashboard_1, answerQuery_3, prefix)
+    new Routes(errorHandler, HomeController_11, CountController_7, AsyncController_10, Assets_9, meetTheTeam_6, login_0, resetPassword_5, dashboard_1, signUp_4, setup_2, MailerService_8, answerQuery_3, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -72,27 +80,37 @@ class Routes(
 
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """trial""", """controllers.HomeController.trialPage"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """count""", """controllers.CountController.count"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """message""", """controllers.AsyncController.message"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(file:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """meetTheTeam""", """controllers.meetTheTeam.showTeamPage"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """documentation""", """controllers.meetTheTeam.documentation"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.login.loginPage"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """checkinglogin""", """controllers.login.loginValidate"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.login.logout"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """resetPassword""", """controllers.resetPassword.sendOtpChange"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """resetPassword/otpverify""", """controllers.resetPassword.sendEmail"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """resetPassword/otpverify/resultofotp""", """controllers.resetPassword.getOTP"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """inputnewPasswords""", """controllers.resetPassword.forgetSendPasswordOne(userEmail:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """forgotPasswords""", """controllers.resetPassword.forgetSendPasswordTwo"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """changePasswordByUser""", """controllers.dashboard.changePassWordOne"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getpasswordForfchangePassword""", """controllers.dashboard.changePasswordTwo"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """changePassword""", """controllers.resetPassword.sendPasswordChangePage"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """validatePasswordChange""", """controllers.resetPassword.setNewPassword"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """signupsetup""", """controllers.signUp.sendSignupSetupPage"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """signup""", """controllers.signUp.sendSignupPage"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """checkingsignup""", """controllers.signUp.getSignupInfo"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getbacksetupinfo""", """controllers.setup.getSetUpInfo"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getbackempinfo""", """controllers.setup.getEmpData"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getbackAddRoles""", """controllers.setup.getAddRoles"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """sendemailnotifications""", """controllers.MailerService.send"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """viewDashboard""", """controllers.dashboard.viewDashboard"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """createPage""", """controllers.dashboard.createPage"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getPageData""", """controllers.dashboard.getPageData"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """viewPages""", """controllers.dashboard.viewPages"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """viewMyPages""", """controllers.dashboard.viewMyPages"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """answer""", """controllers.answerQuery.getQuestionToAnswer(bookNametemp:String, qsNo:Int)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """trial""", """controllers.HomeController.trialPage"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """trial2""", """controllers.answerQuery.answerThequestion"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """trial1""", """controllers.HomeController.upload"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """markCorrectSol""", """controllers.answerQuery.markWorkingSolution(slno:Int, bookNameTemp:String, working:Int, qsno:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """answerquestion""", """controllers.answerQuery.answerThequestion"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -105,7 +123,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_HomeController_index0_invoker = createInvoker(
-    HomeController_9.index,
+    HomeController_11.index,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -118,30 +136,12 @@ class Routes(
     )
   )
 
-  // @LINE:7
-  private[this] lazy val controllers_HomeController_trialPage1_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("trial")))
-  )
-  private[this] lazy val controllers_HomeController_trialPage1_invoker = createInvoker(
-    HomeController_9.trialPage,
-    play.api.routing.HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.HomeController",
-      "trialPage",
-      Nil,
-      "GET",
-      this.prefix + """trial""",
-      """""",
-      Seq()
-    )
-  )
-
   // @LINE:9
-  private[this] lazy val controllers_CountController_count2_route = Route("GET",
+  private[this] lazy val controllers_CountController_count1_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("count")))
   )
-  private[this] lazy val controllers_CountController_count2_invoker = createInvoker(
-    CountController_6.count,
+  private[this] lazy val controllers_CountController_count1_invoker = createInvoker(
+    CountController_7.count,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.CountController",
@@ -149,17 +149,18 @@ class Routes(
       Nil,
       "GET",
       this.prefix + """count""",
-      """ An example controller showing how to use dependency injection""",
+      """GET		/trial						controllers.HomeController.trialPage
+ An example controller showing how to use dependency injection""",
       Seq()
     )
   )
 
   // @LINE:11
-  private[this] lazy val controllers_AsyncController_message3_route = Route("GET",
+  private[this] lazy val controllers_AsyncController_message2_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("message")))
   )
-  private[this] lazy val controllers_AsyncController_message3_invoker = createInvoker(
-    AsyncController_8.message,
+  private[this] lazy val controllers_AsyncController_message2_invoker = createInvoker(
+    AsyncController_10.message,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.AsyncController",
@@ -173,11 +174,11 @@ class Routes(
   )
 
   // @LINE:14
-  private[this] lazy val controllers_Assets_versioned4_route = Route("GET",
+  private[this] lazy val controllers_Assets_versioned3_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned4_invoker = createInvoker(
-    Assets_7.versioned(fakeValue[String]),
+  private[this] lazy val controllers_Assets_versioned3_invoker = createInvoker(
+    Assets_9.versioned(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -191,11 +192,11 @@ class Routes(
   )
 
   // @LINE:18
-  private[this] lazy val controllers_meetTheTeam_showTeamPage5_route = Route("GET",
+  private[this] lazy val controllers_meetTheTeam_showTeamPage4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("meetTheTeam")))
   )
-  private[this] lazy val controllers_meetTheTeam_showTeamPage5_invoker = createInvoker(
-    meetTheTeam_5.showTeamPage,
+  private[this] lazy val controllers_meetTheTeam_showTeamPage4_invoker = createInvoker(
+    meetTheTeam_6.showTeamPage,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.meetTheTeam",
@@ -208,7 +209,25 @@ class Routes(
     )
   )
 
-  // @LINE:21
+  // @LINE:19
+  private[this] lazy val controllers_meetTheTeam_documentation5_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("documentation")))
+  )
+  private[this] lazy val controllers_meetTheTeam_documentation5_invoker = createInvoker(
+    meetTheTeam_6.documentation,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.meetTheTeam",
+      "documentation",
+      Nil,
+      "GET",
+      this.prefix + """documentation""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:22
   private[this] lazy val controllers_login_loginPage6_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
   )
@@ -226,7 +245,7 @@ class Routes(
     )
   )
 
-  // @LINE:22
+  // @LINE:23
   private[this] lazy val controllers_login_loginValidate7_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("checkinglogin")))
   )
@@ -244,11 +263,191 @@ class Routes(
     )
   )
 
-  // @LINE:25
-  private[this] lazy val controllers_signUp_sendSignupSetupPage8_route = Route("GET",
+  // @LINE:24
+  private[this] lazy val controllers_login_logout8_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logout")))
+  )
+  private[this] lazy val controllers_login_logout8_invoker = createInvoker(
+    login_0.logout,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.login",
+      "logout",
+      Nil,
+      "GET",
+      this.prefix + """logout""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:27
+  private[this] lazy val controllers_resetPassword_sendOtpChange9_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("resetPassword")))
+  )
+  private[this] lazy val controllers_resetPassword_sendOtpChange9_invoker = createInvoker(
+    resetPassword_5.sendOtpChange,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.resetPassword",
+      "sendOtpChange",
+      Nil,
+      "GET",
+      this.prefix + """resetPassword""",
+      """All methods related to "Forget Password"""",
+      Seq()
+    )
+  )
+
+  // @LINE:28
+  private[this] lazy val controllers_resetPassword_sendEmail10_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("resetPassword/otpverify")))
+  )
+  private[this] lazy val controllers_resetPassword_sendEmail10_invoker = createInvoker(
+    resetPassword_5.sendEmail,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.resetPassword",
+      "sendEmail",
+      Nil,
+      "POST",
+      this.prefix + """resetPassword/otpverify""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:29
+  private[this] lazy val controllers_resetPassword_getOTP11_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("resetPassword/otpverify/resultofotp")))
+  )
+  private[this] lazy val controllers_resetPassword_getOTP11_invoker = createInvoker(
+    resetPassword_5.getOTP,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.resetPassword",
+      "getOTP",
+      Nil,
+      "POST",
+      this.prefix + """resetPassword/otpverify/resultofotp""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:30
+  private[this] lazy val controllers_resetPassword_forgetSendPasswordOne12_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("inputnewPasswords")))
+  )
+  private[this] lazy val controllers_resetPassword_forgetSendPasswordOne12_invoker = createInvoker(
+    resetPassword_5.forgetSendPasswordOne(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.resetPassword",
+      "forgetSendPasswordOne",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """inputnewPasswords""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:31
+  private[this] lazy val controllers_resetPassword_forgetSendPasswordTwo13_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("forgotPasswords")))
+  )
+  private[this] lazy val controllers_resetPassword_forgetSendPasswordTwo13_invoker = createInvoker(
+    resetPassword_5.forgetSendPasswordTwo,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.resetPassword",
+      "forgetSendPasswordTwo",
+      Nil,
+      "GET",
+      this.prefix + """forgotPasswords""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:34
+  private[this] lazy val controllers_dashboard_changePassWordOne14_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("changePasswordByUser")))
+  )
+  private[this] lazy val controllers_dashboard_changePassWordOne14_invoker = createInvoker(
+    dashboard_1.changePassWordOne,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.dashboard",
+      "changePassWordOne",
+      Nil,
+      "GET",
+      this.prefix + """changePasswordByUser""",
+      """All methods related to "force change password"""",
+      Seq()
+    )
+  )
+
+  // @LINE:35
+  private[this] lazy val controllers_dashboard_changePasswordTwo15_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("getpasswordForfchangePassword")))
+  )
+  private[this] lazy val controllers_dashboard_changePasswordTwo15_invoker = createInvoker(
+    dashboard_1.changePasswordTwo,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.dashboard",
+      "changePasswordTwo",
+      Nil,
+      "POST",
+      this.prefix + """getpasswordForfchangePassword""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:38
+  private[this] lazy val controllers_resetPassword_sendPasswordChangePage16_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("changePassword")))
+  )
+  private[this] lazy val controllers_resetPassword_sendPasswordChangePage16_invoker = createInvoker(
+    resetPassword_5.sendPasswordChangePage,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.resetPassword",
+      "sendPasswordChangePage",
+      Nil,
+      "GET",
+      this.prefix + """changePassword""",
+      """All methods related to "Change Password from forgetting/force change"""",
+      Seq()
+    )
+  )
+
+  // @LINE:39
+  private[this] lazy val controllers_resetPassword_setNewPassword17_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("validatePasswordChange")))
+  )
+  private[this] lazy val controllers_resetPassword_setNewPassword17_invoker = createInvoker(
+    resetPassword_5.setNewPassword,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.resetPassword",
+      "setNewPassword",
+      Nil,
+      "POST",
+      this.prefix + """validatePasswordChange""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:43
+  private[this] lazy val controllers_signUp_sendSignupSetupPage18_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("signupsetup")))
   )
-  private[this] lazy val controllers_signUp_sendSignupSetupPage8_invoker = createInvoker(
+  private[this] lazy val controllers_signUp_sendSignupSetupPage18_invoker = createInvoker(
     signUp_4.sendSignupSetupPage,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -262,29 +461,11 @@ class Routes(
     )
   )
 
-  // @LINE:26
-  private[this] lazy val controllers_signUp_sendSignupPage9_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("signup")))
-  )
-  private[this] lazy val controllers_signUp_sendSignupPage9_invoker = createInvoker(
-    signUp_4.sendSignupPage,
-    play.api.routing.HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.signUp",
-      "sendSignupPage",
-      Nil,
-      "GET",
-      this.prefix + """signup""",
-      """""",
-      Seq()
-    )
-  )
-
-  // @LINE:30
-  private[this] lazy val controllers_signUp_getSignupInfo10_route = Route("POST",
+  // @LINE:48
+  private[this] lazy val controllers_signUp_getSignupInfo19_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("checkingsignup")))
   )
-  private[this] lazy val controllers_signUp_getSignupInfo10_invoker = createInvoker(
+  private[this] lazy val controllers_signUp_getSignupInfo19_invoker = createInvoker(
     signUp_4.getSignupInfo,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -299,11 +480,11 @@ Following are methods to setup""",
     )
   )
 
-  // @LINE:32
-  private[this] lazy val controllers_setup_getSetUpInfo11_route = Route("POST",
+  // @LINE:50
+  private[this] lazy val controllers_setup_getSetUpInfo20_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("getbacksetupinfo")))
   )
-  private[this] lazy val controllers_setup_getSetUpInfo11_invoker = createInvoker(
+  private[this] lazy val controllers_setup_getSetUpInfo20_invoker = createInvoker(
     setup_2.getSetUpInfo,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -317,11 +498,11 @@ Following are methods to setup""",
     )
   )
 
-  // @LINE:34
-  private[this] lazy val controllers_setup_getEmpData12_route = Route("POST",
+  // @LINE:52
+  private[this] lazy val controllers_setup_getEmpData21_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("getbackempinfo")))
   )
-  private[this] lazy val controllers_setup_getEmpData12_invoker = createInvoker(
+  private[this] lazy val controllers_setup_getEmpData21_invoker = createInvoker(
     setup_2.getEmpData,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -335,11 +516,11 @@ Following are methods to setup""",
     )
   )
 
-  // @LINE:35
-  private[this] lazy val controllers_setup_getAddRoles13_route = Route("POST",
+  // @LINE:53
+  private[this] lazy val controllers_setup_getAddRoles22_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("getbackAddRoles")))
   )
-  private[this] lazy val controllers_setup_getAddRoles13_invoker = createInvoker(
+  private[this] lazy val controllers_setup_getAddRoles22_invoker = createInvoker(
     setup_2.getAddRoles,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -353,11 +534,29 @@ Following are methods to setup""",
     )
   )
 
-  // @LINE:38
-  private[this] lazy val controllers_dashboard_viewDashboard14_route = Route("GET",
+  // @LINE:54
+  private[this] lazy val controllers_MailerService_send23_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("sendemailnotifications")))
+  )
+  private[this] lazy val controllers_MailerService_send23_invoker = createInvoker(
+    MailerService_8.send,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.MailerService",
+      "send",
+      Nil,
+      "GET",
+      this.prefix + """sendemailnotifications""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:57
+  private[this] lazy val controllers_dashboard_viewDashboard24_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("viewDashboard")))
   )
-  private[this] lazy val controllers_dashboard_viewDashboard14_invoker = createInvoker(
+  private[this] lazy val controllers_dashboard_viewDashboard24_invoker = createInvoker(
     dashboard_1.viewDashboard,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -371,11 +570,11 @@ Following are methods to setup""",
     )
   )
 
-  // @LINE:39
-  private[this] lazy val controllers_dashboard_createPage15_route = Route("GET",
+  // @LINE:58
+  private[this] lazy val controllers_dashboard_createPage25_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("createPage")))
   )
-  private[this] lazy val controllers_dashboard_createPage15_invoker = createInvoker(
+  private[this] lazy val controllers_dashboard_createPage25_invoker = createInvoker(
     dashboard_1.createPage,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -389,11 +588,11 @@ Following are methods to setup""",
     )
   )
 
-  // @LINE:40
-  private[this] lazy val controllers_dashboard_getPageData16_route = Route("POST",
+  // @LINE:59
+  private[this] lazy val controllers_dashboard_getPageData26_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("getPageData")))
   )
-  private[this] lazy val controllers_dashboard_getPageData16_invoker = createInvoker(
+  private[this] lazy val controllers_dashboard_getPageData26_invoker = createInvoker(
     dashboard_1.getPageData,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -407,11 +606,11 @@ Following are methods to setup""",
     )
   )
 
-  // @LINE:41
-  private[this] lazy val controllers_dashboard_viewPages17_route = Route("GET",
+  // @LINE:61
+  private[this] lazy val controllers_dashboard_viewPages27_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("viewPages")))
   )
-  private[this] lazy val controllers_dashboard_viewPages17_invoker = createInvoker(
+  private[this] lazy val controllers_dashboard_viewPages27_invoker = createInvoker(
     dashboard_1.viewPages,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -420,16 +619,34 @@ Following are methods to setup""",
       Nil,
       "GET",
       this.prefix + """viewPages""",
+      """POST	/getPageDataUpload			controllers.dashboard.upload""",
+      Seq()
+    )
+  )
+
+  // @LINE:62
+  private[this] lazy val controllers_dashboard_viewMyPages28_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("viewMyPages")))
+  )
+  private[this] lazy val controllers_dashboard_viewMyPages28_invoker = createInvoker(
+    dashboard_1.viewMyPages,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.dashboard",
+      "viewMyPages",
+      Nil,
+      "GET",
+      this.prefix + """viewMyPages""",
       """""",
       Seq()
     )
   )
 
-  // @LINE:44
-  private[this] lazy val controllers_answerQuery_getQuestionToAnswer18_route = Route("GET",
+  // @LINE:65
+  private[this] lazy val controllers_answerQuery_getQuestionToAnswer29_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("answer")))
   )
-  private[this] lazy val controllers_answerQuery_getQuestionToAnswer18_invoker = createInvoker(
+  private[this] lazy val controllers_answerQuery_getQuestionToAnswer29_invoker = createInvoker(
     answerQuery_3.getQuestionToAnswer(fakeValue[String], fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -443,29 +660,29 @@ Following are methods to setup""",
     )
   )
 
-  // @LINE:47
-  private[this] lazy val controllers_HomeController_trialPage19_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("trial")))
+  // @LINE:66
+  private[this] lazy val controllers_answerQuery_markWorkingSolution30_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("markCorrectSol")))
   )
-  private[this] lazy val controllers_HomeController_trialPage19_invoker = createInvoker(
-    HomeController_9.trialPage,
+  private[this] lazy val controllers_answerQuery_markWorkingSolution30_invoker = createInvoker(
+    answerQuery_3.markWorkingSolution(fakeValue[Int], fakeValue[String], fakeValue[Int], fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
-      "controllers.HomeController",
-      "trialPage",
-      Nil,
+      "controllers.answerQuery",
+      "markWorkingSolution",
+      Seq(classOf[Int], classOf[String], classOf[Int], classOf[Int]),
       "GET",
-      this.prefix + """trial""",
-      """Following are for test purposes""",
+      this.prefix + """markCorrectSol""",
+      """""",
       Seq()
     )
   )
 
-  // @LINE:48
-  private[this] lazy val controllers_answerQuery_answerThequestion20_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("trial2")))
+  // @LINE:67
+  private[this] lazy val controllers_answerQuery_answerThequestion31_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("answerquestion")))
   )
-  private[this] lazy val controllers_answerQuery_answerThequestion20_invoker = createInvoker(
+  private[this] lazy val controllers_answerQuery_answerThequestion31_invoker = createInvoker(
     answerQuery_3.answerThequestion,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -473,25 +690,7 @@ Following are methods to setup""",
       "answerThequestion",
       Nil,
       "POST",
-      this.prefix + """trial2""",
-      """""",
-      Seq()
-    )
-  )
-
-  // @LINE:49
-  private[this] lazy val controllers_HomeController_upload21_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("trial1")))
-  )
-  private[this] lazy val controllers_HomeController_upload21_invoker = createInvoker(
-    HomeController_9.upload,
-    play.api.routing.HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.HomeController",
-      "upload",
-      Nil,
-      "POST",
-      this.prefix + """trial1""",
+      this.prefix + """answerquestion""",
       """""",
       Seq()
     )
@@ -503,133 +702,193 @@ Following are methods to setup""",
     // @LINE:6
     case controllers_HomeController_index0_route(params@_) =>
       call { 
-        controllers_HomeController_index0_invoker.call(HomeController_9.index)
-      }
-  
-    // @LINE:7
-    case controllers_HomeController_trialPage1_route(params@_) =>
-      call { 
-        controllers_HomeController_trialPage1_invoker.call(HomeController_9.trialPage)
+        controllers_HomeController_index0_invoker.call(HomeController_11.index)
       }
   
     // @LINE:9
-    case controllers_CountController_count2_route(params@_) =>
+    case controllers_CountController_count1_route(params@_) =>
       call { 
-        controllers_CountController_count2_invoker.call(CountController_6.count)
+        controllers_CountController_count1_invoker.call(CountController_7.count)
       }
   
     // @LINE:11
-    case controllers_AsyncController_message3_route(params@_) =>
+    case controllers_AsyncController_message2_route(params@_) =>
       call { 
-        controllers_AsyncController_message3_invoker.call(AsyncController_8.message)
+        controllers_AsyncController_message2_invoker.call(AsyncController_10.message)
       }
   
     // @LINE:14
-    case controllers_Assets_versioned4_route(params@_) =>
+    case controllers_Assets_versioned3_route(params@_) =>
       call(params.fromPath[String]("file", None)) { (file) =>
-        controllers_Assets_versioned4_invoker.call(Assets_7.versioned(file))
+        controllers_Assets_versioned3_invoker.call(Assets_9.versioned(file))
       }
   
     // @LINE:18
-    case controllers_meetTheTeam_showTeamPage5_route(params@_) =>
+    case controllers_meetTheTeam_showTeamPage4_route(params@_) =>
       call { 
-        controllers_meetTheTeam_showTeamPage5_invoker.call(meetTheTeam_5.showTeamPage)
+        controllers_meetTheTeam_showTeamPage4_invoker.call(meetTheTeam_6.showTeamPage)
       }
   
-    // @LINE:21
+    // @LINE:19
+    case controllers_meetTheTeam_documentation5_route(params@_) =>
+      call { 
+        controllers_meetTheTeam_documentation5_invoker.call(meetTheTeam_6.documentation)
+      }
+  
+    // @LINE:22
     case controllers_login_loginPage6_route(params@_) =>
       call { 
         controllers_login_loginPage6_invoker.call(login_0.loginPage)
       }
   
-    // @LINE:22
+    // @LINE:23
     case controllers_login_loginValidate7_route(params@_) =>
       call { 
         controllers_login_loginValidate7_invoker.call(login_0.loginValidate)
       }
   
-    // @LINE:25
-    case controllers_signUp_sendSignupSetupPage8_route(params@_) =>
+    // @LINE:24
+    case controllers_login_logout8_route(params@_) =>
       call { 
-        controllers_signUp_sendSignupSetupPage8_invoker.call(signUp_4.sendSignupSetupPage)
+        controllers_login_logout8_invoker.call(login_0.logout)
       }
   
-    // @LINE:26
-    case controllers_signUp_sendSignupPage9_route(params@_) =>
+    // @LINE:27
+    case controllers_resetPassword_sendOtpChange9_route(params@_) =>
       call { 
-        controllers_signUp_sendSignupPage9_invoker.call(signUp_4.sendSignupPage)
+        controllers_resetPassword_sendOtpChange9_invoker.call(resetPassword_5.sendOtpChange)
+      }
+  
+    // @LINE:28
+    case controllers_resetPassword_sendEmail10_route(params@_) =>
+      call { 
+        controllers_resetPassword_sendEmail10_invoker.call(resetPassword_5.sendEmail)
+      }
+  
+    // @LINE:29
+    case controllers_resetPassword_getOTP11_route(params@_) =>
+      call { 
+        controllers_resetPassword_getOTP11_invoker.call(resetPassword_5.getOTP)
       }
   
     // @LINE:30
-    case controllers_signUp_getSignupInfo10_route(params@_) =>
-      call { 
-        controllers_signUp_getSignupInfo10_invoker.call(signUp_4.getSignupInfo)
+    case controllers_resetPassword_forgetSendPasswordOne12_route(params@_) =>
+      call(params.fromQuery[String]("userEmail", None)) { (userEmail) =>
+        controllers_resetPassword_forgetSendPasswordOne12_invoker.call(resetPassword_5.forgetSendPasswordOne(userEmail))
       }
   
-    // @LINE:32
-    case controllers_setup_getSetUpInfo11_route(params@_) =>
+    // @LINE:31
+    case controllers_resetPassword_forgetSendPasswordTwo13_route(params@_) =>
       call { 
-        controllers_setup_getSetUpInfo11_invoker.call(setup_2.getSetUpInfo)
+        controllers_resetPassword_forgetSendPasswordTwo13_invoker.call(resetPassword_5.forgetSendPasswordTwo)
       }
   
     // @LINE:34
-    case controllers_setup_getEmpData12_route(params@_) =>
+    case controllers_dashboard_changePassWordOne14_route(params@_) =>
       call { 
-        controllers_setup_getEmpData12_invoker.call(setup_2.getEmpData)
+        controllers_dashboard_changePassWordOne14_invoker.call(dashboard_1.changePassWordOne)
       }
   
     // @LINE:35
-    case controllers_setup_getAddRoles13_route(params@_) =>
+    case controllers_dashboard_changePasswordTwo15_route(params@_) =>
       call { 
-        controllers_setup_getAddRoles13_invoker.call(setup_2.getAddRoles)
+        controllers_dashboard_changePasswordTwo15_invoker.call(dashboard_1.changePasswordTwo)
       }
   
     // @LINE:38
-    case controllers_dashboard_viewDashboard14_route(params@_) =>
+    case controllers_resetPassword_sendPasswordChangePage16_route(params@_) =>
       call { 
-        controllers_dashboard_viewDashboard14_invoker.call(dashboard_1.viewDashboard)
+        controllers_resetPassword_sendPasswordChangePage16_invoker.call(resetPassword_5.sendPasswordChangePage)
       }
   
     // @LINE:39
-    case controllers_dashboard_createPage15_route(params@_) =>
+    case controllers_resetPassword_setNewPassword17_route(params@_) =>
       call { 
-        controllers_dashboard_createPage15_invoker.call(dashboard_1.createPage)
+        controllers_resetPassword_setNewPassword17_invoker.call(resetPassword_5.setNewPassword)
       }
   
-    // @LINE:40
-    case controllers_dashboard_getPageData16_route(params@_) =>
+    // @LINE:43
+    case controllers_signUp_sendSignupSetupPage18_route(params@_) =>
       call { 
-        controllers_dashboard_getPageData16_invoker.call(dashboard_1.getPageData)
-      }
-  
-    // @LINE:41
-    case controllers_dashboard_viewPages17_route(params@_) =>
-      call { 
-        controllers_dashboard_viewPages17_invoker.call(dashboard_1.viewPages)
-      }
-  
-    // @LINE:44
-    case controllers_answerQuery_getQuestionToAnswer18_route(params@_) =>
-      call(params.fromQuery[String]("bookNametemp", None), params.fromQuery[Int]("qsNo", None)) { (bookNametemp, qsNo) =>
-        controllers_answerQuery_getQuestionToAnswer18_invoker.call(answerQuery_3.getQuestionToAnswer(bookNametemp, qsNo))
-      }
-  
-    // @LINE:47
-    case controllers_HomeController_trialPage19_route(params@_) =>
-      call { 
-        controllers_HomeController_trialPage19_invoker.call(HomeController_9.trialPage)
+        controllers_signUp_sendSignupSetupPage18_invoker.call(signUp_4.sendSignupSetupPage)
       }
   
     // @LINE:48
-    case controllers_answerQuery_answerThequestion20_route(params@_) =>
+    case controllers_signUp_getSignupInfo19_route(params@_) =>
       call { 
-        controllers_answerQuery_answerThequestion20_invoker.call(answerQuery_3.answerThequestion)
+        controllers_signUp_getSignupInfo19_invoker.call(signUp_4.getSignupInfo)
       }
   
-    // @LINE:49
-    case controllers_HomeController_upload21_route(params@_) =>
+    // @LINE:50
+    case controllers_setup_getSetUpInfo20_route(params@_) =>
       call { 
-        controllers_HomeController_upload21_invoker.call(HomeController_9.upload)
+        controllers_setup_getSetUpInfo20_invoker.call(setup_2.getSetUpInfo)
+      }
+  
+    // @LINE:52
+    case controllers_setup_getEmpData21_route(params@_) =>
+      call { 
+        controllers_setup_getEmpData21_invoker.call(setup_2.getEmpData)
+      }
+  
+    // @LINE:53
+    case controllers_setup_getAddRoles22_route(params@_) =>
+      call { 
+        controllers_setup_getAddRoles22_invoker.call(setup_2.getAddRoles)
+      }
+  
+    // @LINE:54
+    case controllers_MailerService_send23_route(params@_) =>
+      call { 
+        controllers_MailerService_send23_invoker.call(MailerService_8.send)
+      }
+  
+    // @LINE:57
+    case controllers_dashboard_viewDashboard24_route(params@_) =>
+      call { 
+        controllers_dashboard_viewDashboard24_invoker.call(dashboard_1.viewDashboard)
+      }
+  
+    // @LINE:58
+    case controllers_dashboard_createPage25_route(params@_) =>
+      call { 
+        controllers_dashboard_createPage25_invoker.call(dashboard_1.createPage)
+      }
+  
+    // @LINE:59
+    case controllers_dashboard_getPageData26_route(params@_) =>
+      call { 
+        controllers_dashboard_getPageData26_invoker.call(dashboard_1.getPageData)
+      }
+  
+    // @LINE:61
+    case controllers_dashboard_viewPages27_route(params@_) =>
+      call { 
+        controllers_dashboard_viewPages27_invoker.call(dashboard_1.viewPages)
+      }
+  
+    // @LINE:62
+    case controllers_dashboard_viewMyPages28_route(params@_) =>
+      call { 
+        controllers_dashboard_viewMyPages28_invoker.call(dashboard_1.viewMyPages)
+      }
+  
+    // @LINE:65
+    case controllers_answerQuery_getQuestionToAnswer29_route(params@_) =>
+      call(params.fromQuery[String]("bookNametemp", None), params.fromQuery[Int]("qsNo", None)) { (bookNametemp, qsNo) =>
+        controllers_answerQuery_getQuestionToAnswer29_invoker.call(answerQuery_3.getQuestionToAnswer(bookNametemp, qsNo))
+      }
+  
+    // @LINE:66
+    case controllers_answerQuery_markWorkingSolution30_route(params@_) =>
+      call(params.fromQuery[Int]("slno", None), params.fromQuery[String]("bookNameTemp", None), params.fromQuery[Int]("working", None), params.fromQuery[Int]("qsno", None)) { (slno, bookNameTemp, working, qsno) =>
+        controllers_answerQuery_markWorkingSolution30_invoker.call(answerQuery_3.markWorkingSolution(slno, bookNameTemp, working, qsno))
+      }
+  
+    // @LINE:67
+    case controllers_answerQuery_answerThequestion31_route(params@_) =>
+      call { 
+        controllers_answerQuery_answerThequestion31_invoker.call(answerQuery_3.answerThequestion)
       }
   }
 }

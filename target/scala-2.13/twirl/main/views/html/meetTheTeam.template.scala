@@ -46,7 +46,7 @@ Seq[Any](format.raw/*4.1*/("""
 				<a class="nav-link" href=""""),_display_(/*23.32*/routes/*23.38*/.HomeController.index),format.raw/*23.59*/(""""><span class="sub">Home</span></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#"><span class="sub">Documentation</span></a>
+				<a class="nav-link" href=""""),_display_(/*26.32*/routes/*26.38*/.meetTheTeam.documentation),format.raw/*26.64*/(""""><span class="sub">Documentation</span></a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href=""""),_display_(/*29.32*/routes/*29.38*/.meetTheTeam.showTeamPage),format.raw/*29.63*/(""""><span class="sub">Meet The Team</span></a>
@@ -61,13 +61,14 @@ Seq[Any](format.raw/*4.1*/("""
 				<div class="row">
 					<div class=" col-lg-9 col-md-8 col-sm-12">
 						<div class="container part4">
-							<p class="content">Within the field of literary criticism, "text" also refers to the original information content of a particular piece of writing; that is,the "text" of a work is that primal symbolic arrangement of letters as originally composed, apart from later alterations, deterioration, commentary, translations, paratext, etc. Therefore, when literary criticism is concerned with the determination of a "text", it is concerned with the distinguishing of the original information content from whatever has been added to or subtracted from that content as it appears in a given textual</p>
+							<p class="h4"><b>Sanjay Dutta</b></p><p class="content">
+						I started Coding back in school and I have never looked back since. I have a serious passion for Coding, Creating Websites, Learning New Algorithms and incorporating them in my work. I consider myself a Full Stack Developer. I love what I am doing and I am highly motivated to collaborate with you guys. So if you are into some project, don't hesitate to contact me.</p>
 							
 						</div>	
 					</div>
 					<div class="col-lg-3 col-md-4 col-sm-12 part2">
 						<div class="container d-flex justify-content-center part3"> 
-							<img src=""""),_display_(/*47.19*/assetsFinder/*47.31*/.path("/images/per2.png")),format.raw/*47.56*/("""" class="img-responsive image1" alt="pic1">
+							<img src=""""),_display_(/*48.19*/assetsFinder/*48.31*/.path("/images/per2.png")),format.raw/*48.56*/("""" class="img-responsive image1" alt="pic1" style="border-radius: 50%;">
 						</div>
 					</div>
 				</div>
@@ -77,7 +78,7 @@ Seq[Any](format.raw/*4.1*/("""
 				<div class="row">
 					<div class="col-lg-3 col-md-4 col-sm-12 part2">
 						<div class="container d-flex justify-content-center part3"> 
-							<img src=""""),_display_(/*57.19*/assetsFinder/*57.31*/.path("/images/per2.png")),format.raw/*57.56*/("""" class="img-responsive image1" alt="pic1">
+							<img src=""""),_display_(/*58.19*/assetsFinder/*58.31*/.path("/images/per2.png")),format.raw/*58.56*/("""" class="img-responsive image1" alt="pic1">
 						</div>
 					</div>
 					<div class="col-lg-9 col-md-8 col-sm-12">
@@ -99,7 +100,7 @@ Seq[Any](format.raw/*4.1*/("""
 					</div>
 					<div class="col-lg-3 col-md-4 col-sm-12 part2">
 						<div class="container d-flex justify-content-center part3"> 
-							<img src=""""),_display_(/*79.19*/assetsFinder/*79.31*/.path("/images/per2.png")),format.raw/*79.56*/("""" class="img-responsive image1" alt="pic1">
+							<img src=""""),_display_(/*80.19*/assetsFinder/*80.31*/.path("/images/per2.png")),format.raw/*80.56*/("""" class="img-responsive image1" alt="pic1">
 						</div>
 					</div>
 				</div>
@@ -109,7 +110,7 @@ Seq[Any](format.raw/*4.1*/("""
 				<div class="row">
 					<div class="col-lg-3 col-md-4 col-sm-12 part2">
 						<div class="container d-flex justify-content-center part3"> 
-							<img src=""""),_display_(/*89.19*/assetsFinder/*89.31*/.path("/images/per2.png")),format.raw/*89.56*/("""" class="img-responsive image1" alt="pic1">
+							<img src=""""),_display_(/*90.19*/assetsFinder/*90.31*/.path("/images/per2.png")),format.raw/*90.56*/("""" class="img-responsive image1" alt="pic1">
 						</div>
 					</div>
 					<div class="col-lg-9 col-md-8 col-sm-12">
@@ -122,10 +123,11 @@ Seq[Any](format.raw/*4.1*/("""
 			</div>
 		</div>
 		<div class="space1"></div>
+            <a href = """"),_display_(/*103.25*/routes/*103.31*/.HomeController.index),format.raw/*103.52*/("""">Go Back</a>
+
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-            
     </body>  
      
     
@@ -147,11 +149,11 @@ Seq[Any](format.raw/*4.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-07-31T16:15:50.042
+                  DATE: 2020-10-05T13:01:51.141
                   SOURCE: C:/Users/DELL/Desktop/BugTracker/play-samples-play-scala-starter-example/app/views/meetTheTeam.scala.html
-                  HASH: 3441b1a6c84e46c7d85c4db555a14f5e5077bb11
-                  MATRIX: 782->33|918->98|962->114|989->115|1463->562|1484->574|1540->609|1676->718|1697->730|1746->758|2226->1211|2241->1217|2283->1238|2521->1449|2536->1455|2582->1480|3728->2599|3749->2611|3795->2636|4158->2972|4179->2984|4225->3009|6023->4780|6044->4792|6090->4817|6453->5153|6474->5165|6520->5190
-                  LINES: 21->2|24->3|27->4|28->5|35->12|35->12|35->12|39->16|39->16|39->16|46->23|46->23|46->23|52->29|52->29|52->29|70->47|70->47|70->47|80->57|80->57|80->57|102->79|102->79|102->79|112->89|112->89|112->89
+                  HASH: ef33f39edcaf03e0581d5701cfc469ef3c2b3a36
+                  MATRIX: 782->33|918->98|962->114|989->115|1463->562|1484->574|1540->609|1676->718|1697->730|1746->758|2226->1211|2241->1217|2283->1238|2411->1339|2426->1345|2473->1371|2610->1481|2625->1487|2671->1512|3656->2470|3677->2482|3723->2507|4114->2871|4135->2883|4181->2908|5979->4679|6000->4691|6046->4716|6409->5052|6430->5064|6476->5089|7375->5960|7391->5966|7434->5987
+                  LINES: 21->2|24->3|27->4|28->5|35->12|35->12|35->12|39->16|39->16|39->16|46->23|46->23|46->23|49->26|49->26|49->26|52->29|52->29|52->29|71->48|71->48|71->48|81->58|81->58|81->58|103->80|103->80|103->80|113->90|113->90|113->90|126->103|126->103|126->103
                   -- GENERATED --
               */
           

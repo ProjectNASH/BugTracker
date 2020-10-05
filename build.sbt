@@ -26,7 +26,11 @@ lazy val root = (project in file("."))
      "com.pauldijou" %% "jwt-core" % "4.3.0",
      "io.spray" %%  "spray-json" % "1.3.5",
      "com.typesafe.play" %% "play-mailer" % "8.0.1",
-     "com.typesafe.play" %% "play-mailer-guice" % "8.0.1"
+     "com.typesafe.play" %% "play-mailer-guice" % "8.0.1",
+     "javax.xml.bind" % "jaxb-api" % "2.3.1",
+     "org.glassfish.jaxb" % "jaxb-runtime" % "2.3.3",
+     "javax.activation" % "activation" % "1.1.1",
+     
     ),
     scalacOptions ++= Seq(
       "-feature",
